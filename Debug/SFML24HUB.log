@@ -1,0 +1,94 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML13HUB.vcxproj, SFML14HUB.vcxproj, SFML15HUB.vcxproj, SFML16HUB.vcxproj, SFML17HUB.vcxproj, SFML18HUB.vcxproj, SFML19HUB.vcxproj, SFML20HUB.vcxproj, SFML21HUB.vcxproj, SFML22HUB.vcxproj, SFML23HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  HubMain.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\hubmain.cpp(13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\hubmain.cpp(43): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+  GlobalFunctionMissiom.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(77): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(92): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(110): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(143): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(145): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(148): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(153): warning C4018: >: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(155): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(158): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(164): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(167): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(174): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(177): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(186): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(201): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(253): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(278): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(302): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(314): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(316): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(318): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(319): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(344): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(346): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(409): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(415): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(430): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(484): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(486): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(498): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(500): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(510): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(577): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(590): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(612): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(622): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(626): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(633): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(641): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(645): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(654): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(663): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(667): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(673): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(681): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(685): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(692): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(700): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(705): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(714): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(719): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(797): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\globalfunctionmissiom.cpp(774): warning C4715: Generation_Rand_name: значение возвращается не при всех путях выполнения
+  Компиляция...
+  Mission.cpp
+  Interface.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(66): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(72): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(99): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(111): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(117): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\interface.cpp(125): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  ClassUnit.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(13): warning C4305: =: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(14): warning C4305: =: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(48): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(49): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(70): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(104): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(109): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(135): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(139): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(167): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(171): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(179): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(183): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(202): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(206): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classunit.cpp(256): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  ClassTile.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classtile.cpp(11): warning C4305: =: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classtile.cpp(48): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml24hub\classtile.cpp(49): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  ClassPlayers.cpp
+  Создание кода...
+  SFML24HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML24HUB.exe
+  SFML24HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML24HUB.pdb (Partial PDB)

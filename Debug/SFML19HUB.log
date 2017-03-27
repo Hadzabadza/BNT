@@ -1,0 +1,23 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML13HUB.vcxproj, SFML14HUB.vcxproj, SFML15HUB.vcxproj, SFML16HUB.vcxproj, SFML17HUB.vcxproj, SFML18HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ClassUnit.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(13): warning C4305: =: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(14): warning C4305: =: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(47): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(48): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(69): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(101): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(122): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(147): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(152): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(168): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml19hub\classunit.cpp(212): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  Создание кода...
+  Пропуск... (изменения не обнаружены)
+  Mission.cpp
+  Interface.cpp
+  HubMain.cpp
+  GlobalFunctionMissiom.cpp
+  ClassTile.cpp
+  ClassPlayers.cpp
+  SFML19HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML19HUB.exe
+  SFML19HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML19HUB.pdb (Partial PDB)

@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML13HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  HubMain.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml14hub\hubmain.cpp(40): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+  SFML14HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML14HUB.exe
+  SFML14HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML14HUB.pdb (Partial PDB)

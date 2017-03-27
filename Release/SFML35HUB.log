@@ -1,0 +1,161 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (SFML11HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ClassPlayers.cpp
+  ClassTile.cpp
+ClassTile.cpp(11): warning C4305: =: усечение из "double" к "float"
+ClassTile.cpp(48): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+ClassTile.cpp(49): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  ClassUnit.cpp
+ClassUnit.cpp(13): warning C4305: =: усечение из "double" к "float"
+ClassUnit.cpp(14): warning C4305: =: усечение из "double" к "float"
+ClassUnit.cpp(50): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(51): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(72): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(120): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(125): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(151): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(155): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(183): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(187): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(195): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(199): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(218): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(222): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+ClassUnit.cpp(272): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  HubMain.cpp
+HubMain.cpp(20): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+HubMain.cpp(50): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+  GlobalFunctionMissiom.cpp
+GlobalFunctionMissiom.cpp(77): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(92): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(110): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(145): warning C4018: >: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(147): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(150): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(158): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(161): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(166): warning C4018: >: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(168): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(171): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(177): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(180): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(186): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(189): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(196): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(199): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(205): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(208): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(214): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(217): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(227): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(242): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(380): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(417): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(441): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(454): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(458): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(460): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(461): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(492): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(494): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(513): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(515): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(580): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(586): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(601): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(666): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(668): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(680): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(682): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(692): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(767): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(780): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+GlobalFunctionMissiom.cpp(802): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(812): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(816): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(823): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(831): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(835): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(844): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(853): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(857): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(863): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(871): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(875): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+GlobalFunctionMissiom.cpp(882): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(890): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(895): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(904): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(909): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(999): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(1096): warning C4018: <: несоответствие типов со знаком и без знака
+GlobalFunctionMissiom.cpp(1129): warning C4018: <: несоответствие типов со знаком и без знака
+  Interface.cpp
+Interface.cpp(83): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(89): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(95): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(101): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(108): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(113): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(118): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(124): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(130): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(155): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(163): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(168): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(268): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(273): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(278): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(283): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(287): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(289): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(290): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(315): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(319): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(323): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(334): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(392): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(398): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(404): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(410): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(417): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(422): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(432): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(441): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(448): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(454): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(554): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(557): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(559): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(560): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(583): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(587): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(591): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(602): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(639): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(692): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(713): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(719): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(725): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(731): warning C4305: аргумент: усечение из "double" к "float"
+Interface.cpp(744): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(750): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(756): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(762): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(768): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(775): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(782): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(793): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(796): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(802): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(805): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(811): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(814): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+Interface.cpp(818): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Mission.cpp
+  Создание кода
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml35hub\globalfunctionmissiom.cpp(964): warning C4715: Generation_Rand_name: значение возвращается не при всех путях выполнения
+  All 483 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  SFML35HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Release\SFML35HUB.exe
+  SFML35HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Release\SFML35HUB.pdb (Full PDB)

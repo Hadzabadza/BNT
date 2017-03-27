@@ -1,0 +1,4 @@
+﻿  HubMain.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml13hub\hubmain.cpp(40): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+  SFML13HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML13HUB.exe
+  SFML13HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML13HUB.pdb (Partial PDB)

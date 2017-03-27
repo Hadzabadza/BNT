@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML13HUB.vcxproj, SFML14HUB.vcxproj, SFML15HUB.vcxproj, SFML16HUB.vcxproj, SFML17HUB.vcxproj, SFML18HUB.vcxproj, SFML19HUB.vcxproj, SFML20HUB.vcxproj, SFML21HUB.vcxproj, SFML22HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Interface.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml23hub\interface.cpp(77): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml23hub\interface.cpp(88): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  SFML23HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML23HUB.exe
+  SFML23HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML23HUB.pdb (Partial PDB)

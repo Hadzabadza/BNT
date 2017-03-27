@@ -1,0 +1,114 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML13HUB.vcxproj, SFML14HUB.vcxproj, SFML15HUB.vcxproj, SFML16HUB.vcxproj, SFML17HUB.vcxproj, SFML18HUB.vcxproj, SFML19HUB.vcxproj, SFML20HUB.vcxproj, SFML21HUB.vcxproj, SFML22HUB.vcxproj, SFML23HUB.vcxproj, SFML24HUB.vcxproj, SFML25HUB.vcxproj, SFML26HUB.vcxproj, SFML27HUB.vcxproj, SFML28HUB.vcxproj, SFML29HUB.vcxproj, SFML30HUB.vcxproj, SFML31HUB.vcxproj, SFML32HUB.vcxproj, SFML33HUB.vcxproj, SFML34HUB.vcxproj, SFML35HUB.vcxproj, SFML36HUB.vcxproj, SFML37HUB.vcxproj, SFML38HUB.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Interface.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(90): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(96): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(102): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(108): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(115): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(120): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(125): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(131): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(137): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(163): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(174): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(182): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(187): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(287): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(292): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(297): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(302): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(306): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(308): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(309): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(334): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(338): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(342): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(353): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(482): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(488): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(494): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(500): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(507): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(512): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(522): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(531): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(538): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(544): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(644): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(647): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(649): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(650): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(673): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(677): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(681): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(692): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(729): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(782): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(803): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(809): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(815): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(821): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(834): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(840): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(846): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(852): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(858): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(865): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(872): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(883): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(886): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(892): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(895): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(901): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(904): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(908): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(955): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1020): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1046): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1049): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1050): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1051): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1052): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1067): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1072): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1081): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1086): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1096): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1104): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1111): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1118): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1125): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1134): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1143): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1148): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1158): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1166): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1173): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1180): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1187): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1196): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1205): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1210): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1219): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1227): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1234): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1241): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1248): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1258): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1267): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1272): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1281): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1289): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1296): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1303): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1310): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1323): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1329): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1335): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\interface.cpp(1341): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  HubMain.cpp
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\hubmain.cpp(20): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\евгений\documents\c++\program\1 vs\sfml learning\sfml39hub\hubmain.cpp(53): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+  Создание кода...
+  SFML39HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML39HUB.exe
+  SFML39HUB.vcxproj -> C:\Users\Евгений\Documents\c++\program\1 VS\SFML learning\Debug\SFML39HUB.pdb (Partial PDB)
