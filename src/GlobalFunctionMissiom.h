@@ -9,6 +9,7 @@
 #include "ClassUnit.h"
 #include "ClassPlayers.h"
 #include "Interface.h"
+#include "ImageLoader.h"
 
 
 using namespace std;

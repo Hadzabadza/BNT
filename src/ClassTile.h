@@ -18,7 +18,6 @@ private:
 	bool Instantiate = false;	//во время создания карты используется для проверки установлен тайл, или не
 	int _X, _Y, _WH; //поцизиция спрайта на тейл сете и размер спрайта
 	float anspeed;			//скорость анимации
-	Texture map;
 	bool AttackOn; //для рисования обычного курсора атаки
 public:
 	float CurrentFrame;		//количесвто кадров в секунду*
@@ -31,7 +30,6 @@ public:
 
 	//***курсоры***
 	bool StepUnit;	
-	Texture textureGreenTile;
 	Sprite spriteGreenTile;
 	//***курсоры***
 public:

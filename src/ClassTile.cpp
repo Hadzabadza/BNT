@@ -20,14 +20,14 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	_WH = W;
 	if (Land == '1' || Land == '2' || Land == '3' || Land == '4')
 	{
-		map.loadFromFile("image/TileSetGameIsAnimation.png");
-		s_map.setTexture(map);
+		//map.loadFromFile("image/TileSetGameIsAnimation.png");
+		s_map.setTexture(TextureLoader::tex->tileSetAnimated);
 		s_map.setScale(2, 2);
 	}
 	else
 	{
-		map.loadFromFile("image/TileSetGame.png");
-		s_map.setTexture(map);
+		//map.loadFromFile("image/TileSetGame.png");
+		s_map.setTexture(TextureLoader::tex->tileSetGame);
 		s_map.setScale(2, 2);
 	}
 	ID = id;
@@ -37,8 +37,8 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	I = i;
 	J = j;
 
-	textureGreenTile.loadFromFile("image/kursor.png");
-	spriteGreenTile.setTexture(textureGreenTile);
+	//textureGreenTile.loadFromFile("image/kursor.png");
+	spriteGreenTile.setTexture(TextureLoader::tex->cursor);
 	spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
 	spriteGreenTile.setScale(2, 2);
 

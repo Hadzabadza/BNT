@@ -11,7 +11,6 @@ using namespace sf;
 class To_Exit		//элемент интерфейса
 {
 private:
-	Texture texture_exit;
 	Sprite sprite_exit;
 	Vector2f center;
 	Vector2f size;
@@ -28,8 +27,7 @@ public:
 class InformUnitPlayer
 {
 public:
-	Texture texture_infoUnitPlayer; //окошко интерфейса
-	Sprite sprite_infoUnitPlayer;
+	Sprite sprite_infoUnitPlayer; //окошко интерфейса
 	Vector2f center1;		//для центровки текста по камере 
 	Vector2f size1;			//для центровки текста по камере 
 
@@ -53,8 +51,7 @@ public:
 	ostringstream _String2;		//строка количества человек в отряде не раненные
 	ostringstream Teamp_1;		//для вывода лвл и прочей информации
 
-	Texture texture_infoUnitPlayer2;	//бошка юнита на интерфейсе
-	Sprite sprite_infoUnitPlayer2;
+	Sprite sprite_infoUnitPlayer2;//бошка юнита на интерфейсе
 
 	bool _draw;					//рисовать интерфейс или нет
 	bool _hurt;					//если отряд ранен то выводим покалеченную бошку 
@@ -74,15 +71,11 @@ public:
 	int CouterStepUnit, CouterAttackUnit, CouterAmmo;		//шаги, атака, потроны
 	ostringstream _CouterStepUnit, _CouterAttackUnit, _CouterAmmo;	//для вывода
 
-	Texture texture_Black; //черная
-	Sprite sprite_Black;
-	Texture texture_Red; //красная
-	Sprite sprite_Red;
-	Texture texture_Green; //зеленая
-	Sprite sprite_Green;
+	Sprite sprite_Black;//черная
+	Sprite sprite_Red;//красная
+	Sprite sprite_Green;//зеленая
 
-	Texture texture_infoUnitPlayer_Fast; //кнопка нажатия бега
-	Sprite sprite_infoUnitPlayer_Fast;
+	Sprite sprite_infoUnitPlayer_Fast;//кнопка нажатия бега
 
 	float StaminaUnit, MoraleUnit, ConstStaminaUnit, ConstMoraleUnit;			//выносливость на интерфейс - моральное состояние на интерфейс
 
@@ -111,11 +104,9 @@ public:
 	int HurtPeople2, ConstHurtPeople2;				//для вывода зеленой полоски
 	int SelectLvl2;
 
-	Texture texture_infoUnitPlayer3; //окошко интерфейса
-	Sprite sprite_infoUnitPlayer3;
+	Sprite sprite_infoUnitPlayer3;//окошко интерфейса
 
-	Texture texture_infoUnitPlayer4; //бошка юнита
-	Sprite sprite_infoUnitPlayer4;
+	Sprite sprite_infoUnitPlayer4;//бошка юнита
 
 	Text textInfoSquad2;			//информация о название отряда
 	Text textInfoMorale2;		//информация о моральном состояние
@@ -133,12 +124,9 @@ public:
 	ostringstream _String4;		//строка количества человек в отряде не раненные
 	ostringstream Teamp_2;		//для вывода лвл и прочей информации
 
-	Texture texture_Black2; //черная
-	Sprite sprite_Black2;
-	Texture texture_Red2; //красная
-	Sprite sprite_Red2;
-	Texture texture_Green2; //зеленая
-	Sprite sprite_Green2;
+	Sprite sprite_Black2;//черная
+	Sprite sprite_Red2;//красная
+	Sprite sprite_Green2;//зеленая
 
 	InformUnitHostile();
 	void DrawInfoHostile(RenderWindow&);	//выводим на экран
@@ -155,8 +143,7 @@ public:
 	Vector2f center_SureStupe;		//для центровки текста по камере 
 	Vector2f size_SureStupe;			//для центровки текста по камере
 
-	Texture texture_infoUnitPlayer_SureStupe; //окошко интерфейса
-	Sprite sprite_infoUnitPlayer_SureStupe;
+	Sprite sprite_infoUnitPlayer_SureStupe;//окошко интерфейса
 	Text textInfoSureStupe;
 	bool _draw_SureStupe;
 	bool cross_SureStupe;
@@ -174,8 +161,7 @@ public:
 	Vector2f center_SureHalt;		//для центровки текста по камере 
 	Vector2f size_SureHalt;			//для центровки текста по камере
 
-	Texture texture_infoUnitPlayer_SureHalt; //окошко интерфейса
-	Sprite sprite_infoUnitPlayer_SureHalt;
+	Sprite sprite_infoUnitPlayer_SureHalt;//окошко интерфейса
 	Text textInfoSureHalt;
 	bool _draw_SureHalt;
 	bool cross_SureHalt;
@@ -193,8 +179,7 @@ public:
 	Vector2f center_SureStupe_InterfaceMap;		//для центровки текста по камере 
 	Vector2f size_SureStupe_InterfaceMap;			//для центровки текста по камере
 
-	Texture texture_InterfaceMap; //окошко интерфейса
-	Sprite sprite_InterfaceMap;
+	Sprite sprite_InterfaceMap;//окошко интерфейса
 
 	Text StepCouter_InterfaceMap;			//ходы в числах
 	Text StepText_InterfaceMap;		//текст ход
@@ -224,13 +209,10 @@ public:
 	float X_Position, Y_Position;				//мировые координаты позиции
 	bool IsSelectUnit;
 
-	Texture texture_TrayUnit;
 	Sprite sprite_TrayUnit;		//спрайт свитка
 
-	Texture texture_TrayUnit_Head;
 	Sprite sprite_TrayUnit_Head;	//спрайт бошки юнита
 
-	Texture texture_TrayUnit_Dot;
 	Sprite sprite_TrayUnit_Dot;	//точки
 
 	TrayUnit_index();
@@ -243,7 +225,6 @@ public:
 	Vector2f center_SureStupe_TrayUnit;		//для центровки по камере 
 	Vector2f size_SureStupe_TrayUnit;			//для центровки по камере
 
-	Texture texture_TrayUnit_end;
 	Sprite sprite_TrayUnit_end;	//спрайт окончания свика
 
 	vector<TrayUnit_index> ListUnit;	//хранящиеся данные юнитов

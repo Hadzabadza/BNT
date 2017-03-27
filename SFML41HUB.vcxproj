@@ -24,6 +24,7 @@
     <ClCompile Include="src\ClassUnit.cpp" />
     <ClCompile Include="src\GlobalFunctionMissiom.cpp" />
     <ClCompile Include="src\HubMain.cpp" />
+    <ClCompile Include="src\ImageLoader.cpp" />
     <ClCompile Include="src\Interface.cpp" />
     <ClCompile Include="src\Mission.cpp" />
   </ItemGroup>
@@ -32,6 +33,7 @@
     <ClInclude Include="src\ClassTile.h" />
     <ClInclude Include="src\ClassUnit.h" />
     <ClInclude Include="src\GlobalFunctionMissiom.h" />
+    <ClInclude Include="src\ImageLoader.h" />
     <ClInclude Include="src\Interface.h" />
     <ClInclude Include="src\Mission.h" />
     <ClInclude Include="src\PrintMission.h" />

@@ -29,8 +29,7 @@ public:
 	bool isSelectHostile;	//для выделения вражеского юнита
 	bool hurt;				//если отрял ранен, то мы переключаемся на раненный дизайн отрядов
 	int lvl;				//лвл отряда
-	Image image;				//спрайт юнита
-	Texture texture;
+
 	Sprite sprite;
 	////***Графическая механика юнитов***
 

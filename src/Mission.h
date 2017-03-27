@@ -31,11 +31,9 @@ public:
 	float FrameDownload;			//для подсчета времени начала загрузки текстур
 	bool Start;						//для старта загрузки текстур
 
-	Texture texture_DownloadArt; //арт для загрузки
-	Sprite sprite_DownloadArt;
+	Sprite sprite_DownloadArt;//арт для загрузки
 
-	Texture texture_DownloadStrips; //полоска загрузки
-	Sprite sprite_DownloadStrips;
+	Sprite sprite_DownloadStrips;	//полоска загрузки
 
 	Tile **Miss;
 	Mission(int, int, RenderWindow&);

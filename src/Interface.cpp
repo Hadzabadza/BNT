@@ -10,8 +10,8 @@ using namespace sf;
 
 To_Exit::To_Exit()
 {
-	texture_exit.loadFromFile("image/exit.png");
-	sprite_exit.setTexture(texture_exit);
+	//texture_exit.loadFromFile("image/exit.png");
+	sprite_exit.setTexture(TextureLoader::tex->exitBTN);
 	sprite_exit.setTextureRect(IntRect(0, 0, 91, 40));
 	sprite_exit.setScale(2, 2);
 }
@@ -59,26 +59,26 @@ InformUnitPlayer::InformUnitPlayer()
 	missingStep = false;
 	Fast = false;
 
-	texture_infoUnitPlayer.loadFromFile("image/interfeysUnit.png");	//само окно
-	sprite_infoUnitPlayer.setTexture(texture_infoUnitPlayer);
+	//texture_infoUnitPlayer.loadFromFile("image/interfeysUnit.png");	//само окно
+	sprite_infoUnitPlayer.setTexture(TextureLoader::tex->unitInterface);
 	sprite_infoUnitPlayer.setTextureRect(IntRect(0, 0, 119, 165));
 	sprite_infoUnitPlayer.setScale(2, 2);
 
-	texture_infoUnitPlayer_Fast.loadFromFile("image/interfeysUnit.png");	//само окно
-	sprite_infoUnitPlayer_Fast.setTexture(texture_infoUnitPlayer_Fast);
+	//texture_infoUnitPlayer_Fast.loadFromFile("image/interfeysUnit.png");	//само окно
+	sprite_infoUnitPlayer_Fast.setTexture(TextureLoader::tex->unitInterface);
 	sprite_infoUnitPlayer_Fast.setTextureRect(IntRect(0, 481, 16, 17));
 	sprite_infoUnitPlayer_Fast.setScale(2, 2);
 
-	texture_Black.loadFromFile("image/interfeysUnit.png");	//черная полоска
-	sprite_Black.setTexture(texture_Black);
+	//texture_Black.loadFromFile("image/interfeysUnit.png");	//черная полоска
+	sprite_Black.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Black.setScale(2, 2);
 
-	texture_Red.loadFromFile("image/interfeysUnit.png");	//красная полоска
-	sprite_Red.setTexture(texture_Red);
+	//texture_Red.loadFromFile("image/interfeysUnit.png");	//красная полоска
+	sprite_Red.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Red.setScale(2, 2);
 
-	texture_Green.loadFromFile("image/interfeysUnit.png");	//зеленая полоска
-	sprite_Green.setTexture(texture_Green);
+	//texture_Green.loadFromFile("image/interfeysUnit.png");	//зеленая полоска
+	sprite_Green.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Green.setScale(2, 2);
 
 	fontText.loadFromFile("image/3572.ttf");	//шрифт
@@ -137,8 +137,8 @@ InformUnitPlayer::InformUnitPlayer()
 	textInfoAttackpCouter.scale(0.3, 0.44);
 	textInfoAttackpCouter.setColor(Color(255, 255, 255, 160));
 
-	texture_infoUnitPlayer2.loadFromFile("image/interfeysUnit.png");
-	sprite_infoUnitPlayer2.setTexture(texture_infoUnitPlayer2);
+	//exture_infoUnitPlayer2.loadFromFile("image/interfeysUnit.png");
+	sprite_infoUnitPlayer2.setTexture(TextureLoader::tex->unitInterface);
 	
 }
 
@@ -452,25 +452,25 @@ InformUnitHostile::InformUnitHostile()
 	selectionMorale2 = false;
 	cross2 = false;
 
-	texture_infoUnitPlayer3.loadFromFile("image/interfeysUnit.png");	//само окно
-	sprite_infoUnitPlayer3.setTexture(texture_infoUnitPlayer3);
+	//texture_infoUnitPlayer3.loadFromFile("image/interfeysUnit.png");	//само окно
+	sprite_infoUnitPlayer3.setTexture(TextureLoader::tex->unitInterface);
 	sprite_infoUnitPlayer3.setTextureRect(IntRect(0, 166, 119, 162));
 	sprite_infoUnitPlayer3.setScale(2, 2);
 
-	texture_infoUnitPlayer4.loadFromFile("image/interfeysUnit.png");	//бошка
-	sprite_infoUnitPlayer4.setTexture(texture_infoUnitPlayer4);
+	//texture_infoUnitPlayer4.loadFromFile("image/interfeysUnit.png");	//бошка
+	sprite_infoUnitPlayer4.setTexture(TextureLoader::tex->unitInterface);
 	sprite_infoUnitPlayer4.setScale(2, 2);
 
-	texture_Black2.loadFromFile("image/interfeysUnit.png");	//черная полоска
-	sprite_Black2.setTexture(texture_Black2);
+	//texture_Black2.loadFromFile("image/interfeysUnit.png");	//черная полоска
+	sprite_Black2.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Black2.setScale(2, 2);
 
-	texture_Red2.loadFromFile("image/interfeysUnit.png");	//красная полоска
-	sprite_Red2.setTexture(texture_Red2);
+	//texture_Red2.loadFromFile("image/interfeysUnit.png");	//красная полоска
+	sprite_Red2.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Red2.setScale(2, 2);
 
-	texture_Green2.loadFromFile("image/interfeysUnit.png");	//зеленая полоска
-	sprite_Green2.setTexture(texture_Green2);
+	//texture_Green2.loadFromFile("image/interfeysUnit.png");	//зеленая полоска
+	sprite_Green2.setTexture(TextureLoader::tex->unitInterface);
 	sprite_Green2.setScale(2, 2);
 
 	fontText4.loadFromFile("image/3572.ttf");	//шрифт
@@ -718,8 +718,8 @@ SureStupe::SureStupe()
 
 	fontText5.loadFromFile("image/3572.ttf");	//шрифт
 
-	texture_infoUnitPlayer_SureStupe.loadFromFile("image/SteoNotIn.png");	//само окно
-	sprite_infoUnitPlayer_SureStupe.setTexture(texture_infoUnitPlayer_SureStupe);
+	//texture_infoUnitPlayer_SureStupe.loadFromFile("image/SteoNotIn.png");	//само окно
+	sprite_infoUnitPlayer_SureStupe.setTexture(TextureLoader::tex->steoNotIn);
 	sprite_infoUnitPlayer_SureStupe.setTextureRect(IntRect(0, 0, 512, 384));
 	sprite_infoUnitPlayer_SureStupe.setScale(2, 2);
 
@@ -788,8 +788,8 @@ InterfaceMap::InterfaceMap()
 {
 	Color color(82, 17, 20); //цвет букв
 
-	texture_InterfaceMap.loadFromFile("image/interfeysUnit.png");	//само окно
-	sprite_InterfaceMap.setTexture(texture_InterfaceMap);
+	//texture_InterfaceMap.loadFromFile("image/interfeysUnit.png");	//само окно
+	sprite_InterfaceMap.setTexture(TextureLoader::tex->unitInterface);
 	sprite_InterfaceMap.setTextureRect(IntRect(0, 328, 169, 152));
 	sprite_InterfaceMap.setScale(2, 2);
 
@@ -944,8 +944,8 @@ SureHalt::SureHalt()
 
 	fontText_SureHalt.loadFromFile("image/3572.ttf");	//шрифт
 
-	texture_infoUnitPlayer_SureHalt.loadFromFile("image/SteoNotHalt.png");	//само окно
-	sprite_infoUnitPlayer_SureHalt.setTexture(texture_infoUnitPlayer_SureHalt);
+	//texture_infoUnitPlayer_SureHalt.loadFromFile("image/SteoNotHalt.png");	//само окно
+	sprite_infoUnitPlayer_SureHalt.setTexture(TextureLoader::tex->steoNotHalt);
 	sprite_infoUnitPlayer_SureHalt.setTextureRect(IntRect(0, 0, 512, 384));
 	sprite_infoUnitPlayer_SureHalt.setScale(2, 2);
 
@@ -980,8 +980,8 @@ void SureHalt::IsSelectSureHalt(Event& _event, RenderWindow& _window, Mission &_
 
 TrayUnit::TrayUnit()
 {
-	texture_TrayUnit_end.loadFromFile("image/interfeysUnit.png");	//спрайт окончания свитка
-	sprite_TrayUnit_end.setTexture(texture_TrayUnit_end);
+	//texture_TrayUnit_end.loadFromFile("image/interfeysUnit.png");	//спрайт окончания свитка
+	sprite_TrayUnit_end.setTexture(TextureLoader::tex->unitInterface);
 	sprite_TrayUnit_end.setTextureRect(IntRect(0, 528, 13, 32));
 	sprite_TrayUnit_end.setScale(2, 2);
 }
@@ -1023,17 +1023,17 @@ TrayUnit_index::TrayUnit_index()
 	X_Position = 0, Y_Position = 0;				//мировые координаты позици
 	IsSelectUnit = false;
 
-	texture_TrayUnit.loadFromFile("image/interfeysUnit.png");	//спрайт свикта
-	sprite_TrayUnit.setTexture(texture_TrayUnit);
+	//texture_TrayUnit.loadFromFile("image/interfeysUnit.png");	//спрайт свикта
+	sprite_TrayUnit.setTexture(TextureLoader::tex->unitInterface);
 	sprite_TrayUnit.setTextureRect(IntRect(0, 498, 33, 29));
 	sprite_TrayUnit.setScale(2, 2);
 
-	texture_TrayUnit_Head.loadFromFile("image/interfeysUnit.png");	//спрайт бошки
-	sprite_TrayUnit_Head.setTexture(texture_TrayUnit_Head);
+	//texture_TrayUnit_Head.loadFromFile("image/interfeysUnit.png");	//спрайт бошки
+	sprite_TrayUnit_Head.setTexture(TextureLoader::tex->unitInterface);
 	sprite_TrayUnit_Head.setScale(2, 2);
 
-	texture_TrayUnit_Dot.loadFromFile("image/interfeysUnit.png");	//спрайт точки
-	sprite_TrayUnit_Dot.setTexture(texture_TrayUnit_Dot);
+	//texture_TrayUnit_Dot.loadFromFile("image/interfeysUnit.png");	//спрайт точки
+	sprite_TrayUnit_Dot.setTexture(TextureLoader::tex->unitInterface);
 	sprite_TrayUnit_Dot.setScale(2, 2);
 }
 

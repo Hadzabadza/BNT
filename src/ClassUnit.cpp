@@ -56,19 +56,9 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		
 		w = W; h = H;
 
-		if (faction_choice == 0)
-		{
-			image.loadFromFile("image/allebard.png");		//спрайты юнитов запихивать не в один большой имедж, а по отдельности и при создание юнита определять имя загружаемого имеджа
-			texture.loadFromImage(image);
-			sprite.setTexture(texture);
-		}
+		if (faction_choice == 0){sprite.setTexture(TextureLoader::tex->allebard);}
 
-		if (faction_choice == 1)
-		{
-			image.loadFromFile("image/allebard_1.png");		//спрайты юнитов запихивать не в один большой имедж, а по отдельности и при создание юнита определять имя загружаемого имеджа
-			texture.loadFromImage(image);
-			sprite.setTexture(texture);
-		}
+		if (faction_choice == 1){sprite.setTexture(TextureLoader::tex->allebard_1);}
 
 		x = X - w;
 		y = Y - h;
