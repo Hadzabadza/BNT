@@ -1,8 +1,4 @@
 #pragma warning(disable : 4996)	//отключить deprecate
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include <sstream>
 #include "GlobalFunctionMissiom.h"
 using namespace std;

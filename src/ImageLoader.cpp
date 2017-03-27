@@ -1,7 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "GlobalFunctionMissiom.h"
 
 using namespace std;
@@ -43,4 +39,23 @@ TextureLoader::TextureLoader() {
 
 void TextureLoader::load(Texture & which, Image & from) {
 	which.loadFromImage(from);
+}
+
+SpriteLoader * SpriteLoader::sprt = new SpriteLoader();
+
+SpriteLoader::SpriteLoader() {
+	load(allebard, tex->allebard);
+	load(allebard_1, tex->allebard_1);
+	load(exitBTN, tex->exitBTN);
+	load(loadingSplashScreen, tex->loadingSplashScreen);
+	load(unitInterface, tex->unitInterface);
+	load(cursor, tex->cursor);
+	load(steoNotHalt, tex->steoNotHalt);
+	load(steoNotIn, tex->steoNotIn);
+	load(tileSetGame, tex->tileSetGame);
+	load(tileSetAnimated, tex->tileSetAnimated);
+};
+
+void SpriteLoader::load(Sprite & which, Texture & from) {
+	which.setTexture(from);
 }

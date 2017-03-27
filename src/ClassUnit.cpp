@@ -1,7 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "GlobalFunctionMissiom.h"
 
 using namespace std;
@@ -56,15 +52,15 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		
 		w = W; h = H;
 
-		if (faction_choice == 0){sprite.setTexture(TextureLoader::tex->allebard);}
+		if (faction_choice == 0) { sprite = &sprt->allebard; }
 
-		if (faction_choice == 1){sprite.setTexture(TextureLoader::tex->allebard_1);}
+		if (faction_choice == 1){ sprite = &sprt->allebard_1;}
 
 		x = X - w;
 		y = Y - h;
 
-		sprite.setTextureRect(IntRect(0, 0, w, h));
-		sprite.setPosition(x, y);
+		//sprite.setTextureRect(IntRect(0, 0, w, h));
+		//sprite.setPosition(x, y);
 
 		/////////////////////////////механика игры
 		PeopleLive = 100;
@@ -103,7 +99,7 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 	}
 
 
-	sprite.setScale(2, 2);
+	sprite->setScale(spriteScale, spriteScale);
 }
 
 void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
@@ -349,4 +345,9 @@ void Unit::Halt()
 	CouterAttack = 0;
 	CouterStep = 0;
 
+}
+
+void Unit::drawTo(RenderWindow & window) {
+	sprite.setTextureRect(IntRect(0, 0, w, h));
+	sprite.setPosition(x, y);
 }

@@ -1,7 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "GlobalFunctionMissiom.h"
 
 using namespace std;
@@ -52,9 +48,6 @@ Mission::Mission(int _H, int _W, RenderWindow &_window)
 
 Mission::~Mission()
 {
-	for (int i = 0; i < HEIGHT_MAP; i++)
-	{
-		delete [] Miss[i];
-	}
+	for (int i = 0; i < HEIGHT_MAP; i++) delete [] Miss[i];
 	delete [] Miss;
 }

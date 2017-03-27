@@ -1,7 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "GlobalFunctionMissiom.h"
 using namespace std;
 using namespace sf;
@@ -20,13 +16,14 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	_WH = W;
 	if (Land == '1' || Land == '2' || Land == '3' || Land == '4')
 	{
-		//map.loadFromFile("image/TileSetGameIsAnimation.png");
 		s_map.setTexture(TextureLoader::tex->tileSetAnimated);
 		s_map.setScale(2, 2);
+		animated = true;
+		frames = 5;
+		anim = &sprt->tileSetAnimated;
 	}
 	else
 	{
-		//map.loadFromFile("image/TileSetGame.png");
 		s_map.setTexture(TextureLoader::tex->tileSetGame);
 		s_map.setScale(2, 2);
 	}
@@ -37,7 +34,6 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	I = i;
 	J = j;
 
-	//textureGreenTile.loadFromFile("image/kursor.png");
 	spriteGreenTile.setTexture(TextureLoader::tex->cursor);
 	spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
 	spriteGreenTile.setScale(2, 2);
@@ -46,82 +42,34 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	SetDotY = (I * 128) + 64;
 }
 
-string Tile::GetLand()
-{
-	return Land;
-}
+string Tile::GetLand() { return Land; }
 
-int Tile::Get_ID()
-{
-	return ID;
-}
+int Tile::Get_ID() { return ID; }
 
-int Tile::Get_I()
-{
-	return I;
-}
+int Tile::Get_I() { return I; }
 
-int Tile::Get_J()
-{
-	return J;
-}
+int Tile::Get_J() { return J; }
 
-float Tile::Get_Dotx()
-{
-	return SetDotX;
-}
+float Tile::Get_Dotx() { return SetDotX; }
 
-float Tile::Get_Doty()
-{
-	return SetDotY;
-}
+float Tile::Get_Doty() { return SetDotY; }
 
-bool  Tile::Get_Empty()
-{
-	return _Empty;
-}
+bool  Tile::Get_Empty() { return _Empty; }
 
-void  Tile::Set_Empty(bool __Empty)
-{
-	_Empty = __Empty;
-}
+void  Tile::Set_Empty(bool __Empty) { _Empty = __Empty; }
 
-bool  Tile::Get_Instantiate()
-{
-	return Instantiate;
-}
+bool  Tile::Get_Instantiate() { return Instantiate; }
 
-void  Tile::Set_Instantiate(bool __Empty)
-{
-	Instantiate = __Empty;
-}
+void  Tile::Set_Instantiate(bool __Empty) { Instantiate = __Empty; }
 
-float Tile::Get__X()
-{
-	return _X;
-}
+float Tile::Get__X() { return _X; }
 
-float Tile::Get__Y()
-{
-	return _Y;
-}
+float Tile::Get__Y() { return _Y; }
 
-float Tile::Get__WH()
-{
-	return _WH;
-}
+float Tile::Get__WH() { return _WH; }
 
-float Tile::Get_anspeed()
-{
-	return anspeed;
-}
+float Tile::Get_anspeed() { return anspeed; }
 
-bool  Tile::Get_AttackOn()
-{
-	return _Empty;
-}
+bool  Tile::Get_AttackOn() { return _Empty; }
 
-void  Tile::Set_AttackOn(bool __Empty)
-{
-	AttackOn = __Empty;
-}
+void  Tile::Set_AttackOn(bool __Empty) { AttackOn = __Empty; }

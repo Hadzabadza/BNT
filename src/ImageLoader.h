@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-class ImageLoader{
+class ImageLoader {
 protected:
 	ImageLoader();
 public:
@@ -27,7 +27,7 @@ public:
 	void load(Image & which, String path); //Загрузка картинки из файла
 };
 
-class TextureLoader :ImageLoader{
+class TextureLoader :ImageLoader {
 protected:
 	TextureLoader();
 public:
@@ -45,4 +45,24 @@ public:
 	Texture tileSetAnimated; //Текстура тайлов с анимацией
 
 	void load(Texture & which, Image & from); //Загрузка текстуры из картинки
+};
+
+class SpriteLoader :TextureLoader {
+protected:
+	SpriteLoader();
+public:
+	static SpriteLoader * SpriteLoader::sprt; //Синглтон для спрайтов
+
+	Sprite allebard; //Спрайт алебардиста
+	Sprite allebard_1; //Спрайт белого алебардиста
+	Sprite exitBTN; //Спрайт кнопки выхода
+	Sprite loadingSplashScreen; //Спрайт загрузочного экрана
+	Sprite unitInterface; //Спрайт интерфейса юнитов
+	Sprite cursor; //Спрайт индикатора движения
+	Sprite steoNotHalt; //Спрайт свитка с информацией
+	Sprite steoNotIn; //Спрайт свитка с выбором
+	Sprite tileSetGame; //Спрайт тайлов
+	Sprite tileSetAnimated; //Спрайт тайлов с анимацией
+
+	void load(Sprite & which, Texture & from); //Загрузка спрайта из текстуры
 };

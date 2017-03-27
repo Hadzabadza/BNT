@@ -1,24 +1,10 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "GlobalFunctionMissiom.h"
 
 using namespace std;
 using namespace sf;
 
-Player::Player()
-{
-	orders = 5;
-	ConstOrders = 5;
-}
+Player::Player(unsigned max) :maxOrders(max), orders(maxOrders) {}
 
-float Player::GetConstOrders()
-{
-	return ConstOrders;
-}
+unsigned Player::GetMaxOrders() { return maxOrders; }
 
-void Player::SetConstOrders(float _ConstOrders)
-{
-	ConstOrders = _ConstOrders;
-}
+void Player::SetMaxOrders(unsigned max) { maxOrders = max; }

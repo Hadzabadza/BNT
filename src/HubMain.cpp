@@ -1,9 +1,4 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <vector>
 #include <ctime>
-#include <fstream>
 #include "GlobalFunctionMissiom.h"
 
 #define MAPEDIT

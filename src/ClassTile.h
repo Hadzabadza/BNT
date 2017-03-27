@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,10 +20,12 @@ private:
 	float anspeed;			//скорость анимации
 	bool AttackOn; //дл€ рисовани€ обычного курсора атаки
 public:
+	unsigned frames; //ќбщее количество кадров
 	float CurrentFrame;		//количесвто кадров в секунду*
 	Sprite s_map;			//*
+	Sprite * anim;
 
-	
+	bool animated=false; //ƒл€ анимированных тайлов
 	bool _AttackON; //дл€ рисовани€ жирного курсора атаки при наведение мышкой
 	bool InspectionTile;	//используетс€ дл€ проверки, зан€т тайл или нет
 	////***графическа€ механика перемещени€ ***
@@ -32,7 +34,7 @@ public:
 	bool StepUnit;	
 	Sprite spriteGreenTile;
 	//***курсоры***
-public:
+
 	Tile() = default;
 
 	string GetLand();	//сообщаем юниту, на какой тайле он стоит

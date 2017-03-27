@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,6 +13,7 @@ public:
 	////***Графическая механика юнитов***
 	string Test;	//имя командира
 	float w, h, x, y, CurrentFrame, anspeed, speed, distance, teampX, teampY; //w, h- размеры спрайта рект, x,y координаты где находится спрайт, CurrentFrame номер кадра, anspeed - скорость анимации, speed - скорость движения, distance рассчет расстояния которое нужно пройти,teampX teampY - для рассчета дистанции до определенной точки
+	float spriteScale;
 	int Sprite_X, Sprite_Y; //создания спрайта по имеджу, Sprite_Y используется для рандомной анимации
 	int _I, _J;		//i j юнита в клетки которой он находится
 	int Id, faction_choice;			//уникальный id юнита faction_choice - выбор фракции для тайлсета юнита
@@ -30,7 +31,7 @@ public:
 	bool hurt;				//если отрял ранен, то мы переключаемся на раненный дизайн отрядов
 	int lvl;				//лвл отряда
 
-	Sprite sprite;
+	Sprite * sprite;
 	////***Графическая механика юнитов***
 
 	////***Техническая механика юнитов***
@@ -65,4 +66,6 @@ public:
 	void ReceivingFace(float);		//анимация получения урона
 
 	void Halt();
+
+	void drawTo(RenderWindow & window);
 };
