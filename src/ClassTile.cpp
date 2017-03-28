@@ -3,29 +3,26 @@
 using namespace std;
 using namespace sf;
 
-void Tile::SetTile(string Flag, int id, int i, int j, int carveX, int carveY, int W, bool instantiate) //создания тайла	
+Tile::Tile() {
+	pos = new Vector2f(0, 0);
+}
+
+void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width, int height, int scaleX, int scaleY, int frames) //создания тайла	
 {
+	if (height==0) height = width;
+	if (scaleY == 0) scaleY = scaleX;
 	StepUnit = false;
 	_AttackON = false;
 	InspectionTile = false;
 	Instantiate = instantiate;
 	Land = Flag;
-	_WH = W;
-	pos = new Vector2f(i, j);
-	//pos.x = i;
-	//pos.y = j;
+	pos->x = posX;
+	pos->y = posY;
 
-	if (Land == '1' || Land == '2' || Land == '3' || Land == '4') //TODO: Улучши!
-	{
-		sprite = &SpriteLoader::sprt->tileSetAnimated;
-		g = new Animated(Graphic(SpriteLoader::sprt->tileSetAnimated, Vector2f(2.0, 2.0), Vector2f(carveX, carveY), Vector2f(*pos), Vector2f(_WH, _WH)),5);
-
-	}
+	if (frames>0)
+	{ g = new Animated(Graphic(*pos, SpriteLoader::sprt->tileSetAnimated, Vector2i(carveX, carveY), Vector2i(width, height), Vector2f(scaleX, scaleY)),frames); }
 	else
-	{ 
-		g = new Graphic(SpriteLoader::sprt->tileSetGame, Vector2f(2.0, 2.0), Vector2f(carveX, carveY), Vector2f(*pos), Vector2f(_WH, _WH));
-		sprite = &SpriteLoader::sprt->tileSetGame; 
-	}
+	{ g = new Graphic(*pos, SpriteLoader::sprt->tileSetGame, Vector2i(carveX, carveY), Vector2i(width, height), Vector2f(scaleX, scaleY)); }
 
 	ID = id;
 	_Empty = false;
@@ -43,9 +40,9 @@ string Tile::GetLand() { return Land; }
 
 int Tile::Get_ID() { return ID; }
 
-int Tile::Get_I() { return pos->x; }
+float Tile::Get_X() { return pos->x; }
 
-int Tile::Get_J() { return pos->y; }
+float Tile::Get_Y() { return pos->y; }
 
 float Tile::Get_Dotx() { return SetDotX; }
 
@@ -59,13 +56,9 @@ bool  Tile::Get_Instantiate() { return Instantiate; }
 
 void  Tile::Set_Instantiate(bool __Empty) { Instantiate = __Empty; }
 
-//float Tile::Get__X() { return _X; }
+int Tile::GetWidth() { return g->dim.x; }
 
-//float Tile::Get__Y() { return _Y; }
-
-float Tile::Get__WH() { return _WH; }
-
-//float Tile::Get_anspeed() { return anspeed; }
+int Tile::GetHeight() { return g->dim.y; }
 
 bool  Tile::Get_AttackOn() { return _Empty; }
 

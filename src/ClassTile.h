@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Settings.h"
 
 class Graphic;
 
@@ -19,13 +20,11 @@ private:
 
 	////***графическая механика перемещения ***
 	bool Instantiate = false;	//во время создания карты используется для проверки установлен тайл, или не
-	int _WH; //поцизиция спрайта на тейл сете и размер спрайта
 	bool AttackOn; //для рисования обычного курсора атаки
 
 public:
 
 	Vector2f * pos;			//Координатная позиция тайла
-	Sprite * sprite;        //Указатель на спрайт тайлов
 	Graphic * g;            //Графический компонент
 	
 	bool _AttackON; //для рисования жирного курсора атаки при наведение мышкой
@@ -37,12 +36,12 @@ public:
 	Sprite spriteGreenTile;
 	//***курсоры***
 
-	Tile() = default;
+	Tile();
 
 	string GetLand();	//сообщаем юниту, на какой тайле он стоит
 	int Get_ID();		//айди тайла
-	int Get_I();		//позиции тайла по строкам
-	int Get_J();		//позиции тайла по стоблцам
+	float Get_X();		//позиции тайла по строкам
+	float Get_Y();		//позиции тайла по стоблцам
 	float Get_Dotx();	//позиции для юнита
 	float Get_Doty();	//позиции для юнита
 	bool  Get_Empty();	//занят тайл или нет
@@ -50,10 +49,11 @@ public:
 	bool  Get_Instantiate();		
 	void  Set_Instantiate(bool);	
 
-	float Get__WH();	
+	int GetWidth();	
+	int GetHeight();
 	bool  Get_AttackOn();
 	void  Set_AttackOn(bool);
 
-	void SetTile(string Flag, int id, int i, int j, int X, int Y, int W, bool instantiate);		//создания тайла
+	void SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width,int height = 0, int scaleX = defaultScale, int scaleY = 0, int frames=0);       //Установка параметров тайла
 	virtual ~Tile() = default;
 };

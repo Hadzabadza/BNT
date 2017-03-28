@@ -33,6 +33,7 @@
     <ClInclude Include="src\ClassPlayers.h" />
     <ClInclude Include="src\ClassTile.h" />
     <ClInclude Include="src\ClassUnit.h" />
+    <ClInclude Include="src\Settings.h" />
     <ClInclude Include="src\GlobalFunctionMissiom.h" />
     <ClInclude Include="src\Graphic.h" />
     <ClInclude Include="src\ImageLoader.h" />

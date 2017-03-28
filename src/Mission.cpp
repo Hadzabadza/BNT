@@ -28,10 +28,10 @@ Mission::Mission(int _H, int _W, RenderWindow &_window)
 	FrameDownload = 0;
 	Start = false;
 
-	Miss = new Tile *[HEIGHT_MAP];
+	Miss = new Tile *[HEIGHT_MAP]();
 	for (int i(0); i < HEIGHT_MAP; i++)
 	{
-		Miss[i] = new Tile[WIDTH_MAP];
+		Miss[i] = new Tile[WIDTH_MAP]();
 	}
 
 
