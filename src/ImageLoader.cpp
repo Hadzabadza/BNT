@@ -6,16 +6,16 @@ using namespace sf;
 ImageLoader * ImageLoader::imgs = new ImageLoader();
 
 ImageLoader::ImageLoader() {
-	load(allebard, "image/allebard.png");
-	load(allebard_1, "image/allebard_1.png");
-	load(exitBTN, "image/exit.png");
-	load(loadingSplashScreen, "image/DonwoldArt.png");
-	load(unitInterface, "image/interfeysUnit.png");
-	load(cursor, "image/kursor.png");
-	load(steoNotHalt, "image/SteoNotHalt.png");
-	load(steoNotIn, "image/SteoNotIn.png");
-	load(tileSetGame, "image/TileSetGame.png");
-	load(tileSetAnimated, "image/TileSetGameIsAnimation.png");
+	load(allebard, imageFolder+"allebard.png");
+	load(allebard_1, imageFolder + "allebard_1.png");
+	load(exitBTN, imageFolder+"exit.png");
+	load(loadingSplashScreen, imageFolder+"DonwoldArt.png");
+	load(unitInterface, imageFolder+"interfeysUnit.png");
+	load(cursor, imageFolder+"kursor.png");
+	load(steoNotHalt, imageFolder+"SteoNotHalt.png");
+	load(steoNotIn, imageFolder+"SteoNotIn.png");
+	load(tileSetGame, imageFolder+"TileSetGame.png");
+	load(tileSetAnimated, imageFolder+"TileSetGameIsAnimation.png");
 };
 
 void ImageLoader::load(Image & which, String path) {

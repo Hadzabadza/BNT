@@ -11,6 +11,7 @@
 #include "Interface.h"
 #include "ImageLoader.h"
 #include "Graphic.h"
+#include "Settings.h"
 
 using namespace std;
 using namespace sf;

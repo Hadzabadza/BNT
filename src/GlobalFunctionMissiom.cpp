@@ -1014,8 +1014,8 @@ string Generation_Rand_name()
 	ifstream ifile_last_name;
 	int temp_name;
 
-	ifile_name.open("Name_Commander.txt");
-	ifile_last_name.open("Last_Name_Commander.txt");
+	ifile_name.open(nameFileFolder+"Name_Commander.txt");
+	ifile_last_name.open(nameFileFolder + "Last_Name_Commander.txt");
 
 	if (!ifile_name.is_open() || !ifile_last_name.is_open())
 	{

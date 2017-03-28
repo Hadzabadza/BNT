@@ -34,14 +34,11 @@ Mission::Mission(int _H, int _W, RenderWindow &_window)
 		Miss[i] = new Tile[WIDTH_MAP]();
 	}
 
-
-	//texture_DownloadArt.loadFromFile("image/DonwoldArt.png");	//арт
-	sprite_DownloadArt.setTexture(TextureLoader::tex->loadingSplashScreen);
+	sprite_DownloadArt.setTexture(TextureLoader::tex->loadingSplashScreen);	//арт
 	sprite_DownloadArt.setTextureRect(IntRect(0, 0, 1024, 768));
 	sprite_DownloadArt.setPosition(center_Mission.x - size_Mission.x / 2, center_Mission.y - size_Mission.y / 2);
 
-	//texture_DownloadStrips.loadFromFile("image/DonwoldArt.png");	//полоска
-	sprite_DownloadStrips.setTexture(TextureLoader::tex->loadingSplashScreen);
+	sprite_DownloadStrips.setTexture(TextureLoader::tex->loadingSplashScreen);//полоска
 	sprite_DownloadStrips.setTextureRect(IntRect(113, 769, 14, 46));
 	sprite_DownloadStrips.setPosition(center_Mission.x - size_Mission.x / 2.585, center_Mission.y + size_Mission.y / 2.76);
 }
