@@ -3,31 +3,27 @@
 using namespace std;
 using namespace sf;
 
-void Tile::SetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool instantiate) //создания тайла	
+void Tile::SetTile(string Flag, int id, int i, int j, int carveX, int carveY, int W, bool instantiate) //создания тайла	
 {
-	scale = 2.0;
-	//anspeed = 0.004;
-	CurrentFrame = 0;
 	StepUnit = false;
 	_AttackON = false;
 	InspectionTile = false;
 	Instantiate = instantiate;
 	Land = Flag;
-	_X = X;
-	_Y = Y;
-	_WH = W;	
-	I = i;
-	J = j;
-
-	g = new Graphic(SpriteLoader::sprt->tileSetGame, Vector2f(2.0, 2.0), Vector2f(_X, _Y), Vector2f(J, I), Vector2f(_WH, _WH));
+	_WH = W;
+	pos = new Vector2f(i, j);
+	//pos.x = i;
+	//pos.y = j;
 
 	if (Land == '1' || Land == '2' || Land == '3' || Land == '4') //TODO: Улучши!
 	{
 		sprite = &SpriteLoader::sprt->tileSetAnimated;
-		g = new Animated(*g, 5);
+		g = new Animated(Graphic(SpriteLoader::sprt->tileSetAnimated, Vector2f(2.0, 2.0), Vector2f(carveX, carveY), Vector2f(*pos), Vector2f(_WH, _WH)),5);
+
 	}
 	else
 	{ 
+		g = new Graphic(SpriteLoader::sprt->tileSetGame, Vector2f(2.0, 2.0), Vector2f(carveX, carveY), Vector2f(*pos), Vector2f(_WH, _WH));
 		sprite = &SpriteLoader::sprt->tileSetGame; 
 	}
 
@@ -39,17 +35,17 @@ void Tile::SetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
 	spriteGreenTile.setScale(2, 2);
 
-	SetDotX = (J * 128) + 64;
-	SetDotY = (I * 128) + 64;
+	SetDotX = (pos->x * 128) + 64;
+	SetDotY = (pos->y * 128) + 64;
 }
 
 string Tile::GetLand() { return Land; }
 
 int Tile::Get_ID() { return ID; }
 
-int Tile::Get_I() { return I; }
+int Tile::Get_I() { return pos->x; }
 
-int Tile::Get_J() { return J; }
+int Tile::Get_J() { return pos->y; }
 
 float Tile::Get_Dotx() { return SetDotX; }
 
@@ -63,9 +59,9 @@ bool  Tile::Get_Instantiate() { return Instantiate; }
 
 void  Tile::Set_Instantiate(bool __Empty) { Instantiate = __Empty; }
 
-float Tile::Get__X() { return _X; }
+//float Tile::Get__X() { return _X; }
 
-float Tile::Get__Y() { return _Y; }
+//float Tile::Get__Y() { return _Y; }
 
 float Tile::Get__WH() { return _WH; }
 

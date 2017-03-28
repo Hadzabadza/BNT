@@ -13,24 +13,21 @@ class Tile
 {
 private:
 	string Land;	//для взаимодействия юнитов с тайлами
-	int ID, I, J;	//уникальный ID тайла, позиция тайла по координате
+	int ID;	//уникальный ID тайла
 	float SetDotX, SetDotY;	//привязанные координаты тайла для перемещения юнита
 	bool _Empty;			//тру если тайл занят, фолс если тайл свободен
 
 	////***графическая механика перемещения ***
 	bool Instantiate = false;	//во время создания карты используется для проверки установлен тайл, или не
-	int _X, _Y, _WH; //поцизиция спрайта на тейл сете и размер спрайта
-	//float anspeed;			//скорость анимации
+	int _WH; //поцизиция спрайта на тейл сете и размер спрайта
 	bool AttackOn; //для рисования обычного курсора атаки
-public:
-	unsigned frames; //Общее количество кадров
-	float CurrentFrame;		//количесвто кадров в секунду*
-	float scale;            //Фактор увеличения
 
+public:
+
+	Vector2f * pos;			//Координатная позиция тайла
 	Sprite * sprite;        //Указатель на спрайт тайлов
 	Graphic * g;            //Графический компонент
-
-	//bool animated=false; //Для анимированных тайлов
+	
 	bool _AttackON; //для рисования жирного курсора атаки при наведение мышкой
 	bool InspectionTile;	//используется для проверки, занят тайл или нет
 	////***графическая механика перемещения ***
@@ -53,13 +50,10 @@ public:
 	bool  Get_Instantiate();		
 	void  Set_Instantiate(bool);	
 
-	float Get__X();	
-	float Get__Y();	
 	float Get__WH();	
-	//float Get_anspeed();
 	bool  Get_AttackOn();
 	void  Set_AttackOn(bool);
 
-	void SetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool instantiate);		//создания тайла
+	void SetTile(string Flag, int id, int i, int j, int X, int Y, int W, bool instantiate);		//создания тайла
 	virtual ~Tile() = default;
 };

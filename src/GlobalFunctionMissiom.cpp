@@ -864,8 +864,7 @@ void DrawToSpriteMission(RenderWindow &_window, float time, Mission &_Missiom)	/
 
 					_window.draw(*_Missiom.Miss[i][j].sprite);
 					*/
-					_Missiom.Miss[i][j].g->drawTo(_window); //DEBUG
-					//_Missiom.Miss[i][j].g->drawTo(_window,time);
+					_Missiom.Miss[i][j].g->drawTo(_window,time);
 				}
 				else
 				{	/*
