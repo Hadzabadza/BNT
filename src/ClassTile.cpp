@@ -1,10 +1,12 @@
 #include "GlobalFunctionMissiom.h"
+
 using namespace std;
 using namespace sf;
 
-void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool instantiate) //создания тайла	
+void Tile::SetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool instantiate) //создания тайла	
 {
-	anspeed = 0.004;
+	scale = 2.0;
+	//anspeed = 0.004;
 	CurrentFrame = 0;
 	StepUnit = false;
 	_AttackON = false;
@@ -13,26 +15,25 @@ void Tile::GetTile(string Flag, int id, int j, int i, int X, int Y, int W, bool 
 	Land = Flag;
 	_X = X;
 	_Y = Y;
-	_WH = W;
-	if (Land == '1' || Land == '2' || Land == '3' || Land == '4')
-	{
-		s_map.setTexture(TextureLoader::tex->tileSetAnimated);
-		s_map.setScale(2, 2);
-		animated = true;
-		frames = 5;
-		anim = &sprt->tileSetAnimated;
-	}
-	else
-	{
-		s_map.setTexture(TextureLoader::tex->tileSetGame);
-		s_map.setScale(2, 2);
-	}
-	ID = id;
-	s_map.setTextureRect(IntRect(_X, _Y, _WH, _WH));
-	_Empty = false;
-	AttackOn = false;
+	_WH = W;	
 	I = i;
 	J = j;
+
+	g = new Graphic(SpriteLoader::sprt->tileSetGame, Vector2f(2.0, 2.0), Vector2f(_X, _Y), Vector2f(J, I), Vector2f(_WH, _WH));
+
+	if (Land == '1' || Land == '2' || Land == '3' || Land == '4') //TODO: Улучши!
+	{
+		sprite = &SpriteLoader::sprt->tileSetAnimated;
+		g = new Animated(*g, 5);
+	}
+	else
+	{ 
+		sprite = &SpriteLoader::sprt->tileSetGame; 
+	}
+
+	ID = id;
+	_Empty = false;
+	AttackOn = false;
 
 	spriteGreenTile.setTexture(TextureLoader::tex->cursor);
 	spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
@@ -68,7 +69,7 @@ float Tile::Get__Y() { return _Y; }
 
 float Tile::Get__WH() { return _WH; }
 
-float Tile::Get_anspeed() { return anspeed; }
+//float Tile::Get_anspeed() { return anspeed; }
 
 bool  Tile::Get_AttackOn() { return _Empty; }
 

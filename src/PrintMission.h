@@ -35,3 +35,4 @@ String TileMap2[HEIGHT_MAP_2] =	//вторая тестовая миссия
 	"aaaaaaaaaaa ",
 };
 
+

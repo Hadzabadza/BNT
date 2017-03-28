@@ -39,6 +39,9 @@
     <ClCompile Include="src\ImageLoader.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graphic.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ClassPlayers.h">
@@ -63,6 +66,9 @@
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="src\ImageLoader.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphic.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

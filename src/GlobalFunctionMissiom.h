@@ -10,14 +10,10 @@
 #include "ClassPlayers.h"
 #include "Interface.h"
 #include "ImageLoader.h"
-
+#include "Graphic.h"
 
 using namespace std;
 using namespace sf;
-
-ImageLoader * imgs = ImageLoader::imgs;
-TextureLoader * tex = TextureLoader::tex;
-SpriteLoader * sprt = SpriteLoader::sprt;
 
 void FunctionPrintToMission_1(Mission&, float, AllInterfaceMissiom&); //создание карты
 const int HEIGHT_MAP_1 = 7; //размер карты строки 1 миссия

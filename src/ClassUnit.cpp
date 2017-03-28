@@ -52,9 +52,9 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		
 		w = W; h = H;
 
-		if (faction_choice == 0) { sprite = &sprt->allebard; }
+		if (faction_choice == 0) { sprite = &SpriteLoader::sprt->allebard; }
 
-		if (faction_choice == 1){ sprite = &sprt->allebard_1;}
+		if (faction_choice == 1){ sprite = &SpriteLoader::sprt->allebard_1;}
 
 		x = X - w;
 		y = Y - h;
@@ -99,7 +99,7 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 	}
 
 
-	sprite->setScale(spriteScale, spriteScale);
+	//sprite->setScale(spriteScale, spriteScale);
 }
 
 void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
@@ -113,18 +113,18 @@ void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 
 		if (hurt == false)
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 2), w, h));
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 2), w, h));
 		}
 
 		else
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 8), w, h));		//8
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 8), w, h));		//8
 		}
 
 		x += (speed*time*(teampX - x) / distance);//идем по иксу с помощью вектора нормали
 		y += (speed*time*(teampY - y) / distance);//идем по игреку так же
 
-		sprite.setPosition(x, y);
+		sprite->setPosition(x, y);
 	}
 	else { isMove = false; /*std::cout << "priehali\n" << endl;  cout << "i:" << _I << " j:" << _J << endl; cout << "Stamina:" << Stamina << endl;*/ CurrentFrame = 0;}//говорим что уже никуда не идем 
 }
@@ -144,11 +144,11 @@ void Unit::AnimationToAttack(float time)
 
 		if (hurt == false)
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 3), w, h));
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 3), w, h));
 		}
 		else
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 9), w, h));
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 9), w, h));
 		}
 	}
 
@@ -176,11 +176,11 @@ void Unit::ReceivingFace(float time)
 		{
 			if (hurt == false)
 			{
-				sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 4), w, h));
+				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 4), w, h));
 			}
 			else
 			{
-				sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 10), w, h));
+				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 10), w, h));
 			}
 		}
 
@@ -188,11 +188,11 @@ void Unit::ReceivingFace(float time)
 		{
 			if (hurt == false)
 			{
-				sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 5), w, h));
+				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 5), w, h));
 			}
 			else
 			{
-				sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 11), w, h));
+				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 11), w, h));
 			}
 		}
 
@@ -211,11 +211,11 @@ void Unit::ReceivingFace(float time)
 
 		if (hurt == false)
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 6), w, h));
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 6), w, h));
 		}
 		else
 		{
-			sprite.setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 12), w, h));
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 12), w, h));
 		}
 
 	}
@@ -348,6 +348,6 @@ void Unit::Halt()
 }
 
 void Unit::drawTo(RenderWindow & window) {
-	sprite.setTextureRect(IntRect(0, 0, w, h));
-	sprite.setPosition(x, y);
+	sprite->setTextureRect(IntRect(0, 0, w, h));
+	sprite->setPosition(x, y);
 }
