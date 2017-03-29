@@ -11,6 +11,7 @@ class ImageLoader {
 protected:
 	ImageLoader();
 public:
+	~ImageLoader();
 	static ImageLoader * ImageLoader::imgs; //Синглтон для картинок
 
 	Image allebard; //Картинка алебардиста
@@ -27,10 +28,11 @@ public:
 	void load(Image & which, String path); //Загрузка картинки из файла
 };
 
-class TextureLoader :ImageLoader {
+class TextureLoader {
 protected:
 	TextureLoader();
 public:
+	~TextureLoader();
 	static TextureLoader * TextureLoader::tex; //Синглтон для текстур
 
 	Texture allebard; //Текстура алебардиста
@@ -47,10 +49,11 @@ public:
 	void load(Texture & which, Image & from); //Загрузка текстуры из картинки
 };
 
-class SpriteLoader :TextureLoader {
+class SpriteLoader {
 protected:
 	SpriteLoader();
 public:
+	~SpriteLoader();
 	static SpriteLoader * SpriteLoader::sprt; //Синглтон для спрайтов
 
 	Sprite allebard; //Спрайт алебардиста

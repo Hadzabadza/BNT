@@ -71,8 +71,8 @@ InformUnitPlayer::InformUnitPlayer()
 	sprite_Green.setTexture(TextureLoader::tex->unitInterface);//зеленая полоска
 	sprite_Green.setScale(2, 2);
 
-	fontText.loadFromFile(fontsFolder+"3572.ttf");	//шрифт
-	fontText2.loadFromFile(fontsFolder + "acknowtt.ttf");
+	fontText.loadFromFile(projectPath+fontsFolder+"3572.ttf");	//шрифт
+	fontText2.loadFromFile(projectPath + fontsFolder + "acknowtt.ttf");
 
 	textInfoLvl.setString("");				//уровень отряда
 	textInfoLvl.setFont(fontText2);
@@ -457,8 +457,8 @@ InformUnitHostile::InformUnitHostile()
 	sprite_Green2.setTexture(TextureLoader::tex->unitInterface);//зеленая полоска
 	sprite_Green2.setScale(2, 2);
 
-	fontText4.loadFromFile(fontsFolder+"3572.ttf");	//шрифт
-	fontText5.loadFromFile(fontsFolder+"acknowtt.ttf");
+	fontText4.loadFromFile(projectPath + fontsFolder+"3572.ttf");	//шрифт
+	fontText5.loadFromFile(projectPath + fontsFolder+"acknowtt.ttf");
 
 	textInfoLvl2.setString("");				//уровень отряда
 	textInfoLvl2.setFont(fontText5);
@@ -700,7 +700,7 @@ SureStupe::SureStupe()
 	_draw_SureStupe = false;
 	cross_SureStupe = false;
 
-	fontText5.loadFromFile(fontsFolder+"3572.ttf");	//шрифт
+	fontText5.loadFromFile(projectPath + fontsFolder+"3572.ttf");	//шрифт
 
 	sprite_infoUnitPlayer_SureStupe.setTexture(TextureLoader::tex->steoNotIn);//само окно
 	sprite_infoUnitPlayer_SureStupe.setTextureRect(IntRect(0, 0, 512, 384));
@@ -776,8 +776,8 @@ InterfaceMap::InterfaceMap()
 	sprite_InterfaceMap.setScale(2, 2);
 
 
-	fontText_InterfaceMap1.loadFromFile(fontsFolder+"3572.ttf");	//шрифт
-	fontText_InterfaceMap2.loadFromFile(fontsFolder + "acknowtt.ttf");
+	fontText_InterfaceMap1.loadFromFile(projectPath + fontsFolder+"3572.ttf");	//шрифт
+	fontText_InterfaceMap2.loadFromFile(projectPath + fontsFolder + "acknowtt.ttf");
 
 	StepCouter_InterfaceMap.setString("");				//ход цифра
 	StepCouter_InterfaceMap.setFont(fontText_InterfaceMap2);
@@ -924,7 +924,7 @@ SureHalt::SureHalt()
 	_draw_SureHalt = false;
 	cross_SureHalt = false;
 
-	fontText_SureHalt.loadFromFile(fontsFolder + "3572.ttf");	//шрифт
+	fontText_SureHalt.loadFromFile(projectPath + fontsFolder + "3572.ttf");	//шрифт
 	
 	sprite_infoUnitPlayer_SureHalt.setTexture(TextureLoader::tex->steoNotHalt);//само окно
 	sprite_infoUnitPlayer_SureHalt.setTextureRect(IntRect(0, 0, 512, 384));

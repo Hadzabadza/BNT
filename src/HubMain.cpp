@@ -1,7 +1,9 @@
 #include <ctime>
 #include "GlobalFunctionMissiom.h"
 
-#define MAPEDIT
+#ifdef RELEASE
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup") //Выключает консольку в релизе
+#endif
 
 using namespace std;
 using namespace sf;

@@ -28,6 +28,7 @@
     <ClCompile Include="src\ImageLoader.cpp" />
     <ClCompile Include="src\Interface.cpp" />
     <ClCompile Include="src\Mission.cpp" />
+    <ClCompile Include="src\Tileset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ClassPlayers.h" />
@@ -40,6 +41,7 @@
     <ClInclude Include="src\Interface.h" />
     <ClInclude Include="src\Mission.h" />
     <ClInclude Include="src\PrintMission.h" />
+    <ClInclude Include="src\Tileset.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5220FE68-FCC2-49F8-A46B-9CAE1E35056F}</ProjectGuid>
@@ -97,6 +99,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin</OutDir>
+    <TargetName>Blood and Tears</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,13 +129,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(ProjectDir)libs</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
