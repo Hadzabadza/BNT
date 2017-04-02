@@ -7,6 +7,8 @@
 using namespace std;
 using namespace sf;
 
+class AnimExtended;
+
 class Unit
 {	
 public:
@@ -16,6 +18,7 @@ public:
 	float spriteScale=2;
 	int Sprite_X, Sprite_Y; //создания спрайта по имеджу, Sprite_Y используется для рандомной анимации
 	int _I, _J;		//i j юнита в клетки которой он находится
+	Vector2f * pos;   //Позиция по тайловым координатам
 	int Id, faction_choice;			//уникальный id юнита faction_choice - выбор фракции для тайлсета юнита
 	bool isMove, isSelect;		//ismove юнит идет, isselect юнит выделен
 	bool _Attack;				//для проигрываания анимации атаки
@@ -33,6 +36,7 @@ public:
 
 	Sprite * sprite;
 	Graphic * g;
+	AnimExtended * animation;
 	////***Графическая механика юнитов***
 
 	////***Техническая механика юнитов***
@@ -68,5 +72,5 @@ public:
 
 	void Halt();
 
-	void drawTo(RenderWindow & window);
+	void drawTo(RenderWindow & window, float time);
 };

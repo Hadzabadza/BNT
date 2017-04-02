@@ -30,10 +30,10 @@ void FunctionPrintToMission_1(Mission &_Mission, float _time, AllInterfaceMissio
 						if ((TileMap2[i][j] == 'r')) _Mission.Miss[i][j].SetTile("r", true, (int)_Mission.id_tile, j, i, 128, 320, 64);	//верхний край леса
 						if ((TileMap2[i][j] == '*')) _Mission.Miss[i][j].SetTile("*", true, (int)_Mission.id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
 						if ((TileMap2[i][j] == '%')) _Mission.Miss[i][j].SetTile("%", true, (int)_Mission.id_tile, j, i, 64, 0, 64);	//дорога влево вправо
-						if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 2, 2, 5);	//болото
-						if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 2, 2, 5);	//болото
-						if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 2, 2, 5);	//болото
-						if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 2, 2, 5);	//болото
+						if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 5);	//болото
 						if ((TileMap2[i][j] == 'H')) _Mission.Miss[i][j].SetTile("H", true, (int)_Mission.id_tile, j, i, 256, 256, 64);	//холм
 						if ((TileMap2[i][j] == 'j')) _Mission.Miss[i][j].SetTile("J", true, (int)_Mission.id_tile, j, i, 256, 320, 64);	//холм
 						if ((TileMap2[i][j] == 'J')) _Mission.Miss[i][j].SetTile("j", true, (int)_Mission.id_tile, j, i, 256, 384, 64);	//холм
@@ -92,10 +92,10 @@ void FunctionPrintToMission_2(Mission &_Mission, float _time, AllInterfaceMissio
 					if ((TileMap2[i][j] == 'r')) _Mission.Miss[i][j].SetTile("r", true, (int)_Mission.id_tile, j, i, 128, 320, 64);	//верхний край леса
 					if ((TileMap2[i][j] == '*')) _Mission.Miss[i][j].SetTile("*", true, (int)_Mission.id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
 					if ((TileMap2[i][j] == '%')) _Mission.Miss[i][j].SetTile("%", true, (int)_Mission.id_tile, j, i, 64, 0, 64);	//дорога влево вправо
-					if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 2, 2, 5);	//болото
-					if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 2, 2, 5);	//болото
-					if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 2, 2, 5);	//болото
-					if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 2, 2, 5);	//болото
+					if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 5);	//болото
 					if ((TileMap2[i][j] == 'H')) _Mission.Miss[i][j].SetTile("H", true, (int)_Mission.id_tile, j, i, 256, 256, 64);	//холм
 					if ((TileMap2[i][j] == 'j')) _Mission.Miss[i][j].SetTile("J", true, (int)_Mission.id_tile, j, i, 256, 320, 64);	//холм
 					if ((TileMap2[i][j] == 'J')) _Mission.Miss[i][j].SetTile("j", true, (int)_Mission.id_tile, j, i, 256, 384, 64);	//холм

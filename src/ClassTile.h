@@ -54,6 +54,6 @@ public:
 	bool  Get_AttackOn();
 	void  Set_AttackOn(bool);
 
-	void SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width,int height = 0, int scaleX = defaultScale, int scaleY = 0, int frames=0);       //Установка параметров тайла
+	void SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width,int height = 0, int frames=0);       //Установка параметров тайла
 	virtual ~Tile() = default;
 };

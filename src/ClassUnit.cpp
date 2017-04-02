@@ -9,6 +9,8 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 	anspeed = 0.006;		//0.006
 	speed = 0.04;
 
+	pos = new Vector2f(i, j);
+
 	CurrentFrameToAttackReceiving = 0;
 	CurrentFrame = 0;
 
@@ -52,15 +54,20 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		
 		w = W; h = H;
 
+		Graphic * g = new Graphic(*pos, SpriteLoader::sprt->allebard, Vector2i(0, 0), Vector2i(W, H)); //TODO: Сменить адрес спрайта на более абстрактный
 		if (faction_choice == 0) { sprite = &SpriteLoader::sprt->allebard; }
+		if (faction_choice == 1) { 
+			sprite = &SpriteLoader::sprt->allebard_1;
+			delete g;  
+			g = new Graphic(*pos, SpriteLoader::sprt->allebard_1, Vector2i(0, 0), Vector2i(W, H)); 
+		}
 
-		if (faction_choice == 1){ sprite = &SpriteLoader::sprt->allebard_1;}
+		animation = new AnimExtended(*g, *(new Animator(projectPath + unitsFolder + "Halberdier/")));
+		animation->anSpeed = this->anspeed;
 
 		x = X - w;
 		y = Y - h;
 
-		//sprite.setTextureRect(IntRect(0, 0, w, h));
-		//sprite.setPosition(x, y);
 
 		/////////////////////////////механика игры
 		PeopleLive = 100;
@@ -97,9 +104,6 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		CouterStep = 2;
 		ConstCouterStep = 2;
 	}
-
-
-	//sprite->setScale(spriteScale, spriteScale);
 }
 
 void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
@@ -112,10 +116,9 @@ void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 		if (CurrentFrame > 4) CurrentFrame -= 4;
 
 		if (hurt == false)
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 2), w, h));
+		{ 
+			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 2), w, h)); 
 		}
-
 		else
 		{
 			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 8), w, h));		//8
@@ -235,7 +238,6 @@ void Unit::ReceivingFace(float time)
 
 void Unit::Update(Mission &TeampMision, float time)		//функция апдейт юнита
 {
-
 	if (isMove == true)
 	{
 		To_Move(TeampMision, time);
@@ -347,7 +349,8 @@ void Unit::Halt()
 
 }
 
-void Unit::drawTo(RenderWindow & window) {
+void Unit::drawTo(RenderWindow & window, float time) {
 	sprite->setTextureRect(IntRect(0, 0, w, h));
 	sprite->setPosition(x, y);
+	//animation->drawTo(window, time);
 }

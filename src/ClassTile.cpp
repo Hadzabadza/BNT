@@ -7,10 +7,9 @@ Tile::Tile() {
 	pos = new Vector2f(0, 0);
 }
 
-void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width, int height, int scaleX, int scaleY, int frames) //создания тайла	
+void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width, int height, int frames) //создания тайла	
 {
 	if (height==0) height = width;
-	if (scaleY == 0) scaleY = scaleX;
 	StepUnit = false;
 	_AttackON = false;
 	InspectionTile = false;
@@ -20,9 +19,9 @@ void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY
 	pos->y = posY;
 
 	if (frames>0)
-	{ g = new Animated(Graphic(*pos, SpriteLoader::sprt->tileSetAnimated, Vector2i(carveX, carveY), Vector2i(width, height), Vector2f(scaleX, scaleY)),frames); }
+	{ g = new Animated(Graphic(*pos, SpriteLoader::sprt->tileSetAnimated, Vector2i(carveX, carveY), Vector2i(width, height)),frames); }
 	else
-	{ g = new Graphic(*pos, SpriteLoader::sprt->tileSetGame, Vector2i(carveX, carveY), Vector2i(width, height), Vector2f(scaleX, scaleY)); }
+	{ g = new Graphic(*pos, SpriteLoader::sprt->tileSetGame, Vector2i(carveX, carveY), Vector2i(width, height)); }
 
 	ID = id;
 	_Empty = false;
@@ -32,8 +31,8 @@ void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY
 	spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
 	spriteGreenTile.setScale(2, 2);
 
-	SetDotX = (pos->x * 128) + 64;
-	SetDotY = (pos->y * 128) + 64;
+	SetDotX = (pos->x * g->dim.x*scale.x) + g->dim.x*scale.x/2;
+	SetDotY = (pos->y * g->dim.y*scale.y) + g->dim.y*scale.y/2;
 }
 
 string Tile::GetLand() { return Land; }
