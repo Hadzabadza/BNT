@@ -889,6 +889,7 @@ void DrawSpriteCursor(RenderWindow &_window, float time, Mission &_Missiom)
 //////////////////////////////////////////////////////////////////////////////
 void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_window, float time) //рисуем спрайты юнитов армии игрока
 {
+	/*
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
 	{
 		//анимация стояния
@@ -987,6 +988,13 @@ void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_wind
 		{
 			_window.draw(*MainCharacter.ArmyGamer[i].sprite);
 		}
+		*/
+	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++) {
+		MainCharacter.ArmyGamer[i].animation->drawTo(_window, time);
+	}
+	for (int i(0); i < hostile.ArmyEnemy_1.size(); i++) {
+		hostile.ArmyEnemy_1[i].animation->drawTo(_window, time);
+	}
 }
 //////////////////////////////////////////////////////////////////////////////
 void UpdateUnitArmy(Player &MainCharacter, Enemy_1 &hostile, Mission &TeampMision, float time)   //обновление юнитов на карте
