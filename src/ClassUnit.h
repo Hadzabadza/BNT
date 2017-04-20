@@ -14,10 +14,11 @@ class Unit
 public:
 	////***Графическая механика юнитов***
 	string Test;	//имя командира
-	float w, h, x, y, CurrentFrame, anspeed, speed, distance, teampX, teampY; //w, h- размеры спрайта рект, x,y координаты где находится спрайт, CurrentFrame номер кадра, anspeed - скорость анимации, speed - скорость движения, distance рассчет расстояния которое нужно пройти,teampX teampY - для рассчета дистанции до определенной точки
-	float spriteScale=2;
+	float w, h, x, y, CurrentFrame, anspeed, speed, distance; //w, h- размеры спрайта рект, x,y координаты где находится спрайт, CurrentFrame номер кадра, anspeed - скорость анимации, speed - скорость движения, distance рассчет расстояния которое нужно пройти
+	Vector2f moveTo;  //Координата тайла, в который был выдан приказ двигаться
+	//float spriteScale=2;
 	int Sprite_X, Sprite_Y; //создания спрайта по имеджу, Sprite_Y используется для рандомной анимации
-	int _I, _J;		//i j юнита в клетки которой он находится
+	//int _I, _J;		//i j юнита в клетки которой он находится
 	Vector2f * pos;   //Позиция по тайловым координатам
 	int Id, faction_choice;			//уникальный id юнита faction_choice - выбор фракции для тайлсета юнита
 	bool isMove, isSelect;		//ismove юнит идет, isselect юнит выделен
@@ -34,9 +35,7 @@ public:
 	bool hurt;				//если отрял ранен, то мы переключаемся на раненный дизайн отрядов
 	int lvl;				//лвл отряда
 
-	Sprite * sprite;
-	Graphic * g;
-	AnimExtended * animation;
+	Graphic * animation;
 	////***Графическая механика юнитов***
 
 	////***Техническая механика юнитов***

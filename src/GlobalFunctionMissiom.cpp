@@ -146,7 +146,7 @@ void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//
 			{
 				if (_Mission.Miss[i][j].InspectionTile == false)
 				{
-					if (MainCharacter.ArmyGamer[ii]._I == _Mission.Miss[i][j].Get_X() && MainCharacter.ArmyGamer[ii]._J == _Mission.Miss[i][j].Get_Y() && MainCharacter.ArmyGamer[ii].Life == true)
+					if (MainCharacter.ArmyGamer[ii].pos->x == _Mission.Miss[i][j].Get_X() && MainCharacter.ArmyGamer[ii].pos->y == _Mission.Miss[i][j].Get_Y() && MainCharacter.ArmyGamer[ii].Life == true)
 					{
 						_Mission.Miss[i][j].Set_Empty(true);
 						_Mission.Miss[i][j].InspectionTile = true;
@@ -161,7 +161,7 @@ void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//
 				{
 					if (_Mission.Miss[i][j].InspectionTile == false)
 					{
-						if (hostile.ArmyEnemy_1[ii]._I == _Mission.Miss[i][j].Get_X() && hostile.ArmyEnemy_1[ii]._J == _Mission.Miss[i][j].Get_Y() && hostile.ArmyEnemy_1[ii].Life == true)
+						if (hostile.ArmyEnemy_1[ii].pos->x == _Mission.Miss[i][j].Get_X() && hostile.ArmyEnemy_1[ii].pos->y == _Mission.Miss[i][j].Get_Y() && hostile.ArmyEnemy_1[ii].Life == true)
 						{
 							_Mission.Miss[i][j].Set_Empty(true);
 							_Mission.Miss[i][j].InspectionTile = true;
@@ -179,7 +179,7 @@ void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//
 			{
 				if (_Mission.Miss[i][j].InspectionTile == false)
 				{
-					if (MainCharacter.ArmyGamer[ii]._I != _Mission.Miss[i][j].Get_X() || MainCharacter.ArmyGamer[ii]._J != _Mission.Miss[i][j].Get_Y())
+					if (MainCharacter.ArmyGamer[ii].pos->x != _Mission.Miss[i][j].Get_X() || MainCharacter.ArmyGamer[ii].pos->y != _Mission.Miss[i][j].Get_Y())
 					{
 						_Mission.Miss[i][j].Set_Empty(false);
 						_Mission.Miss[i][j].InspectionTile = true;
@@ -196,7 +196,7 @@ void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//
 			{
 				if (_Mission.Miss[i][j].InspectionTile == false)
 				{
-					if (hostile.ArmyEnemy_1[ii]._I != _Mission.Miss[i][j].Get_X() || hostile.ArmyEnemy_1[ii]._J != _Mission.Miss[i][j].Get_Y())
+					if (hostile.ArmyEnemy_1[ii].pos->x != _Mission.Miss[i][j].Get_X() || hostile.ArmyEnemy_1[ii].pos->y != _Mission.Miss[i][j].Get_Y())
 					{
 						_Mission.Miss[i][j].Set_Empty(false);
 						_Mission.Miss[i][j].InspectionTile = true;
@@ -291,8 +291,8 @@ void ViewScroling(View &_view, Vector2i &_localPosition, float &_time, RenderWin
 //////////////////////////////////////////////////////////////////////////////
 bool InspectionToStep(Unit &Inspect, int i, int j)	//проверка как далеко может пойти юнит
 {
-	Inspect.calculation_distance_x_Step = Inspect._I - i;
-	Inspect.calculation_distance_y_Step = Inspect._J - j;
+	Inspect.calculation_distance_x_Step = Inspect.pos->x - i;
+	Inspect.calculation_distance_y_Step = Inspect.pos->y - j;
 	Inspect.calculation_distance_Step = sqrt((Inspect.calculation_distance_x_Step * Inspect.calculation_distance_x_Step) + (Inspect.calculation_distance_y_Step * Inspect.calculation_distance_y_Step));
 
 	if (Inspect.calculation_distance_Step <= Inspect.step)
@@ -310,10 +310,10 @@ void GreenToTheTile(Unit &Teamp, Mission &TeampMiss)	//даем добро на рисования з
 	{
 		for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
 		{
-			Pythagoras = sqrt((((float)i - (float)Teamp._I) * ((float)i - (float)Teamp._I)) + (((float)j - (float)Teamp._J) * ((float)j - (float)Teamp._J)));
+			Pythagoras = sqrt((((float)i - (float)Teamp.pos->x) * ((float)i - (float)Teamp.pos->x)) + (((float)j - (float)Teamp.pos->y) * ((float)j - (float)Teamp.pos->y)));
 			if (Pythagoras <= Teamp.step)
 			{
-				if ((i != Teamp._I || j != Teamp._J) && TeampMiss.Miss[i][j].Get_Empty() == false)
+				if ((i != Teamp.pos->x || j != Teamp.pos->y) && TeampMiss.Miss[i][j].Get_Empty() == false)
 				{
 					TeampMiss.Miss[i][j].StepUnit = true;
 				}
@@ -495,13 +495,12 @@ void interactionWithMap(Unit  &Teamp, string _land)
 //////////////////////////////////////////////////////////////////////////////
 void SelectUnitPlayer(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission &TeampMiss, AllInterfaceMissiom &Inf)
 {
-
 	string teamp;
 	if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
 		if (_event.key.code == Mouse::Left)
 		{//а именно левая
 			for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
-				if (MainCharacter.ArmyGamer[i].sprite->getGlobalBounds().contains(_pos.x, _pos.y) && MainCharacter.ArmyGamer[i].isMove == false && MainCharacter.ArmyGamer[i]._Attack == false && MainCharacter.ArmyGamer[i].Life == true)//и при этом координата курсора попадает в спрайт
+				if (hovered(*MainCharacter.ArmyGamer[i].animation, _pos) && MainCharacter.ArmyGamer[i].isMove == false && MainCharacter.ArmyGamer[i]._Attack == false && MainCharacter.ArmyGamer[i].Life == true)//и при этом координата курсора попадает в спрайт
 				{
 
 					MainCharacter.ArmyGamer[i].isSelect = true;
@@ -541,7 +540,7 @@ void SelectHostileUnit(Event &_event, Vector2f &_pos, Enemy_1 &hostile, Mission 
 		{
 			for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
 			{
-				if (hostile.ArmyEnemy_1[i].sprite->getGlobalBounds().contains(_pos.x, _pos.y) && hostile.ArmyEnemy_1[i].isSelectHostile == false && hostile.ArmyEnemy_1[i]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false && hostile.ArmyEnemy_1[i].Life == true)
+				if (hovered(*hostile.ArmyEnemy_1[i].animation, _pos) && hostile.ArmyEnemy_1[i].isSelectHostile == false && hostile.ArmyEnemy_1[i]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false && hostile.ArmyEnemy_1[i].Life == true)
 				{
 					hostile.ArmyEnemy_1[i].isSelectHostile = true;
 
@@ -583,18 +582,18 @@ void AttackUnitPlayerToHostile(Event &_event, Vector2f &_pos, Player &MainCharac
 		{
 			for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
 			{
-				hostile.ArmyEnemy_1[i].calculation_distance_x_Attack = MainCharacter.ArmyGamer[ii]._I - hostile.ArmyEnemy_1[i]._I;
-				hostile.ArmyEnemy_1[i].calculation_distance_y_Attack = MainCharacter.ArmyGamer[ii]._J - hostile.ArmyEnemy_1[i]._J;
+				hostile.ArmyEnemy_1[i].calculation_distance_x_Attack = MainCharacter.ArmyGamer[ii].pos->x - hostile.ArmyEnemy_1[i].pos->x;
+				hostile.ArmyEnemy_1[i].calculation_distance_y_Attack = MainCharacter.ArmyGamer[ii].pos->y - hostile.ArmyEnemy_1[i].pos->y;
 				hostile.ArmyEnemy_1[i].calculation_distance_Attack = sqrt((hostile.ArmyEnemy_1[i].calculation_distance_x_Attack * hostile.ArmyEnemy_1[i].calculation_distance_x_Attack) + (hostile.ArmyEnemy_1[i].calculation_distance_y_Attack * hostile.ArmyEnemy_1[i].calculation_distance_y_Attack));
 				if (hostile.ArmyEnemy_1[i].Life == true)
 				{
 					if (hostile.ArmyEnemy_1[i].calculation_distance_Attack <= MainCharacter.ArmyGamer[ii].radius && MainCharacter.ArmyGamer[ii].isSelect == true && hostile.ArmyEnemy_1[i].Life == true)
 					{
-						TeampMiss.Miss[hostile.ArmyEnemy_1[i]._I][hostile.ArmyEnemy_1[i]._J].Set_AttackOn(true);
+						TeampMiss.Miss[int(hostile.ArmyEnemy_1[i].pos->x)][int(hostile.ArmyEnemy_1[i].pos->y)].Set_AttackOn(true);
 						if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
 							if (_event.key.code == Mouse::Right)
 							{//а именно левая
-								if (hostile.ArmyEnemy_1[i].sprite->getGlobalBounds().contains(_pos.x, _pos.y) && MainCharacter.ArmyGamer[ii]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false)//и при этом координата курсора попадает в спрайт
+								if (hovered(*hostile.ArmyEnemy_1[i].animation, _pos) && MainCharacter.ArmyGamer[ii]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false)//и при этом координата курсора попадает в спрайт
 								{
 
 									cout << "\nAttack!" << endl;
@@ -668,7 +667,7 @@ void TileGreenOn(Event &_event, Vector2f &_pos, Mission &TeampMiss)
 			{
 				for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
 				{
-					if (TeampMiss.Miss[i][j].g->sheet->getGlobalBounds().contains(_pos.x, _pos.y) && TeampMiss.Miss[i][j].StepUnit == true)
+					if (hovered(*TeampMiss.Miss[i][j].g, _pos) && TeampMiss.Miss[i][j].StepUnit == true)
 					{
 						TeampMiss.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(64, 0, 64, 64));
 					}
@@ -692,7 +691,7 @@ void LocalAreaInspectionClick(Event &_event, Vector2f &_pos, Mission &TeampMiss)
 			{
 				for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
 				{
-					if (TeampMiss.Miss[i][j].g->sheet->getGlobalBounds().contains(_pos.x, _pos.y))
+					if (hovered(*TeampMiss.Miss[i][j].g, _pos))
 					{
 
 						cout << "\nEmpty:" << TeampMiss.Miss[i][j].Get_Empty() << endl;
@@ -724,18 +723,19 @@ void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission
 						{
 							if (TeampMiss.Miss[i][j].Get_Empty() == false)
 							{
-								if (TeampMiss.Miss[i][j].g->sheet->getGlobalBounds().contains(_pos.x, _pos.y))
+								if (hovered(*TeampMiss.Miss[i][j].g, _pos))
 								{
 									if (InspectionToStep(MainCharacter.ArmyGamer[ii], i, j))
 									{
 										if (TeampMiss.MovementPlayer == true && MainCharacter.ArmyGamer[ii].CouterStep > 0)
 										{
 											interactionWithMap(MainCharacter.ArmyGamer[ii], TeampMiss.Miss[i][j].GetLand());
-											MainCharacter.ArmyGamer[ii].teampX = TeampMiss.Miss[i][j].Get_Dotx() - MainCharacter.ArmyGamer[ii].w;
-											MainCharacter.ArmyGamer[ii].teampY = TeampMiss.Miss[i][j].Get_Doty() - MainCharacter.ArmyGamer[ii].h;
-											MainCharacter.ArmyGamer[ii]._I = TeampMiss.Miss[i][j].Get_X();
-											MainCharacter.ArmyGamer[ii]._J = TeampMiss.Miss[i][j].Get_Y();
+											MainCharacter.ArmyGamer[ii].moveTo = *TeampMiss.Miss[i][j].g->pos;
+
+											MainCharacter.ArmyGamer[ii].pos->x = TeampMiss.Miss[i][j].Get_X();
+											MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //TODO: привести в порядок
 											MainCharacter.ArmyGamer[ii].isMove = true;
+
 											MainCharacter.ArmyGamer[ii]._Land = TeampMiss.Miss[i][j].GetLand();
 											MainCharacter.orders--;
 											MainCharacter.ArmyGamer[ii].CouterStep--;
@@ -775,28 +775,28 @@ void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy
 		{
 			for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
 			{
-				if (TeampMiss.Miss[i][j].g->sheet->getGlobalBounds().contains(_pos.x, _pos.y) && TeampMiss.Miss[i][j].Get_AttackOn() == true)
+				if (hovered(*TeampMiss.Miss[i][j].g, _pos) && TeampMiss.Miss[i][j].Get_AttackOn() == true)
 				{
 					TeampMiss.Miss[i][j]._AttackON = true;
 
 					for (int ii(0); ii < hostile.ArmyEnemy_1.size(); ii++)
 					{
 						for (int iii(0); iii < MainCharacter.ArmyGamer.size(); iii++)
-							if (i == hostile.ArmyEnemy_1[ii]._I && j == hostile.ArmyEnemy_1[ii]._J && MainCharacter.ArmyGamer[iii].isSelect == true)
+							if (i == hostile.ArmyEnemy_1[ii].pos->x && j == hostile.ArmyEnemy_1[ii].pos->y && MainCharacter.ArmyGamer[iii].isSelect == true)
 							{
 								hostile.ArmyEnemy_1[ii].isSelectHostile = true;
 							}
 					}
 				}
 
-				if (TeampMiss.Miss[i][j].g->sheet->getGlobalBounds().contains(_pos.x, _pos.y) == false && TeampMiss.Miss[i][j].Get_AttackOn() == true)
+				if (hovered(*TeampMiss.Miss[i][j].g, _pos) == false && TeampMiss.Miss[i][j].Get_AttackOn() == true)
 				{
 					TeampMiss.Miss[i][j]._AttackON = false;
 
 					for (int ii(0); ii < hostile.ArmyEnemy_1.size(); ii++)
 					{
 						for (int iii(0); iii < MainCharacter.ArmyGamer.size(); iii++)
-							if (i == hostile.ArmyEnemy_1[ii]._I && j == hostile.ArmyEnemy_1[ii]._J && MainCharacter.ArmyGamer[iii].isSelect == true)
+							if (i == hostile.ArmyEnemy_1[ii].pos->x && j == hostile.ArmyEnemy_1[ii].pos->y && MainCharacter.ArmyGamer[iii].isSelect == true)
 							{
 								hostile.ArmyEnemy_1[ii].isSelectHostile = false;
 							}
@@ -813,10 +813,10 @@ void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy
 						TeampMiss.Miss[i][j]._AttackON = false;
 					}
 
-					if (hostile.ArmyEnemy_1[ii].Life == false && hostile.ArmyEnemy_1[ii]._I == i && hostile.ArmyEnemy_1[ii]._J == j == TeampMiss.Miss[i][j]._AttackON == true)
+					if (hostile.ArmyEnemy_1[ii].Life == false && hostile.ArmyEnemy_1[ii].pos->x == i && hostile.ArmyEnemy_1[ii].pos->y == j == TeampMiss.Miss[i][j]._AttackON == true)
 					{
-						TeampMiss.Miss[hostile.ArmyEnemy_1[ii]._I][hostile.ArmyEnemy_1[ii]._J]._AttackON = false;
-						TeampMiss.Miss[hostile.ArmyEnemy_1[ii]._I][hostile.ArmyEnemy_1[ii]._J].Set_AttackOn(false);
+						TeampMiss.Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)]._AttackON = false;
+						TeampMiss.Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)].Set_AttackOn(false);
 					}
 				}
 			}
@@ -854,9 +854,13 @@ void DrawToSpriteMission(RenderWindow &_window, float time, Mission &_Missiom)	/
 		{
 			if (!_Missiom.screen_lock) {
 				if (_Missiom.Miss[i][j].g->animated)
-				{_Missiom.Miss[i][j].g->drawTo(_window,time);}
+				{
+					_Missiom.Miss[i][j].g->drawTo(_window, time);
+				}
 				else
-				{_Missiom.Miss[i][j].g->drawTo(_window);}
+				{
+					_Missiom.Miss[i][j].g->drawTo(_window);
+				}
 			}
 			_Missiom.Miss[i][j].InspectionTile = false;		//все проверку сбарсываем
 		}
@@ -990,10 +994,10 @@ void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_wind
 		}
 		*/
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++) {
-		MainCharacter.ArmyGamer[i].animation->drawTo(_window, time);
+		MainCharacter.ArmyGamer[i].drawTo(_window, time);
 	}
 	for (int i(0); i < hostile.ArmyEnemy_1.size(); i++) {
-		hostile.ArmyEnemy_1[i].animation->drawTo(_window, time);
+		hostile.ArmyEnemy_1[i].drawTo(_window, time);
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -1022,7 +1026,7 @@ string Generation_Rand_name()
 	ifstream ifile_last_name;
 	int temp_name;
 
-	ifile_name.open(projectPath + nameFileFolder+"Name_Commander.txt");
+	ifile_name.open(projectPath + nameFileFolder + "Name_Commander.txt");
 	ifile_last_name.open(projectPath + nameFileFolder + "Last_Name_Commander.txt");
 
 	if (!ifile_name.is_open() || !ifile_last_name.is_open())
@@ -1386,6 +1390,4 @@ void UpdateMissiom(Mission& _Missiom, Player& MainCharacter, float time)
 		_Missiom.MovementPlayer = true;
 	}
 	StepOnStep(MainCharacter, _Missiom);
-
-
 }

@@ -12,6 +12,7 @@
 #include "ImageLoader.h"
 #include "Graphic.h"
 #include "Settings.h"
+#include "HelperFunctions.h"
 
 using namespace std;
 using namespace sf;

@@ -26,6 +26,7 @@ int main()
 	Enemy_1 hostile;		//класс противника
 
 	Unit first(448, 576, 64, 64, 4, 3, 0, 0, "a", 0, "defender");
+	first.animation->ar->setVariant("wounded",true);
 	Unit second(576, 576, 64, 64, 4, 4, 1, 0, "a", 0, "defender");
 	Unit treti(320, 576, 64, 64, 4, 2, 2, 0, "a", 0, "defender");
 	//Unit chetverti(704, 576, 64, 64, 4, 5, 3, 0, "a", 0, "defender");
@@ -40,11 +41,11 @@ int main()
 
 
 	MainCharacter.ArmyGamer.push_back(first);
-	MainCharacter.ArmyGamer.push_back(second);
-	MainCharacter.ArmyGamer.push_back(treti);
+	//MainCharacter.ArmyGamer.push_back(second);
+	//MainCharacter.ArmyGamer.push_back(treti);
 	//MainCharacter.ArmyGamer.push_back(chetverti);
 	hostile.ArmyEnemy_1.push_back(enemy);
-	hostile.ArmyEnemy_1.push_back(enemy_1);
+	//hostile.ArmyEnemy_1.push_back(enemy_1);
 
 	while (window.isOpen())
 	{

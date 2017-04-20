@@ -16,8 +16,8 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 
 	Test = Generation_Rand_name();
 
-	_I = i;
-	_J = j;
+	//_I = i;
+	//_J = j;
 	Id = id;
 
 	lvl = 1;
@@ -55,9 +55,8 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		w = W; h = H;
 
 		Graphic * g = new Graphic(*pos, SpriteLoader::sprt->allebard, Vector2i(0, 0), Vector2i(W, H)); //TODO: Сменить адрес спрайта на более абстрактный
-		if (faction_choice == 0) { sprite = &SpriteLoader::sprt->allebard; }
+		if (faction_choice == 0) {}
 		if (faction_choice == 1) { 
-			sprite = &SpriteLoader::sprt->allebard_1;
 			delete g;  
 			g = new Graphic(*pos, SpriteLoader::sprt->allebard_1, Vector2i(0, 0), Vector2i(W, H)); 
 		}
@@ -108,51 +107,30 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 
 void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 {
-	distance = sqrt((teampX - x)*(teampX - x) + (teampY - y)*(teampY - y));//считаем дистанцию (расстояние от точки А до точки Б). используя формулу длины вектора
+	distance = sqrt(pow(moveTo.x - pos->x,2) + pow(moveTo.y-pos->y,2));//считаем дистанцию (расстояние от точки А до точки Б). используя формулу длины вектора
 	if (distance > 2)//этим условием убираем дергание во время конечной позиции спрайта
 	{
 		isSelect = false;
-		CurrentFrame += anspeed*time;
-		if (CurrentFrame > 4) CurrentFrame -= 4;
 
-		if (hurt == false)
-		{ 
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 2), w, h)); 
-		}
-		else
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrame), (Sprite_Y * 8), w, h));		//8
-		}
+		if (animation->ar->getCurrentAnim() != "move") { animation->ar->setAnim("move"); }
 
-		x += (speed*time*(teampX - x) / distance);//идем по иксу с помощью вектора нормали
-		y += (speed*time*(teampY - y) / distance);//идем по игреку так же
+		x += (speed*time*(moveTo.x - pos->x) / distance);//идем по иксу с помощью вектора нормали
+		y += (speed*time*(moveTo.y - pos->y) / distance);//идем по игреку так же
 
-		sprite->setPosition(x, y);
+		pos->x = x;
+		pos->y = y;
 	}
-	else { isMove = false; /*std::cout << "priehali\n" << endl;  cout << "i:" << _I << " j:" << _J << endl; cout << "Stamina:" << Stamina << endl;*/ CurrentFrame = 0;}//говорим что уже никуда не идем 
+	else { isMove = false; /*std::cout << "priehali\n" << endl;  cout << "i:" << _I << " j:" << _J << endl; cout << "Stamina:" << Stamina << endl;*/ 
+	animation->ar->setAnim("idle");}//говорим что уже никуда не идем 
 }
 
 void Unit::AnimationToAttack(float time)
 {
 	if (_Attack == true)
 	{
-		CurrentFrameToAttackReceiving += anspeed*time;
-		if (CurrentFrameToAttackReceiving > 9)
-		{
-			CurrentFrameToAttackReceiving -= 9;
-			_Attack = false;
-			CurrentFrameToAttackReceiving = 0;
-		}
-
-
-		if (hurt == false)
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 3), w, h));
-		}
-		else
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 9), w, h));
-		}
+		if (animation->ar->getCurrentAnim()=="idle")
+		animation->ar->setAnim("attack");
+		_Attack = false;
 	}
 
 }
@@ -161,101 +139,45 @@ void Unit::ReceivingFace(float time)
 {
 	if (ReceivingCutting == true)
 	{
-		CurrentFrameToAttackReceiving += anspeed*time;
-		if (CurrentFrameToAttackReceiving > 10)
-		{
-			CurrentFrameToAttackReceiving -= 10;
-			ReceivingCutting = false;
-			CurrentFrameToAttackReceiving = 0;
-			if (Receiving_int == 0)
-			{
-				Receiving_int = 1;
-			}
-			
-			else { Receiving_int = 0; }
-		}
-
-		if (Receiving_int == 0)
-		{
-			if (hurt == false)
-			{
-				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 4), w, h));
-			}
-			else
-			{
-				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 10), w, h));
-			}
-		}
-
-		if (Receiving_int == 1)
-		{
-			if (hurt == false)
-			{
-				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 5), w, h));
-			}
-			else
-			{
-				sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 11), w, h));
-			}
-		}
-
+		animation->ar->setAnim("slashed");
+		animation->ar->setVariant("slashSide", !animation->ar->getVariantState("slashSide"));
+		ReceivingCutting = false;
 	}
 
 	
 	if (ReceivingPricking == true)
 	{
-		CurrentFrameToAttackReceiving += anspeed*time;
-		if (CurrentFrameToAttackReceiving > 10)
-		{
-			CurrentFrameToAttackReceiving -= 10;
-			ReceivingPricking = false;
-			CurrentFrameToAttackReceiving = 0;
-		}
-
-		if (hurt == false)
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 6), w, h));
-		}
-		else
-		{
-			sprite->setTextureRect(IntRect(Sprite_X * int(CurrentFrameToAttackReceiving), (Sprite_Y * 12), w, h));
-		}
-
+		animation->ar->setAnim("poked");
+		ReceivingPricking = false;
 	}
 
-	if (PeopleHealth <= 0)
+	if (PeopleHealth <= 0 && !hurt)
 	{
 		hurt = true;
+		animation->ar->setVariant("wounded", true);
 	}
 
-	if (PeopleLive <= 0 && Life == true && ReceivingCutting == false && ReceivingPricking == false)
+	if (PeopleLive <= 0 && Life == true && animation->ar->getCurrentAnim()=="idle")
 	{
 		Life = false;
 		//cout << "Отряд, уничтожен!" << endl;
+		Graphic * g= new Graphic(*pos, SpriteLoader::sprt->allebard, Vector2i(0, 128), animation->dim);
+		delete animation;
+		animation = g;
 	}
 
 }
 
 void Unit::Update(Mission &TeampMision, float time)		//функция апдейт юнита
 {
-	if (isMove == true)
-	{
-		To_Move(TeampMision, time);
-	}
+	if (Life) {
+		if (isMove == true) { To_Move(TeampMision, time); }
+		if (fast_step_True == true) { step = fast_step; }
+		if (fast_step_True == false) { step = const_step; }
 
-	if (fast_step_True == true)
-	{
-		step = fast_step;
+		AnimationToAttack(time);
+		ReceivingFace(time);
 	}
-
-	if (fast_step_True == false)
-	{
-		step = const_step;
-	}
-
-	
-	AnimationToAttack(time);
-	ReceivingFace(time);
 }
 
 
@@ -349,8 +271,4 @@ void Unit::Halt()
 
 }
 
-void Unit::drawTo(RenderWindow & window, float time) {
-	sprite->setTextureRect(IntRect(0, 0, w, h));
-	sprite->setPosition(x, y);
-	//animation->drawTo(window, time);
-}
+void Unit::drawTo(RenderWindow & window, float time) { animation->drawTo(window, time); }
