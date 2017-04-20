@@ -310,7 +310,7 @@ void GreenToTheTile(Unit &Teamp, Mission &TeampMiss)	//даем добро на рисования з
 	{
 		for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
 		{
-			Pythagoras = sqrt((((float)i - (float)Teamp.pos->x) * ((float)i - (float)Teamp.pos->x)) + (((float)j - (float)Teamp.pos->y) * ((float)j - (float)Teamp.pos->y)));
+			Pythagoras = sqrt(pow((float)j - (float)Teamp.pos->x,2) + pow((float)i - (float)Teamp.pos->y,2));
 			if (Pythagoras <= Teamp.step)
 			{
 				if ((i != Teamp.pos->x || j != Teamp.pos->y) && TeampMiss.Miss[i][j].Get_Empty() == false)
@@ -696,8 +696,8 @@ void LocalAreaInspectionClick(Event &_event, Vector2f &_pos, Mission &TeampMiss)
 
 						cout << "\nEmpty:" << TeampMiss.Miss[i][j].Get_Empty() << endl;
 						cout << "Land:" << TeampMiss.Miss[i][j].GetLand() << endl;
-						cout << "X:" << TeampMiss.Miss[i][j].Get_Dotx() << endl;
-						cout << "Y:" << TeampMiss.Miss[i][j].Get_Doty() << endl;
+						cout << "X:" << TeampMiss.Miss[i][j].g->truePos->x << endl;
+						cout << "Y:" << TeampMiss.Miss[i][j].g->truePos->x << endl;
 						cout << "Tile i:" << TeampMiss.Miss[i][j].Get_X() << " Tile j:" << TeampMiss.Miss[i][j].Get_Y() << endl;
 
 					}
@@ -733,7 +733,7 @@ void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission
 											MainCharacter.ArmyGamer[ii].moveTo = *TeampMiss.Miss[i][j].g->pos;
 
 											MainCharacter.ArmyGamer[ii].pos->x = TeampMiss.Miss[i][j].Get_X();
-											MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //TODO: привести в порядок
+											MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //FIXME: Спутанные x и y
 											MainCharacter.ArmyGamer[ii].isMove = true;
 
 											MainCharacter.ArmyGamer[ii]._Land = TeampMiss.Miss[i][j].GetLand();

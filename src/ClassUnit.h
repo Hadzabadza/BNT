@@ -40,6 +40,7 @@ public:
 
 	////***Техническая механика юнитов***
 	int UnitToUnit;			//индитификатор по которому будет определяться какого юнита мы создаем
+	Unit * gets_lyuley;     //Цель приказа атаки
 	string _Land;			//земля на которой стоит юнит
 	float Morale, Stamina, ConstMorale, ConstStamina;	//мораль отряда и выносливость отряда 
 	int PeopleLive, PeopleHealth;	//раненые и сколько человек вообщем в отряде
@@ -56,20 +57,14 @@ public:
 	////***Техническая механика юнитов***
 
 	Unit(float, float, float, float, int, int, int, int, string, int, string);		//создания юнита
-
 	Unit(void) {};
 
-	void To_Move(Mission&, float);				//функция движения,
-
-	void Update(Mission&, float);		//функция апдейт юнита
-
-	void AttackToAttack(Unit&, float); //атака юнита
-
-	void AnimationToAttack(float);	//анимация атаки
-
-	void ReceivingFace(float);		//анимация получения урона
-
+	void To_Move(Mission&, float);	   //функция движения,
+	void Update(Mission&, float);	   //функция апдейт юнита
+	void AttackToAttack(Unit&, float); //Приказ атаковать
+	void damageTarget();               //Попадание атакой
+	void AnimationToAttack(float);	   //Анимация атаки
+	void ReceivingFace(float);		   //Анимация получения урона
 	void Halt();
-
 	void drawTo(RenderWindow & window, float time);
 };

@@ -41,11 +41,11 @@ int main()
 
 
 	MainCharacter.ArmyGamer.push_back(first);
-	//MainCharacter.ArmyGamer.push_back(second);
-	//MainCharacter.ArmyGamer.push_back(treti);
+	MainCharacter.ArmyGamer.push_back(second);
+	MainCharacter.ArmyGamer.push_back(treti);
 	//MainCharacter.ArmyGamer.push_back(chetverti);
 	hostile.ArmyEnemy_1.push_back(enemy);
-	//hostile.ArmyEnemy_1.push_back(enemy_1);
+	hostile.ArmyEnemy_1.push_back(enemy_1);
 
 	while (window.isOpen())
 	{

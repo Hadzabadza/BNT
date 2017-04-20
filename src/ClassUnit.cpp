@@ -54,11 +54,11 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 		
 		w = W; h = H;
 
-		Graphic * g = new Graphic(*pos, SpriteLoader::sprt->allebard, Vector2i(0, 0), Vector2i(W, H)); //TODO: Сменить адрес спрайта на более абстрактный
+		Graphic * g = new Graphic(*pos, SpriteLoader::sprt->halberdier, Vector2i(0, 0), Vector2i(W, H)); //TODO: Сменить адрес спрайта на более абстрактный
 		if (faction_choice == 0) {}
 		if (faction_choice == 1) { 
 			delete g;  
-			g = new Graphic(*pos, SpriteLoader::sprt->allebard_1, Vector2i(0, 0), Vector2i(W, H)); 
+			g = new Graphic(*pos, SpriteLoader::sprt->halberdierGray, Vector2i(0, 0), Vector2i(W, H)); 
 		}
 
 		animation = new AnimExtended(*g, *(new Animator(projectPath + unitsFolder + "Halberdier/")));
@@ -124,15 +124,71 @@ void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 	animation->ar->setAnim("idle");}//говорим что уже никуда не идем 
 }
 
+void Unit::AttackToAttack(Unit & _gets_lyuley, float time)
+{
+	gets_lyuley = &_gets_lyuley;
+	int minStaminaDrain, maxStaminaDrain, staminaDrain;
+
+	minStaminaDrain = 50;		
+	maxStaminaDrain = 90;
+	staminaDrain = minStaminaDrain + rand() % (maxStaminaDrain - minStaminaDrain);
+	Stamina -= staminaDrain;	//Уменьшение выносливости
+
+	animation->ar->setAnim("attack");
+	_Attack = true;				//Приказ атаковать
+}
+
+void Unit::damageTarget() {
+	int AllHp, AllHpKill, min_attack_, max_attack_, _attack_, AllDefeat, min_percent, max_percent, GeneratePercent;
+
+	min_attack_ = (Attack * (PeopleHealth / 2)) + ((PeopleLive - PeopleHealth) * (Attack / 2));						//берем мин атаку
+	max_attack_ = ((Attack * PeopleHealth) + (PeopleLive - PeopleHealth) * (Attack / 2));							//берем макс атаку
+
+	min_percent = 5;	//проценты убитых
+	max_percent = 20;
+
+	AllHp = gets_lyuley->HpHurt * gets_lyuley->PeopleHealth;		//высчитываем хп не раненых
+	AllHpKill = gets_lyuley->Hp * gets_lyuley->PeopleLive;		//высчитываем всех в отряде
+	AllDefeat = gets_lyuley->PeopleHealth * gets_lyuley->Defense;	//высчитываем защиту, защиту несут только не раненые
+
+	_attack_ = min_attack_ + rand() % (max_attack_ - min_attack_);			//рандомизация
+	GeneratePercent = min_percent + rand() % (max_percent - min_percent);
+
+	AllHpKill = AllHpKill - ((_attack_ / 100) * GeneratePercent);	//наносим смертельный урон отряду
+
+	if (gets_lyuley->PeopleHealth > 0)
+	{
+		AllHp = AllHp - (_attack_ - AllDefeat);				//урон для ранений
+		gets_lyuley->PeopleHealth = AllHp / gets_lyuley->HpHurt;
+	}
+	else { gets_lyuley->PeopleHealth = 0; AllHpKill = AllHpKill - ((_attack_ / 100) * GeneratePercent); }
+	gets_lyuley->PeopleLive = AllHpKill / gets_lyuley->Hp;
+
+	if (gets_lyuley->PeopleLive < gets_lyuley->PeopleHealth)
+	{
+		gets_lyuley->PeopleHealth = 0;
+		gets_lyuley->PeopleHealth = gets_lyuley->PeopleLive;
+	}
+	/*cout << "Человек в отряде:" << gets_lyuley->PeopleLive << endl;
+	cout << "Человек в отряде не раненых:" << gets_lyuley->PeopleHealth << endl;*/
+	if (gets_lyuley->PeopleHealth > 0) { /*cout << "Раненные:" << gets_lyuley->PeopleLive - gets_lyuley->PeopleHealth << endl;*/ }
+	else { /*cout << "Раненные:" << gets_lyuley->PeopleLive << endl;*/ gets_lyuley->PeopleHealth = 0; }
+	cout << Stamina << endl;
+
+	if (Cutting == true) { gets_lyuley->ReceivingCutting = true; }
+	if (Pricking == true) { gets_lyuley->ReceivingPricking = true; }
+	gets_lyuley = nullptr;
+}
+
 void Unit::AnimationToAttack(float time)
 {
 	if (_Attack == true)
 	{
-		if (animation->ar->getCurrentAnim()=="idle")
-		animation->ar->setAnim("attack");
-		_Attack = false;
+		if (animation->ar->isPastPeak()) {
+			_Attack = false;
+			damageTarget();
+		}
 	}
-
 }
 
 void Unit::ReceivingFace(float time)
@@ -143,29 +199,29 @@ void Unit::ReceivingFace(float time)
 		animation->ar->setVariant("slashSide", !animation->ar->getVariantState("slashSide"));
 		ReceivingCutting = false;
 	}
-
-	
 	if (ReceivingPricking == true)
 	{
 		animation->ar->setAnim("poked");
 		ReceivingPricking = false;
 	}
-
 	if (PeopleHealth <= 0 && !hurt)
 	{
 		hurt = true;
 		animation->ar->setVariant("wounded", true);
 	}
-
-	if (PeopleLive <= 0 && Life == true && animation->ar->getCurrentAnim()=="idle")
+	if (PeopleLive <= 0 && Life == true && animation->ar->isPastPeak())
 	{
 		Life = false;
 		//cout << "Отряд, уничтожен!" << endl;
-		Graphic * g= new Graphic(*pos, SpriteLoader::sprt->allebard, Vector2i(0, 128), animation->dim);
+		Graphic * g= new Graphic(*pos, SpriteLoader::sprt->halberdier, Vector2i(128, 0), animation->dim);
+		if (faction_choice == 0) {}
+		if (faction_choice == 1) {
+			delete g;
+			g = new Graphic(*pos, SpriteLoader::sprt->halberdierGray, Vector2i(128, 0), animation->dim);
+		}
 		delete animation;
 		animation = g;
 	}
-
 }
 
 void Unit::Update(Mission &TeampMision, float time)		//функция апдейт юнита
@@ -178,73 +234,6 @@ void Unit::Update(Mission &TeampMision, float time)		//функция апдейт юнита
 		AnimationToAttack(time);
 		ReceivingFace(time);
 	}
-}
-
-
-void Unit::AttackToAttack(Unit& gets_lyuley, float time)
-{
-	int AllHp, AllHpKill, min_attack_, max_attack_, _attack_, AllDefeat, min_percent, max_percent, GeneratePercent;
-	int min_damageStamina, max_damageStamina, DamageStamina;
-	_Attack = true;																									//анимация атаки
-
-	min_attack_ = (Attack * (PeopleHealth / 2)) + ((PeopleLive - PeopleHealth) * (Attack / 2));						//берем мин атаку
-	max_attack_ = ((Attack * PeopleHealth) + (PeopleLive - PeopleHealth) * (Attack / 2));							//берем макс атаку
-
-	min_percent = 5;	//проценты убитых
-	max_percent = 20;
-
-	min_damageStamina = 50;		//дамажим стамину
-	max_damageStamina = 90;
-
-	AllHp = gets_lyuley.HpHurt * gets_lyuley.PeopleHealth;		//высчитываем хп не раненых
-	AllHpKill = gets_lyuley.Hp * gets_lyuley.PeopleLive;		//высчитываем всех в отряде
-	AllDefeat = gets_lyuley.PeopleHealth * gets_lyuley.Defense;	//высчитываем защиту, защиту несут только не раненые
-
-
-	_attack_ = min_attack_ + rand() % (max_attack_ - min_attack_);			//рандомизация
-	GeneratePercent = min_percent + rand() % (max_percent - min_percent);
-	DamageStamina = min_damageStamina + rand() % (max_damageStamina - min_damageStamina);
-
-	Stamina -= DamageStamina;	//наносим ущерб стамине во время атаки
-
-	AllHpKill = AllHpKill - ((_attack_ / 100) * GeneratePercent);	//наносим смертельный урон отряду
-
-	if (gets_lyuley.PeopleHealth > 0)
-	{
-		AllHp = AllHp - (_attack_ - AllDefeat);				//урон для ранений
-		gets_lyuley.PeopleHealth = AllHp / gets_lyuley.HpHurt;
-	}
-	else { gets_lyuley.PeopleHealth = 0; AllHpKill = AllHpKill - ((_attack_ / 100) * GeneratePercent); }
-	gets_lyuley.PeopleLive = AllHpKill / gets_lyuley.Hp;
-
-
-	if (gets_lyuley.PeopleLive < gets_lyuley.PeopleHealth)
-	{
-		gets_lyuley.PeopleHealth = 0;
-		gets_lyuley.PeopleHealth = gets_lyuley.PeopleLive;
-	}
-
-
-	/*cout << "Человек в отряде:" << gets_lyuley.PeopleLive << endl;
-	cout << "Человек в отряде не раненых:" << gets_lyuley.PeopleHealth << endl;*/
-	if (gets_lyuley.PeopleHealth > 0)
-	{
-		//cout << "Раненные:" << gets_lyuley.PeopleLive - gets_lyuley.PeopleHealth << endl;
-	}
-	else { /*cout << "Раненные:" << gets_lyuley.PeopleLive << endl;*/ gets_lyuley.PeopleHealth = 0; }
-	cout << Stamina << endl;
-
-
-	if (Cutting == true)
-	{
-		gets_lyuley.ReceivingCutting = true;
-	}
-
-	if (Pricking == true)
-	{
-		gets_lyuley.ReceivingPricking = true;
-	}
-
 }
 
 void Unit::Halt()
@@ -268,7 +257,6 @@ void Unit::Halt()
 
 	CouterAttack = 0;
 	CouterStep = 0;
-
 }
 
 void Unit::drawTo(RenderWindow & window, float time) { animation->drawTo(window, time); }

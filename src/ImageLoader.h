@@ -14,8 +14,8 @@ public:
 	~ImageLoader();
 	static ImageLoader * ImageLoader::imgs; //Синглтон для картинок
 
-	Image allebard; //Картинка алебардиста
-	Image allebard_1; //Картинка белого алебардиста
+	Image halberdier; //Картинка алебардиста
+	Image halberdierGray; //Картинка белого алебардиста
 	Image exitBTN; //Картинка кнопки выхода
 	Image loadingSplashScreen; //Картинка загрузочного экрана
 	Image unitInterface; //Картинка интерфейса юнитов
@@ -35,8 +35,8 @@ public:
 	~TextureLoader();
 	static TextureLoader * TextureLoader::tex; //Синглтон для текстур
 
-	Texture allebard; //Текстура алебардиста
-	Texture allebard_1; //Текстура белого алебардиста
+	Texture halberdier; //Текстура алебардиста
+	Texture halberdierGray; //Текстура белого алебардиста
 	Texture exitBTN; //Текстура кнопки выхода
 	Texture loadingSplashScreen; //Текстура загрузочного экрана
 	Texture unitInterface; //Текстура интерфейса юнитов
@@ -56,8 +56,8 @@ public:
 	~SpriteLoader();
 	static SpriteLoader * SpriteLoader::sprt; //Синглтон для спрайтов
 
-	Sprite allebard; //Спрайт алебардиста
-	Sprite allebard_1; //Спрайт белого алебардиста
+	Sprite halberdier; //Спрайт алебардиста
+	Sprite halberdierGray; //Спрайт белого алебардиста
 	Sprite exitBTN; //Спрайт кнопки выхода
 	Sprite loadingSplashScreen; //Спрайт загрузочного экрана
 	Sprite unitInterface; //Спрайт интерфейса юнитов

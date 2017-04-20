@@ -7,16 +7,16 @@ ImageLoader * ImageLoader::imgs = new ImageLoader();
 
 ImageLoader::ImageLoader() {
 	//Загрузка файлов
-	load(allebard, projectPath+imageFolder+"allebard.png");
-	load(allebard_1, projectPath + imageFolder + "allebard_1.png");
-	load(exitBTN, projectPath + imageFolder+"exit.png");
-	load(loadingSplashScreen, projectPath + imageFolder+"DonwoldArt.png");
-	load(unitInterface, projectPath + imageFolder+"interfeysUnit.png");
-	load(cursor, projectPath + imageFolder+"kursor.png");
-	load(steoNotHalt, projectPath + imageFolder+"SteoNotHalt.png");
-	load(steoNotIn, projectPath + imageFolder+"SteoNotIn.png");
-	load(tileSetGame, projectPath + imageFolder+"TileSetGame.png");
-	load(tileSetAnimated, projectPath + imageFolder+"TileSetGameIsAnimation.png");
+	load(halberdier, projectPath + unitsFolder +"Halberdier/halberdier.png");
+	load(halberdierGray, projectPath + unitsFolder + "Halberdier/halberdierGray.png");
+	load(exitBTN, projectPath + imageFolder +"exit.png");
+	load(loadingSplashScreen, projectPath + imageFolder +"DonwoldArt.png");
+	load(unitInterface, projectPath + imageFolder +"interfeysUnit.png");
+	load(cursor, projectPath + imageFolder +"kursor.png");
+	load(steoNotHalt, projectPath + imageFolder +"SteoNotHalt.png");
+	load(steoNotIn, projectPath + imageFolder +"SteoNotIn.png");
+	load(tileSetGame, projectPath + imageFolder +"TileSetGame.png");
+	load(tileSetAnimated, projectPath + imageFolder +"TileSetGameIsAnimation.png");
 };
 
 ImageLoader::~ImageLoader() {}
@@ -28,8 +28,8 @@ void ImageLoader::load(Image & which, String path) {
 TextureLoader * TextureLoader::tex = new TextureLoader();
 
 TextureLoader::TextureLoader() {
-	load(allebard, ImageLoader::imgs->allebard);
-	load(allebard_1, ImageLoader::imgs->allebard_1);
+	load(halberdier, ImageLoader::imgs->halberdier);
+	load(halberdierGray, ImageLoader::imgs->halberdierGray);
 	load(exitBTN, ImageLoader::imgs->exitBTN);
 	load(loadingSplashScreen, ImageLoader::imgs->loadingSplashScreen);
 	load(unitInterface, ImageLoader::imgs->unitInterface);
@@ -51,8 +51,8 @@ void TextureLoader::load(Texture & which, Image & from) {
 SpriteLoader * SpriteLoader::sprt = new SpriteLoader();
 
 SpriteLoader::SpriteLoader() {
-	load(allebard, TextureLoader::tex->allebard);
-	load(allebard_1, TextureLoader::tex->allebard_1);
+	load(halberdier, TextureLoader::tex->halberdier);
+	load(halberdierGray, TextureLoader::tex->halberdierGray);
 	load(exitBTN, TextureLoader::tex->exitBTN);
 	load(loadingSplashScreen, TextureLoader::tex->loadingSplashScreen);
 	load(unitInterface, TextureLoader::tex->unitInterface);

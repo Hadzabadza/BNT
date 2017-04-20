@@ -20,7 +20,9 @@ void Graphic::drawTo(RenderWindow & drawTo) {
 	drawTo.draw(*sheet);
 };
 
-void Graphic::drawTo(RenderWindow & drawTo, float time) {};
+void Graphic::drawTo(RenderWindow & _drawTo, float time) {
+	drawTo(_drawTo);
+};
 
 //--------------------------------------------------------------
 
