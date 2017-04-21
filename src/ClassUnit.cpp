@@ -3,11 +3,13 @@
 using namespace std;
 using namespace sf;
 
+Unit * Unit::NIL = new Unit();
+
 Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, string L, int _U, string _C)		//создания юнита
 {
 	UnitToUnit = _U;
 	anspeed = 0.006;		//0.006
-	speed = 0.04;
+	speed = 0.0004;
 
 	pos = new Vector2f(i, j);
 
@@ -16,8 +18,6 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 
 	Test = Generation_Rand_name();
 
-	//_I = i;
-	//_J = j;
 	Id = id;
 
 	lvl = 1;
@@ -108,20 +108,24 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 {
 	distance = sqrt(pow(moveTo.x - pos->x,2) + pow(moveTo.y-pos->y,2));//считаем дистанцию (расстояние от точки А до точки Б). используя формулу длины вектора
-	if (distance > 2)//этим условием убираем дергание во время конечной позиции спрайта
+	if (distance > 0.002)//этим условием убираем дергание во время конечной позиции спрайта
 	{
 		isSelect = false;
 
 		if (animation->ar->getCurrentAnim() != "move") { animation->ar->setAnim("move"); }
 
-		x += (speed*time*(moveTo.x - pos->x) / distance);//идем по иксу с помощью вектора нормали
-		y += (speed*time*(moveTo.y - pos->y) / distance);//идем по игреку так же
+		pos->x += (speed*time*(moveTo.x - pos->x) / distance);//идем по иксу с помощью вектора нормали
+		pos->y += (speed*time*(moveTo.y - pos->y) / distance);//идем по игреку так же
 
-		pos->x = x;
-		pos->y = y;
 	}
-	else { isMove = false; /*std::cout << "priehali\n" << endl;  cout << "i:" << _I << " j:" << _J << endl; cout << "Stamina:" << Stamina << endl;*/ 
-	animation->ar->setAnim("idle");}//говорим что уже никуда не идем 
+	else 
+	{ 
+		isMove = false; 
+		/*std::cout << "priehali\n" << endl;  cout << "i:" << _I << " j:" << _J << endl; cout << "Stamina:" << Stamina << endl;*/ 
+		animation->ar->setAnim("idle");
+		pos->x = moveTo.x;
+		pos->y = moveTo.y;
+	}//говорим что уже никуда не идем 
 }
 
 void Unit::AttackToAttack(Unit & _gets_lyuley, float time)

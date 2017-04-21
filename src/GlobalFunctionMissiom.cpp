@@ -732,8 +732,8 @@ void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission
 											interactionWithMap(MainCharacter.ArmyGamer[ii], TeampMiss.Miss[i][j].GetLand());
 											MainCharacter.ArmyGamer[ii].moveTo = *TeampMiss.Miss[i][j].g->pos;
 
-											MainCharacter.ArmyGamer[ii].pos->x = TeampMiss.Miss[i][j].Get_X();
-											MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //FIXME: Спутанные x и y
+											//MainCharacter.ArmyGamer[ii].pos->x = TeampMiss.Miss[i][j].Get_X();
+											//MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //FIXME: Спутанные x и y
 											MainCharacter.ArmyGamer[ii].isMove = true;
 
 											MainCharacter.ArmyGamer[ii]._Land = TeampMiss.Miss[i][j].GetLand();

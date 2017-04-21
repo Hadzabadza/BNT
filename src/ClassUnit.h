@@ -39,6 +39,7 @@ public:
 	////***Графическая механика юнитов***
 
 	////***Техническая механика юнитов***
+	static Unit * Unit::NIL;//Пустышка для проверок
 	int UnitToUnit;			//индитификатор по которому будет определяться какого юнита мы создаем
 	Unit * gets_lyuley;     //Цель приказа атаки
 	string _Land;			//земля на которой стоит юнит
@@ -55,6 +56,10 @@ public:
 	float const_step, step, fast_step;					//дальность ходьбы юнита
 	bool fast_step_True;	//включена быстрая ходьба
 	////***Техническая механика юнитов***
+
+protected:
+	Unit();
+public:
 
 	Unit(float, float, float, float, int, int, int, int, string, int, string);		//создания юнита
 	Unit(void) {};
