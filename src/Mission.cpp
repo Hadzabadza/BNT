@@ -3,6 +3,8 @@
 using namespace std;
 using namespace sf;
 
+Mission::Mission() {};
+
 Mission::Mission(int _H, int _W, RenderWindow &_window)
 {
 	HEIGHT_MAP = _H;
@@ -26,7 +28,7 @@ Mission::Mission(int _H, int _W, RenderWindow &_window)
 	No_fast = false;
 	DownloadArt = true;
 	FrameDownload = 0;
-	Start = false;
+	Start = true;
 
 	Miss = new Tile *[HEIGHT_MAP]();
 	for (int i(0); i < HEIGHT_MAP; i++)

@@ -5,6 +5,8 @@ using namespace sf;
 
 Unit * Unit::NIL = new Unit();
 
+Unit::Unit() {};
+
 Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, string L, int _U, string _C)		//создания юнита
 {
 	UnitToUnit = _U;
@@ -46,6 +48,7 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 	Cutting = true;
 
 	_Land = L;
+
 	if (UnitToUnit == 0)
 	{
 		faction_choice = _fa;
@@ -66,7 +69,6 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 
 		x = X - w;
 		y = Y - h;
-
 
 		/////////////////////////////механика игры
 		PeopleLive = 100;
@@ -105,7 +107,7 @@ Unit::Unit(float X, float Y, float W, float H, int i, int j, int id, int _fa, st
 	}
 }
 
-void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
+void Unit::To_Move()				//функция движения,
 {
 	distance = sqrt(pow(moveTo.x - pos->x,2) + pow(moveTo.y-pos->y,2));//считаем дистанцию (расстояние от точки А до точки Б). используя формулу длины вектора
 	if (distance > 0.002)//этим условием убираем дергание во время конечной позиции спрайта
@@ -114,9 +116,8 @@ void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 
 		if (animation->ar->getCurrentAnim() != "move") { animation->ar->setAnim("move"); }
 
-		pos->x += (speed*time*(moveTo.x - pos->x) / distance);//идем по иксу с помощью вектора нормали
-		pos->y += (speed*time*(moveTo.y - pos->y) / distance);//идем по игреку так же
-
+		pos->x += (speed*elapsed*(moveTo.x - pos->x) / distance);//идем по иксу с помощью вектора нормали
+		pos->y += (speed*elapsed*(moveTo.y - pos->y) / distance);//идем по игреку так же
 	}
 	else 
 	{ 
@@ -125,10 +126,11 @@ void Unit::To_Move(Mission &TeampMision, float time)				//функция движения,
 		animation->ar->setAnim("idle");
 		pos->x = moveTo.x;
 		pos->y = moveTo.y;
+		ground->unit = this;
 	}//говорим что уже никуда не идем 
 }
 
-void Unit::AttackToAttack(Unit & _gets_lyuley, float time)
+void Unit::AttackToAttack(Unit & _gets_lyuley)
 {
 	gets_lyuley = &_gets_lyuley;
 	int minStaminaDrain, maxStaminaDrain, staminaDrain;
@@ -184,7 +186,7 @@ void Unit::damageTarget() {
 	gets_lyuley = nullptr;
 }
 
-void Unit::AnimationToAttack(float time)
+void Unit::AnimationToAttack()
 {
 	if (_Attack == true)
 	{
@@ -195,7 +197,7 @@ void Unit::AnimationToAttack(float time)
 	}
 }
 
-void Unit::ReceivingFace(float time)
+void Unit::ReceivingFace()
 {
 	if (ReceivingCutting == true)
 	{
@@ -228,15 +230,15 @@ void Unit::ReceivingFace(float time)
 	}
 }
 
-void Unit::Update(Mission &TeampMision, float time)		//функция апдейт юнита
+void Unit::Update()		//функция апдейт юнита
 {
 	if (Life) {
-		if (isMove == true) { To_Move(TeampMision, time); }
+		if (isMove == true) { To_Move(); }
 		if (fast_step_True == true) { step = fast_step; }
 		if (fast_step_True == false) { step = const_step; }
 
-		AnimationToAttack(time);
-		ReceivingFace(time);
+		AnimationToAttack();
+		ReceivingFace();
 	}
 }
 
@@ -263,4 +265,4 @@ void Unit::Halt()
 	CouterStep = 0;
 }
 
-void Unit::drawTo(RenderWindow & window, float time) { animation->drawTo(window, time); }
+void Unit::drawTo(RenderWindow & window) { animation->drawTo(window); }

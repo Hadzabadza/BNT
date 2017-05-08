@@ -5,6 +5,7 @@ using namespace sf;
 
 Tile::Tile() {
 	pos = new Vector2f(0, 0);
+	Instantiate = false;
 }
 
 void Tile::SetTile(string Flag, bool instantiate, int id, float posX, float posY, int carveX, int carveY, int width, int height, int frames) //создания тайла	

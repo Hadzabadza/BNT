@@ -6,41 +6,41 @@ using namespace std;
 using namespace sf;
 
 //////////////////////////////////////////////////////////////////////////////
-void FunctionPrintToMission_1(Mission &_Mission, float _time, AllInterfaceMissiom &In)		//создание карты 
+void FunctionPrintToMission_1(AllInterfaceMissiom &In)		//создание карты 
 {
-	_Mission.screen_lock = true;
+	tnd->screen_lock = true;
 
-	if (_Mission.Start == true)
+	if (tnd->Start == true)
 	{
 		for (int i = 0; i < HEIGHT_MAP_1; i++)
 		{
 			for (int j = 0; j < WIDTH_MAP_1; j++)
 			{
-				if (_Mission.Miss[i][j].Get_Instantiate() == false)
+				if (tnd->Miss[i][j].Get_Instantiate() == false)
 				{
-					if (((HEIGHT_MAP_1 * WIDTH_MAP_1) > _Mission.id_tile))
+					if (((HEIGHT_MAP_1 * WIDTH_MAP_1) > tnd->id_tile))
 					{
-						_Mission.Miss[i][j].SetTile("a", true, (int)_Mission.id_tile, j, i, 128, 0, 64);
-						if ((TileMap2[i][j] == 'a')) _Mission.Miss[i][j].SetTile("a", true, (int)_Mission.id_tile, j, i, 128, 0, 64);	//травка
-						if ((TileMap2[i][j] == ' ')) _Mission.Miss[i][j].SetTile(" ", true, (int)_Mission.id_tile, j, i, 64, 704, 64);	//камешки на травке
-						if ((TileMap2[i][j] == ':')) _Mission.Miss[i][j].SetTile(":", true, (int)_Mission.id_tile, j, i, 64, 64, 64);	//дорога верх вниз
-						if ((TileMap2[i][j] == 'W')) _Mission.Miss[i][j].SetTile("W", true, (int)_Mission.id_tile, j, i, 128, 128, 64);	//левый край леса
-						if ((TileMap2[i][j] == 'e')) _Mission.Miss[i][j].SetTile("e", true, (int)_Mission.id_tile, j, i, 128, 64, 64);	//верхний левый угол леса
-						if ((TileMap2[i][j] == 'R')) _Mission.Miss[i][j].SetTile("R", true, (int)_Mission.id_tile, j, i, 128, 576, 64);	//сплошной лес
-						if ((TileMap2[i][j] == 'r')) _Mission.Miss[i][j].SetTile("r", true, (int)_Mission.id_tile, j, i, 128, 320, 64);	//верхний край леса
-						if ((TileMap2[i][j] == '*')) _Mission.Miss[i][j].SetTile("*", true, (int)_Mission.id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
-						if ((TileMap2[i][j] == '%')) _Mission.Miss[i][j].SetTile("%", true, (int)_Mission.id_tile, j, i, 64, 0, 64);	//дорога влево вправо
-						if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 5);	//болото
-						if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 5);	//болото
-						if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 5);	//болото
-						if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 5);	//болото
-						if ((TileMap2[i][j] == 'H')) _Mission.Miss[i][j].SetTile("H", true, (int)_Mission.id_tile, j, i, 256, 256, 64);	//холм
-						if ((TileMap2[i][j] == 'j')) _Mission.Miss[i][j].SetTile("J", true, (int)_Mission.id_tile, j, i, 256, 320, 64);	//холм
-						if ((TileMap2[i][j] == 'J')) _Mission.Miss[i][j].SetTile("j", true, (int)_Mission.id_tile, j, i, 256, 384, 64);	//холм
-						if ((TileMap2[i][j] == '!')) _Mission.Miss[i][j].SetTile("!", true, (int)_Mission.id_tile, j, i, 0, 576, 64);	//сожженая деревня
-						if ((TileMap2[i][j] == '>')) _Mission.Miss[i][j].SetTile(">", true, (int)_Mission.id_tile, j, i, 385, 256, 64);	//сожженая каменная крепость
-						_Mission.id_tile++;
-						_Mission.Start = false;
+						tnd->Miss[i][j].SetTile("a", true, (int)tnd->id_tile, j, i, 128, 0, 64);
+						if ((TileMap2[i][j] == 'a')) tnd->Miss[i][j].SetTile("a", true, (int)tnd->id_tile, j, i, 128, 0, 64);	//травка
+						if ((TileMap2[i][j] == ' ')) tnd->Miss[i][j].SetTile(" ", true, (int)tnd->id_tile, j, i, 64, 704, 64);	//камешки на травке
+						if ((TileMap2[i][j] == ':')) tnd->Miss[i][j].SetTile(":", true, (int)tnd->id_tile, j, i, 64, 64, 64);	//дорога верх вниз
+						if ((TileMap2[i][j] == 'W')) tnd->Miss[i][j].SetTile("W", true, (int)tnd->id_tile, j, i, 128, 128, 64);	//левый край леса
+						if ((TileMap2[i][j] == 'e')) tnd->Miss[i][j].SetTile("e", true, (int)tnd->id_tile, j, i, 128, 64, 64);	//верхний левый угол леса
+						if ((TileMap2[i][j] == 'R')) tnd->Miss[i][j].SetTile("R", true, (int)tnd->id_tile, j, i, 128, 576, 64);	//сплошной лес
+						if ((TileMap2[i][j] == 'r')) tnd->Miss[i][j].SetTile("r", true, (int)tnd->id_tile, j, i, 128, 320, 64);	//верхний край леса
+						if ((TileMap2[i][j] == '*')) tnd->Miss[i][j].SetTile("*", true, (int)tnd->id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
+						if ((TileMap2[i][j] == '%')) tnd->Miss[i][j].SetTile("%", true, (int)tnd->id_tile, j, i, 64, 0, 64);	//дорога влево вправо
+						if ((TileMap2[i][j] == '1')) tnd->Miss[i][j].SetTile("1", true, (int)tnd->id_tile, j, i, 0, 0, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '2')) tnd->Miss[i][j].SetTile("2", true, (int)tnd->id_tile, j, i, 0, 64, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '3')) tnd->Miss[i][j].SetTile("3", true, (int)tnd->id_tile, j, i, 0, 128, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == '4')) tnd->Miss[i][j].SetTile("4", true, (int)tnd->id_tile, j, i, 0, 192, 64, 64, 5);	//болото
+						if ((TileMap2[i][j] == 'H')) tnd->Miss[i][j].SetTile("H", true, (int)tnd->id_tile, j, i, 256, 256, 64);	//холм
+						if ((TileMap2[i][j] == 'j')) tnd->Miss[i][j].SetTile("J", true, (int)tnd->id_tile, j, i, 256, 320, 64);	//холм
+						if ((TileMap2[i][j] == 'J')) tnd->Miss[i][j].SetTile("j", true, (int)tnd->id_tile, j, i, 256, 384, 64);	//холм
+						if ((TileMap2[i][j] == '!')) tnd->Miss[i][j].SetTile("!", true, (int)tnd->id_tile, j, i, 0, 576, 64);	//сожженая деревня
+						if ((TileMap2[i][j] == '>')) tnd->Miss[i][j].SetTile(">", true, (int)tnd->id_tile, j, i, 385, 256, 64);	//сожженая каменная крепость
+						tnd->id_tile++;
+						tnd->Start = false;
 						//break; //Замедляет загрузку
 					}
 				}
@@ -50,86 +50,87 @@ void FunctionPrintToMission_1(Mission &_Mission, float _time, AllInterfaceMissio
 
 
 
-	if (_Mission.Start == false && _Mission.DownloadArt == true)
+	if (tnd->Start == false && tnd->DownloadArt == true)
 	{
-		_Mission.sprite_DownloadStrips.setTextureRect(IntRect(113, 769, 14 * (_Mission.id_tile / 2), 46));
+		tnd->sprite_DownloadStrips.setTextureRect(IntRect(113, 769, 14 * (tnd->id_tile / 2), 46));
 	}
 
 
-	if (((HEIGHT_MAP_1 * WIDTH_MAP_1) == _Mission.id_tile))
+	if (((HEIGHT_MAP_1 * WIDTH_MAP_1) == tnd->id_tile))
 	{
-		_Mission.DownloadArt = false;
-		_Mission.Start = false;
+		tnd->DownloadArt = false;
+		tnd->Start = false;
 	}
 
 
-	if (_Mission.DownloadArt == false && _Mission.OnSureHalt == false && _Mission.OnIUO3 == false && In.IUP3._draw_SureStupe == false)
+	if (tnd->DownloadArt == false && tnd->OnSureHalt == false && tnd->OnIUO3 == false && In.IUP3._draw_SureStupe == false)
 	{
-		_Mission.screen_lock = false;
+		tnd->screen_lock = false;
 	}
 
 }
 //////////////////////////////////////////////////////////////////////////////
-void FunctionPrintToMission_2(Mission &_Mission, float _time, AllInterfaceMissiom &In)		//создание карты 
+void FunctionPrintToMission_2(AllInterfaceMissiom &In)		//создание карты 
 {
-	_Mission.screen_lock = true;
+	tnd->screen_lock = true;
 
-	if (_Mission.Start == true)
+	if (tnd->Start == true)
 	{
 		for (int i = 0; i < HEIGHT_MAP_2; i++)
 		{
 			for (int j = 0; j < WIDTH_MAP_2; j++)
 			{
-				if (_Mission.Miss[i][j].Get_Instantiate() == false && ((HEIGHT_MAP_2 * WIDTH_MAP_2) > _Mission.id_tile))
+				if (tnd->Miss[i][j].Get_Instantiate() == false && ((HEIGHT_MAP_2 * WIDTH_MAP_2) > tnd->id_tile))
 				{
-					_Mission.Miss[i][j].SetTile("a", true, (int)_Mission.id_tile, j, i, 128, 0, 64);
-					if ((TileMap2[i][j] == 'a')) _Mission.Miss[i][j].SetTile("a", true, (int)_Mission.id_tile, j, i, 128, 0, 64);	//травка
-					if ((TileMap2[i][j] == ' ')) _Mission.Miss[i][j].SetTile(" ", true, (int)_Mission.id_tile, j, i, 64, 704, 64);	//камешки на травке
-					if ((TileMap2[i][j] == ':')) _Mission.Miss[i][j].SetTile(":", true, (int)_Mission.id_tile, j, i, 64, 64, 64);	//дорога верх вниз
-					if ((TileMap2[i][j] == 'W')) _Mission.Miss[i][j].SetTile("W", true, (int)_Mission.id_tile, j, i, 128, 128, 64);	//левый край леса
-					if ((TileMap2[i][j] == 'e')) _Mission.Miss[i][j].SetTile("e", true, (int)_Mission.id_tile, j, i, 128, 64, 64);	//верхний левый угол леса
-					if ((TileMap2[i][j] == 'R')) _Mission.Miss[i][j].SetTile("R", true, (int)_Mission.id_tile, j, i, 128, 576, 64);	//сплошной лес
-					if ((TileMap2[i][j] == 'r')) _Mission.Miss[i][j].SetTile("r", true, (int)_Mission.id_tile, j, i, 128, 320, 64);	//верхний край леса
-					if ((TileMap2[i][j] == '*')) _Mission.Miss[i][j].SetTile("*", true, (int)_Mission.id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
-					if ((TileMap2[i][j] == '%')) _Mission.Miss[i][j].SetTile("%", true, (int)_Mission.id_tile, j, i, 64, 0, 64);	//дорога влево вправо
-					if ((TileMap2[i][j] == '1')) _Mission.Miss[i][j].SetTile("1", true, (int)_Mission.id_tile, j, i, 0, 0, 64, 64, 5);	//болото
-					if ((TileMap2[i][j] == '2')) _Mission.Miss[i][j].SetTile("2", true, (int)_Mission.id_tile, j, i, 0, 64, 64, 64, 5);	//болото
-					if ((TileMap2[i][j] == '3')) _Mission.Miss[i][j].SetTile("3", true, (int)_Mission.id_tile, j, i, 0, 128, 64, 64, 5);	//болото
-					if ((TileMap2[i][j] == '4')) _Mission.Miss[i][j].SetTile("4", true, (int)_Mission.id_tile, j, i, 0, 192, 64, 64, 5);	//болото
-					if ((TileMap2[i][j] == 'H')) _Mission.Miss[i][j].SetTile("H", true, (int)_Mission.id_tile, j, i, 256, 256, 64);	//холм
-					if ((TileMap2[i][j] == 'j')) _Mission.Miss[i][j].SetTile("J", true, (int)_Mission.id_tile, j, i, 256, 320, 64);	//холм
-					if ((TileMap2[i][j] == 'J')) _Mission.Miss[i][j].SetTile("j", true, (int)_Mission.id_tile, j, i, 256, 384, 64);	//холм
-					if ((TileMap2[i][j] == '!')) _Mission.Miss[i][j].SetTile("!", true, (int)_Mission.id_tile, j, i, 0, 576, 64);	//сожженая деревня
-					if ((TileMap2[i][j] == '>')) _Mission.Miss[i][j].SetTile(">", true, (int)_Mission.id_tile, j, i, 385, 256, 64);	//сожженая каменная крепость
-					_Mission.id_tile++;
-					_Mission.Start = false;
+					tnd->Miss[i][j].SetTile("a", true, (int)tnd->id_tile, j, i, 128, 0, 64);
+					if ((TileMap2[i][j] == 'a')) tnd->Miss[i][j].SetTile("a", true, (int)tnd->id_tile, j, i, 128, 0, 64);	//травка
+					if ((TileMap2[i][j] == ' ')) tnd->Miss[i][j].SetTile(" ", true, (int)tnd->id_tile, j, i, 64, 704, 64);	//камешки на травке
+					if ((TileMap2[i][j] == ':')) tnd->Miss[i][j].SetTile(":", true, (int)tnd->id_tile, j, i, 64, 64, 64);	//дорога верх вниз
+					if ((TileMap2[i][j] == 'W')) tnd->Miss[i][j].SetTile("W", true, (int)tnd->id_tile, j, i, 128, 128, 64);	//левый край леса
+					if ((TileMap2[i][j] == 'e')) tnd->Miss[i][j].SetTile("e", true, (int)tnd->id_tile, j, i, 128, 64, 64);	//верхний левый угол леса
+					if ((TileMap2[i][j] == 'R')) tnd->Miss[i][j].SetTile("R", true, (int)tnd->id_tile, j, i, 128, 576, 64);	//сплошной лес
+					if ((TileMap2[i][j] == 'r')) tnd->Miss[i][j].SetTile("r", true, (int)tnd->id_tile, j, i, 128, 320, 64);	//верхний край леса
+					if ((TileMap2[i][j] == '*')) tnd->Miss[i][j].SetTile("*", true, (int)tnd->id_tile, j, i, 64, 128, 64);	//дорога нижняя дуга поварачивает вправо
+					if ((TileMap2[i][j] == '%')) tnd->Miss[i][j].SetTile("%", true, (int)tnd->id_tile, j, i, 64, 0, 64);	//дорога влево вправо
+					if ((TileMap2[i][j] == '1')) tnd->Miss[i][j].SetTile("1", true, (int)tnd->id_tile, j, i, 0, 0, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '2')) tnd->Miss[i][j].SetTile("2", true, (int)tnd->id_tile, j, i, 0, 64, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '3')) tnd->Miss[i][j].SetTile("3", true, (int)tnd->id_tile, j, i, 0, 128, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == '4')) tnd->Miss[i][j].SetTile("4", true, (int)tnd->id_tile, j, i, 0, 192, 64, 64, 5);	//болото
+					if ((TileMap2[i][j] == 'H')) tnd->Miss[i][j].SetTile("H", true, (int)tnd->id_tile, j, i, 256, 256, 64);	//холм
+					if ((TileMap2[i][j] == 'j')) tnd->Miss[i][j].SetTile("J", true, (int)tnd->id_tile, j, i, 256, 320, 64);	//холм
+					if ((TileMap2[i][j] == 'J')) tnd->Miss[i][j].SetTile("j", true, (int)tnd->id_tile, j, i, 256, 384, 64);	//холм
+					if ((TileMap2[i][j] == '!')) tnd->Miss[i][j].SetTile("!", true, (int)tnd->id_tile, j, i, 0, 576, 64);	//сожженая деревня
+					if ((TileMap2[i][j] == '>')) tnd->Miss[i][j].SetTile(">", true, (int)tnd->id_tile, j, i, 385, 256, 64);	//сожженая каменная крепость
+					tnd->id_tile++;
+					tnd->Start = false;
 					//break; //Замедляет загрузку
 				}
 			}
 		}
 	}
 
-	if (_Mission.Start == false && _Mission.DownloadArt == true)
+	if (tnd->Start == false && tnd->DownloadArt == true)
 	{
-		_Mission.sprite_DownloadStrips.setTextureRect(IntRect(113, 769, 14 * (_Mission.id_tile / 2), 46));
+		tnd->sprite_DownloadStrips.setTextureRect(IntRect(113, 769, 14 * (tnd->id_tile / 2), 46));
 	}
 
 
-	if (((HEIGHT_MAP_2 * WIDTH_MAP_2) == _Mission.id_tile))
+	if (((HEIGHT_MAP_2 * WIDTH_MAP_2) == tnd->id_tile))
 	{
-		_Mission.DownloadArt = false;
-		_Mission.Start = false;
+		tnd->DownloadArt = false;
+		tnd->Start = false;
 	}
 
-	if (_Mission.DownloadArt == false && _Mission.OnSureHalt == false && _Mission.OnIUO3 == false && In.IUP3._draw_SureStupe == false)
+	if (tnd->DownloadArt == false && tnd->OnSureHalt == false && tnd->OnIUO3 == false && In.IUP3._draw_SureStupe == false)
 	{
-		_Mission.screen_lock = false;
+		tnd->screen_lock = false;
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
-void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//проверка на то занят тайл или нет
+bool TileIsEmpty(Tile & t) //проверка на то занят тайл или нет
 {
-
+	return t.unit == Unit::NIL;
+	/*
 	for (int i = 0; i < _Mission.HEIGHT_MAP; i++) //проверка занятости из за ланшафта
 		for (int j = 0; j < _Mission.WIDTH_MAP; j++)
 		{
@@ -204,19 +205,19 @@ void TileIsEmpty(Mission &_Mission, Player &MainCharacter, Enemy_1 &hostile)		//
 				}
 			}
 		}
-
+	*/
 }
 //////////////////////////////////////////////////////////////////////////////
-void ViewScroling(View &_view, Vector2i &_localPosition, float &_time, RenderWindow &_window, Mission &TeampMission)	//скроллинг до краев
+void ViewScroling(View &_view, Vector2i &_localPosition, RenderWindow &_window)	//скроллинг до краев
 {
-	if (TeampMission.screen_lock == false)
+	if (tnd->screen_lock == false)
 	{
 		if (_localPosition.x > _window.getSize().x - 10)
 		{
-			_view.move(0.9*_time, 0);
-			if (_view.getCenter().x > (128 * TeampMission.WIDTH_MAP) - 511) //разница в 510
+			_view.move(0.9*elapsed, 0);
+			if (_view.getCenter().x > (128 * tnd->WIDTH_MAP) - 511) //разница в 510
 			{
-				_view.move(-0.9*_time, 0);
+				_view.move(-0.9*elapsed, 0);
 			}
 
 		}
@@ -224,66 +225,66 @@ void ViewScroling(View &_view, Vector2i &_localPosition, float &_time, RenderWin
 
 		if (Keyboard::isKeyPressed(Keyboard::Right))
 		{
-			_view.move(0.9*_time, 0);
-			if (_view.getCenter().x > (128 * TeampMission.WIDTH_MAP) - 511) //разница в 510
+			_view.move(0.9*elapsed, 0);
+			if (_view.getCenter().x > (128 * tnd->WIDTH_MAP) - 511) //разница в 510
 			{
-				_view.move(-0.9*_time, 0);
+				_view.move(-0.9*elapsed, 0);
 			}
 		}
 
 
 		if (_localPosition.y > _window.getSize().y - 10)
 		{
-			_view.move(0, 0.9*_time);
-			if (_view.getCenter().y > (128 * TeampMission.HEIGHT_MAP) - 386)		//разница в 350
+			_view.move(0, 0.9*elapsed);
+			if (_view.getCenter().y > (128 * tnd->HEIGHT_MAP) - 386)		//разница в 350
 			{
-				_view.move(0, -0.9*_time);
+				_view.move(0, -0.9*elapsed);
 			}
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Down))
 		{
-			_view.move(0, 0.9*_time);
-			if (_view.getCenter().y > (128 * TeampMission.HEIGHT_MAP) - 386)		//разница в 385
+			_view.move(0, 0.9*elapsed);
+			if (_view.getCenter().y > (128 * tnd->HEIGHT_MAP) - 386)		//разница в 385
 			{
-				_view.move(0, -0.9*_time);
+				_view.move(0, -0.9*elapsed);
 			}
 		}
 
 		if (_localPosition.x < 10)
 		{
-			_view.move(-0.9*_time, 0);
+			_view.move(-0.9*elapsed, 0);
 			if (_view.getCenter().x - 511 < 0)
 			{
-				_view.move(0.9*_time, 0);
+				_view.move(0.9*elapsed, 0);
 			}
 
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Left))
 		{
-			_view.move(-0.9*_time, 0);
+			_view.move(-0.9*elapsed, 0);
 			if (_view.getCenter().x - 511 < 0)
 			{
-				_view.move(0.9*_time, 0);
+				_view.move(0.9*elapsed, 0);
 			}
 		}
 
 		if (_localPosition.y < 10)
 		{
-			_view.move(0, -0.9*_time);
+			_view.move(0, -0.9*elapsed);
 			if (_view.getCenter().y - 386 < 0)
 			{
-				_view.move(0, 0.9*_time);
+				_view.move(0, 0.9*elapsed);
 			}
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Up))
 		{
-			_view.move(0, -0.9*_time);
+			_view.move(0, -0.9*elapsed);
 			if (_view.getCenter().y - 386 < 0)
 			{
-				_view.move(0, 0.9*_time);
+				_view.move(0, 0.9*elapsed);
 			}
 		}
 	}
@@ -302,36 +303,34 @@ bool InspectionToStep(Unit &Inspect, int i, int j)	//проверка как далеко может п
 	else { return false; }
 }
 //////////////////////////////////////////////////////////////////////////////
-void GreenToTheTile(Unit &Teamp, Mission &TeampMiss)	//даем добро на рисования зеленых тайлов
+void GreenToTheTile(Unit &Teamp)	//даем добро на рисования зеленых тайлов
 {
-
 	float Pythagoras = 0;
-	for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
+	for (int i(0); i < tnd->HEIGHT_MAP; i++)
 	{
-		for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+		for (int j(0); j < tnd->WIDTH_MAP; j++)
 		{
-			Pythagoras = sqrt(pow((float)j - (float)Teamp.pos->x,2) + pow((float)i - (float)Teamp.pos->y,2));
+			Pythagoras = sqrt(pow((float)j - (float)Teamp.pos->x, 2) + pow((float)i - (float)Teamp.pos->y, 2));
 			if (Pythagoras <= Teamp.step)
 			{
-				if ((i != Teamp.pos->x || j != Teamp.pos->y) && TeampMiss.Miss[i][j].Get_Empty() == false)
+				if ((i != Teamp.pos->x || j != Teamp.pos->y) && tnd->Miss[i][j].Get_Empty() == false)
 				{
-					TeampMiss.Miss[i][j].StepUnit = true;
+					tnd->Miss[i][j].StepUnit = true;
 				}
 			}
 		}
 	}
-
 }
 //////////////////////////////////////////////////////////////////////////////
-void GreenTileOFF(Mission &TeampMiss)
+void GreenTileOFF()
 {
-	for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
+	for (int i(0); i < tnd->HEIGHT_MAP; i++)
 	{
-		for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+		for (int j(0); j < tnd->WIDTH_MAP; j++)
 		{
-			TeampMiss.Miss[i][j].StepUnit = false;
-			TeampMiss.Miss[i][j].Set_AttackOn(false);
-			TeampMiss.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
+			tnd->Miss[i][j].StepUnit = false;
+			tnd->Miss[i][j].Set_AttackOn(false);
+			tnd->Miss[i][j].spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64));
 		}
 	}
 
@@ -493,14 +492,14 @@ void interactionWithMap(Unit  &Teamp, string _land)
 
 }
 //////////////////////////////////////////////////////////////////////////////
-void SelectUnitPlayer(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission &TeampMiss, AllInterfaceMissiom &Inf)
+void SelectUnitPlayer(Event &_event, Player &MainCharacter, AllInterfaceMissiom &Inf)
 {
 	string teamp;
 	if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
 		if (_event.key.code == Mouse::Left)
 		{//а именно левая
 			for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
-				if (hovered(*MainCharacter.ArmyGamer[i].animation, _pos) && MainCharacter.ArmyGamer[i].isMove == false && MainCharacter.ArmyGamer[i]._Attack == false && MainCharacter.ArmyGamer[i].Life == true)//и при этом координата курсора попадает в спрайт
+				if (MainCharacter.ArmyGamer[i].animation->hovered() && MainCharacter.ArmyGamer[i].isMove == false && MainCharacter.ArmyGamer[i]._Attack == false && MainCharacter.ArmyGamer[i].Life == true)//и при этом координата курсора попадает в спрайт
 				{
 
 					MainCharacter.ArmyGamer[i].isSelect = true;
@@ -522,9 +521,9 @@ void SelectUnitPlayer(Event &_event, Vector2f &_pos, Player &MainCharacter, Miss
 					cout << "Unit:" << MainCharacter.ArmyGamer[i].UnitToUnit << endl;
 					cout << "Class Unit:" << MainCharacter.ArmyGamer[i].ClassUnit << endl;
 
-					if (TeampMiss.MovementPlayer == true && MainCharacter.ArmyGamer[i].CouterStep > 0)
+					if (tnd->MovementPlayer == true && MainCharacter.ArmyGamer[i].CouterStep > 0)
 					{
-						GreenToTheTile(MainCharacter.ArmyGamer[i], TeampMiss);	//рисуем зеленый тайлы вокруг юнита
+						GreenToTheTile(MainCharacter.ArmyGamer[i]);	//рисуем зеленый тайлы вокруг юнита
 					}
 				}
 		}
@@ -532,7 +531,7 @@ void SelectUnitPlayer(Event &_event, Vector2f &_pos, Player &MainCharacter, Miss
 }
 //////////////////////////////////////////////////////////////////////////////
 
-void SelectHostileUnit(Event &_event, Vector2f &_pos, Enemy_1 &hostile, Mission &TeampMiss, Player &MainCharacter, AllInterfaceMissiom &Inf)
+void SelectHostileUnit(Event &_event, Enemy_1 &hostile, Player &MainCharacter, AllInterfaceMissiom &Inf)
 {
 
 	if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
@@ -540,7 +539,7 @@ void SelectHostileUnit(Event &_event, Vector2f &_pos, Enemy_1 &hostile, Mission 
 		{
 			for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
 			{
-				if (hovered(*hostile.ArmyEnemy_1[i].animation, _pos) && hostile.ArmyEnemy_1[i].isSelectHostile == false && hostile.ArmyEnemy_1[i]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false && hostile.ArmyEnemy_1[i].Life == true)
+				if (hostile.ArmyEnemy_1[i].animation->hovered() && hostile.ArmyEnemy_1[i].isSelectHostile == false && hostile.ArmyEnemy_1[i]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false && hostile.ArmyEnemy_1[i].Life == true)
 				{
 					hostile.ArmyEnemy_1[i].isSelectHostile = true;
 
@@ -573,12 +572,12 @@ void SelectHostileUnit(Event &_event, Vector2f &_pos, Enemy_1 &hostile, Mission 
 }
 
 //////////////////////////////////////////////////////////////////////////////
-void AttackUnitPlayerToHostile(Event &_event, Vector2f &_pos, Player &MainCharacter, Enemy_1 &hostile, Mission &TeampMiss, float time)
+void AttackUnitPlayerToHostile(Event &_event, Player &MainCharacter, Enemy_1 &hostile)
 {
 
 	for (int ii(0); ii < MainCharacter.ArmyGamer.size(); ii++)
 	{
-		if (TeampMiss.MovementPlayer == true && MainCharacter.ArmyGamer[ii].CouterAttack > 0)
+		if (tnd->MovementPlayer == true && MainCharacter.ArmyGamer[ii].CouterAttack > 0)
 		{
 			for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
 			{
@@ -589,15 +588,15 @@ void AttackUnitPlayerToHostile(Event &_event, Vector2f &_pos, Player &MainCharac
 				{
 					if (hostile.ArmyEnemy_1[i].calculation_distance_Attack <= MainCharacter.ArmyGamer[ii].radius && MainCharacter.ArmyGamer[ii].isSelect == true && hostile.ArmyEnemy_1[i].Life == true)
 					{
-						TeampMiss.Miss[int(hostile.ArmyEnemy_1[i].pos->x)][int(hostile.ArmyEnemy_1[i].pos->y)].Set_AttackOn(true);
+						tnd->Miss[int(hostile.ArmyEnemy_1[i].pos->x)][int(hostile.ArmyEnemy_1[i].pos->y)].Set_AttackOn(true);
 						if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
 							if (_event.key.code == Mouse::Right)
 							{//а именно левая
-								if (hovered(*hostile.ArmyEnemy_1[i].animation, _pos) && MainCharacter.ArmyGamer[ii]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false)//и при этом координата курсора попадает в спрайт
+								if (hostile.ArmyEnemy_1[i].animation->hovered() && MainCharacter.ArmyGamer[ii]._Attack == false && hostile.ArmyEnemy_1[i].ReceivingCutting == false && hostile.ArmyEnemy_1[i].ReceivingPricking == false)//и при этом координата курсора попадает в спрайт
 								{
 
 									cout << "\nAttack!" << endl;
-									MainCharacter.ArmyGamer[ii].AttackToAttack(hostile.ArmyEnemy_1[i], time);
+									MainCharacter.ArmyGamer[ii].AttackToAttack(hostile.ArmyEnemy_1[i]);
 									MainCharacter.orders--;
 									MainCharacter.ArmyGamer[ii].CouterAttack--;
 									cout << "Осталось приказов:" << MainCharacter.orders << endl;
@@ -613,7 +612,7 @@ void AttackUnitPlayerToHostile(Event &_event, Vector2f &_pos, Player &MainCharac
 }
 //////////////////////////////////////////////////////////////////////////////
 
-void OffSelectUnitToUnitPlayer(Player &MainCharacter, Mission &TeampMiss)
+void OffSelectUnitToUnitPlayer(Player &MainCharacter)
 {
 
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
@@ -626,7 +625,7 @@ void OffSelectUnitToUnitPlayer(Player &MainCharacter, Mission &TeampMiss)
 				{
 					MainCharacter.ArmyGamer[i].isSelect = false;
 					MainCharacter.ArmyGamer[ii].isSelect = false;
-					GreenTileOFF(TeampMiss);
+					GreenTileOFF();
 				}
 			}
 		}
@@ -636,7 +635,7 @@ void OffSelectUnitToUnitPlayer(Player &MainCharacter, Mission &TeampMiss)
 
 //////////////////////////////////////////////////////////////////////////////
 
-void OffSelectUnitToHostilePlayer(Enemy_1 &hostile, Mission &TeampMiss)
+void OffSelectUnitToHostilePlayer(Enemy_1 &hostile)
 {
 	for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
 	{
@@ -656,22 +655,22 @@ void OffSelectUnitToHostilePlayer(Enemy_1 &hostile, Mission &TeampMiss)
 
 //////////////////////////////////////////////////////////////////////////////
 
-void TileGreenOn(Event &_event, Vector2f &_pos, Mission &TeampMiss)
+void TileGreenOn(Event &_event)
 {
 
-	if (TeampMiss.MovementPlayer == true)
+	if (tnd->MovementPlayer == true)
 	{
 		if (_event.MouseMoved)
 		{
-			for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
+			for (int i(0); i < tnd->HEIGHT_MAP; i++)
 			{
-				for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+				for (int j(0); j < tnd->WIDTH_MAP; j++)
 				{
-					if (hovered(*TeampMiss.Miss[i][j].g, _pos) && TeampMiss.Miss[i][j].StepUnit == true)
+					if (tnd->Miss[i][j].g->hovered() && tnd->Miss[i][j].StepUnit == true)
 					{
-						TeampMiss.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(64, 0, 64, 64));
+						tnd->Miss[i][j].spriteGreenTile.setTextureRect(IntRect(64, 0, 64, 64));
 					}
-					else { TeampMiss.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64)); }
+					else { tnd->Miss[i][j].spriteGreenTile.setTextureRect(IntRect(0, 0, 64, 64)); }
 
 				}
 			}
@@ -681,24 +680,24 @@ void TileGreenOn(Event &_event, Vector2f &_pos, Mission &TeampMiss)
 }
 //////////////////////////////////////////////////////////////////////////////
 
-void LocalAreaInspectionClick(Event &_event, Vector2f &_pos, Mission &TeampMiss)
+void LocalAreaInspectionClick(Event &_event)
 {
 
 	if (_event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
 		if (_event.key.code == Mouse::Middle)
 		{//а именно левая
-			for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
+			for (int i(0); i < tnd->HEIGHT_MAP; i++)
 			{
-				for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+				for (int j(0); j < tnd->WIDTH_MAP; j++)
 				{
-					if (hovered(*TeampMiss.Miss[i][j].g, _pos))
+					if (tnd->Miss[i][j].g->hovered())
 					{
 
-						cout << "\nEmpty:" << TeampMiss.Miss[i][j].Get_Empty() << endl;
-						cout << "Land:" << TeampMiss.Miss[i][j].GetLand() << endl;
-						cout << "X:" << TeampMiss.Miss[i][j].g->truePos->x << endl;
-						cout << "Y:" << TeampMiss.Miss[i][j].g->truePos->x << endl;
-						cout << "Tile i:" << TeampMiss.Miss[i][j].Get_X() << " Tile j:" << TeampMiss.Miss[i][j].Get_Y() << endl;
+						cout << "\nEmpty:" << tnd->Miss[i][j].Get_Empty() << endl;
+						cout << "Land:" << tnd->Miss[i][j].GetLand() << endl;
+						cout << "X:" << tnd->Miss[i][j].g->truePos->x << endl;
+						cout << "Y:" << tnd->Miss[i][j].g->truePos->x << endl;
+						cout << "Tile i:" << tnd->Miss[i][j].Get_X() << " Tile j:" << tnd->Miss[i][j].Get_Y() << endl;
 
 					}
 				}
@@ -709,7 +708,7 @@ void LocalAreaInspectionClick(Event &_event, Vector2f &_pos, Mission &TeampMiss)
 
 //////////////////////////////////////////////////////////////////////////////
 
-void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission &TeampMiss)
+void ClickToGOTile(Event &_event, Player &MainCharacter)
 {
 
 	for (int ii(0); ii < MainCharacter.ArmyGamer.size(); ii++)
@@ -718,25 +717,22 @@ void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission
 			if (_event.type == Event::MouseButtonPressed)
 				if (_event.key.code == Mouse::Right)
 				{
-					for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
-						for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+					for (int i(0); i < tnd->HEIGHT_MAP; i++)
+						for (int j(0); j < tnd->WIDTH_MAP; j++)
 						{
-							if (TeampMiss.Miss[i][j].Get_Empty() == false)
+							if (tnd->Miss[i][j].Get_Empty() == false)
 							{
-								if (hovered(*TeampMiss.Miss[i][j].g, _pos))
+								if (tnd->Miss[i][j].g->hovered())
 								{
 									if (InspectionToStep(MainCharacter.ArmyGamer[ii], i, j))
 									{
-										if (TeampMiss.MovementPlayer == true && MainCharacter.ArmyGamer[ii].CouterStep > 0)
+										if (tnd->MovementPlayer == true && MainCharacter.ArmyGamer[ii].CouterStep > 0)
 										{
-											interactionWithMap(MainCharacter.ArmyGamer[ii], TeampMiss.Miss[i][j].GetLand());
-											MainCharacter.ArmyGamer[ii].moveTo = *TeampMiss.Miss[i][j].g->pos;
-
-											//MainCharacter.ArmyGamer[ii].pos->x = TeampMiss.Miss[i][j].Get_X();
-											//MainCharacter.ArmyGamer[ii].pos->y = TeampMiss.Miss[i][j].Get_Y(); //FIXME: Спутанные x и y
+											interactionWithMap(MainCharacter.ArmyGamer[ii], tnd->Miss[i][j].GetLand());
+											MainCharacter.ArmyGamer[ii].moveTo = *tnd->Miss[i][j].g->pos;
 											MainCharacter.ArmyGamer[ii].isMove = true;
 
-											MainCharacter.ArmyGamer[ii]._Land = TeampMiss.Miss[i][j].GetLand();
+											MainCharacter.ArmyGamer[ii].ground = &tnd->Miss[i][j];
 											MainCharacter.orders--;
 											MainCharacter.ArmyGamer[ii].CouterStep--;
 											cout << "Осталось приказов:" << MainCharacter.orders << endl;
@@ -745,39 +741,36 @@ void ClickToGOTile(Event &_event, Vector2f &_pos, Player &MainCharacter, Mission
 									else
 									{
 										MainCharacter.ArmyGamer[ii].isSelect = false;
-										GreenTileOFF(TeampMiss);
+										GreenTileOFF();
 									}
 								}
 
 								else
 								{
 									MainCharacter.ArmyGamer[ii].isSelect = false;
-									GreenTileOFF(TeampMiss);
+									GreenTileOFF();
 								}
 
 							}
 						}
-
 				}
-
 	}
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
-void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy_1 &hostile, Player &MainCharacter)	//если юнит в радиусе атаки и мы мышкой попадаем на этого юнита
+void TileRedOnRedCursor(Event &_event, Enemy_1 &hostile, Player &MainCharacter)	//если юнит в радиусе атаки и мы мышкой попадаем на этого юнита
 {
 
-	if (TeampMiss.MovementPlayer == true)
+	if (tnd->MovementPlayer == true)
 	{
-		for (int i(0); i < TeampMiss.HEIGHT_MAP; i++)
+		for (int i(0); i < tnd->HEIGHT_MAP; i++)
 		{
-			for (int j(0); j < TeampMiss.WIDTH_MAP; j++)
+			for (int j(0); j < tnd->WIDTH_MAP; j++)
 			{
-				if (hovered(*TeampMiss.Miss[i][j].g, _pos) && TeampMiss.Miss[i][j].Get_AttackOn() == true)
+				if (tnd->Miss[i][j].g->hovered() && tnd->Miss[i][j].Get_AttackOn() == true)
 				{
-					TeampMiss.Miss[i][j]._AttackON = true;
+					tnd->Miss[i][j]._AttackON = true;
 
 					for (int ii(0); ii < hostile.ArmyEnemy_1.size(); ii++)
 					{
@@ -789,9 +782,9 @@ void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy
 					}
 				}
 
-				if (hovered(*TeampMiss.Miss[i][j].g, _pos) == false && TeampMiss.Miss[i][j].Get_AttackOn() == true)
+				if (tnd->Miss[i][j].g->hovered() == false && tnd->Miss[i][j].Get_AttackOn() == true)
 				{
-					TeampMiss.Miss[i][j]._AttackON = false;
+					tnd->Miss[i][j]._AttackON = false;
 
 					for (int ii(0); ii < hostile.ArmyEnemy_1.size(); ii++)
 					{
@@ -810,13 +803,13 @@ void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy
 					if (hostile.ArmyEnemy_1[ii]._Attack == true || hostile.ArmyEnemy_1[ii].ReceivingCutting == true || hostile.ArmyEnemy_1[ii].ReceivingPricking == true)
 					{
 						hostile.ArmyEnemy_1[ii].isSelectHostile = false;
-						TeampMiss.Miss[i][j]._AttackON = false;
+						tnd->Miss[i][j]._AttackON = false;
 					}
 
-					if (hostile.ArmyEnemy_1[ii].Life == false && hostile.ArmyEnemy_1[ii].pos->x == i && hostile.ArmyEnemy_1[ii].pos->y == j == TeampMiss.Miss[i][j]._AttackON == true)
+					if (hostile.ArmyEnemy_1[ii].Life == false && hostile.ArmyEnemy_1[ii].pos->x == i && hostile.ArmyEnemy_1[ii].pos->y == j == tnd->Miss[i][j]._AttackON == true)
 					{
-						TeampMiss.Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)]._AttackON = false;
-						TeampMiss.Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)].Set_AttackOn(false);
+						tnd->Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)]._AttackON = false;
+						tnd->Miss[int(hostile.ArmyEnemy_1[ii].pos->x)][int(hostile.ArmyEnemy_1[ii].pos->y)].Set_AttackOn(false);
 					}
 				}
 			}
@@ -826,72 +819,72 @@ void TileRedOnRedCursor(Event &_event, Vector2f &_pos, Mission &TeampMiss, Enemy
 }
 
 //////////////////////////////////////////////////////////////////////////////
-void IsSelectMouseMissiomStatic(Event &_event, Vector2f &_pos, Player &MainCharacter, Enemy_1 &hostile, Mission &TeampMiss, float time, AllInterfaceMissiom &Inf) //двигаем мышкой
+void IsSelectMouseMissiomStatic(Event &_event, Player &MainCharacter, Enemy_1 &hostile, AllInterfaceMissiom &Inf) //двигаем мышкой
 {
-	if (TeampMiss.screen_lock == false)
+	if (tnd->screen_lock == false)
 	{
-		SelectUnitPlayer(_event, _pos, MainCharacter, TeampMiss, Inf);	//выдиляем юнита
+		SelectUnitPlayer(_event, MainCharacter, Inf);	//выдиляем юнита
 
-		SelectHostileUnit(_event, _pos, hostile, TeampMiss, MainCharacter, Inf); //функция выделения юнита противника для вывода информации
+		SelectHostileUnit(_event, hostile, MainCharacter, Inf); //функция выделения юнита противника для вывода информации
 
-		AttackUnitPlayerToHostile(_event, _pos, MainCharacter, hostile, TeampMiss, time);
+		AttackUnitPlayerToHostile(_event, MainCharacter, hostile);
 
-		OffSelectUnitToUnitPlayer(MainCharacter, TeampMiss);	//сбрасываем курсор если нажимаем на другого юнита
+		OffSelectUnitToUnitPlayer(MainCharacter);	//сбрасываем курсор если нажимаем на другого юнита
 
-		TileGreenOn(_event, _pos, TeampMiss);	//окрашиваем тайл зеленый в красный
+		TileGreenOn(_event);	//окрашиваем тайл зеленый в красный
 
-		LocalAreaInspectionClick(_event, _pos, TeampMiss);	//проверяем тайл его внутренности
+		LocalAreaInspectionClick(_event);	//проверяем тайл его внутренности
 
-		ClickToGOTile(_event, _pos, MainCharacter, TeampMiss);	//клик ходьба в нужный тайл
+		ClickToGOTile(_event, MainCharacter);	//клик ходьба в нужный тайл
 	}
 
 }
 //////////////////////////////////////////////////////////////////////////////
-void DrawToSpriteMission(RenderWindow &_window, float time, Mission &_Missiom)	//вывод спрайтов на экран
+void DrawToSpriteMission(RenderWindow &_window)	//вывод спрайтов на экран
 {
-	for (int i(0); i < _Missiom.HEIGHT_MAP; i++)
-		for (int j(0); j < _Missiom.WIDTH_MAP; j++)
+	for (int i(0); i < tnd->HEIGHT_MAP; i++)
+		for (int j(0); j < tnd->WIDTH_MAP; j++)
 		{
-			if (!_Missiom.screen_lock) {
-				if (_Missiom.Miss[i][j].g->animated)
+			if (!tnd->screen_lock) {
+				if (tnd->Miss[i][j].g->animated)
 				{
-					_Missiom.Miss[i][j].g->drawTo(_window, time);
+					tnd->Miss[i][j].g->drawTo(_window);
 				}
 				else
 				{
-					_Missiom.Miss[i][j].g->drawTo(_window);
+					tnd->Miss[i][j].g->drawTo(_window);
 				}
 			}
-			_Missiom.Miss[i][j].InspectionTile = false;		//все проверку сбарсываем
+			tnd->Miss[i][j].InspectionTile = false;		//все проверку сбарсываем
 		}
 }
 //////////////////////////////////////////////////////////////////////////////
-void DrawSpriteCursor(RenderWindow &_window, float time, Mission &_Missiom)
+void DrawSpriteCursor(RenderWindow &_window)
 {
-	for (int i(0); i < _Missiom.HEIGHT_MAP; i++)
-		for (int j(0); j < _Missiom.WIDTH_MAP; j++)
+	for (int i(0); i < tnd->HEIGHT_MAP; i++)
+		for (int j(0); j < tnd->WIDTH_MAP; j++)
 		{
-			_Missiom.Miss[i][j].spriteGreenTile.setPosition(_Missiom.Miss[i][j].Get_X() * 128, _Missiom.Miss[i][j].Get_Y() * 128);
-			if (_Missiom.Miss[i][j].StepUnit == true)
+			tnd->Miss[i][j].spriteGreenTile.setPosition(tnd->Miss[i][j].Get_X() * 128, tnd->Miss[i][j].Get_Y() * 128);
+			if (tnd->Miss[i][j].StepUnit == true)
 			{
-				_window.draw(_Missiom.Miss[i][j].spriteGreenTile);
+				_window.draw(tnd->Miss[i][j].spriteGreenTile);
 			}
 
-			if (_Missiom.Miss[i][j].Get_AttackOn() == true)
+			if (tnd->Miss[i][j].Get_AttackOn() == true)
 			{
-				_Missiom.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(128, 0, 64, 64));
-				_window.draw(_Missiom.Miss[i][j].spriteGreenTile);
+				tnd->Miss[i][j].spriteGreenTile.setTextureRect(IntRect(128, 0, 64, 64));
+				_window.draw(tnd->Miss[i][j].spriteGreenTile);
 			}
 
-			if (_Missiom.Miss[i][j]._AttackON == true)
+			if (tnd->Miss[i][j]._AttackON == true)
 			{
-				_Missiom.Miss[i][j].spriteGreenTile.setTextureRect(IntRect(192, 0, 64, 64));
-				_window.draw(_Missiom.Miss[i][j].spriteGreenTile);
+				tnd->Miss[i][j].spriteGreenTile.setTextureRect(IntRect(192, 0, 64, 64));
+				_window.draw(tnd->Miss[i][j].spriteGreenTile);
 			}
 		}
 }
 //////////////////////////////////////////////////////////////////////////////
-void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_window, float time) //рисуем спрайты юнитов армии игрока
+void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_window) //рисуем спрайты юнитов армии игрока
 {
 	/*
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
@@ -994,22 +987,22 @@ void DrawSpriteUnit(Player &MainCharacter, Enemy_1 &hostile, RenderWindow &_wind
 		}
 		*/
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++) {
-		MainCharacter.ArmyGamer[i].drawTo(_window, time);
+		MainCharacter.ArmyGamer[i].drawTo(_window);
 	}
 	for (int i(0); i < hostile.ArmyEnemy_1.size(); i++) {
-		hostile.ArmyEnemy_1[i].drawTo(_window, time);
+		hostile.ArmyEnemy_1[i].drawTo(_window);
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
-void UpdateUnitArmy(Player &MainCharacter, Enemy_1 &hostile, Mission &TeampMision, float time)   //обновление юнитов на карте
+void UpdateUnitArmy(Player &MainCharacter, Enemy_1 &hostile)   //обновление юнитов на карте
 {
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
-		MainCharacter.ArmyGamer[i].Update(TeampMision, time);
+		MainCharacter.ArmyGamer[i].Update();
 
 	if (hostile.ArmyEnemy_1.empty() == false)
 	{
 		for (int i(0); i < hostile.ArmyEnemy_1.size(); i++)
-			hostile.ArmyEnemy_1[i].Update(TeampMision, time);
+			hostile.ArmyEnemy_1[i].Update();
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -1066,16 +1059,16 @@ string Generation_Rand_name()
 }
 //////////////////////////////////////////////////////////////////////////////
 
-void PressPassStep(AllInterfaceMissiom &In, Event &_event, Player &MainCharacter, Mission &_Missiom, RenderWindow &windows)
+void PressPassStep(AllInterfaceMissiom &In, Event &_event, Player &MainCharacter, RenderWindow &windows)
 {
 
-	if (Keyboard::isKeyPressed(Keyboard::Space) && MainCharacter.orders > 0 && _Missiom.PressedSpace == false)
+	if (Keyboard::isKeyPressed(Keyboard::Space) && MainCharacter.orders > 0 && tnd->PressedSpace == false)
 	{
-		_Missiom.PressedSpace = true;
-		if (_Missiom.PressedSpace == true)
+		tnd->PressedSpace = true;
+		if (tnd->PressedSpace == true)
 		{
 			cout << "Нажат space" << endl;
-			_Missiom.screen_lock = true;
+			tnd->screen_lock = true;
 			In.IUP3._draw_SureStupe = true;
 		}
 
@@ -1084,19 +1077,19 @@ void PressPassStep(AllInterfaceMissiom &In, Event &_event, Player &MainCharacter
 
 	if (Keyboard::isKeyPressed(Keyboard::Space) && MainCharacter.orders <= 0)
 	{
-		_Missiom.PressedSpace = true;
-		if (_Missiom.PressedSpace == true)
+		tnd->PressedSpace = true;
+		if (tnd->PressedSpace == true)
 		{
-			_Missiom.StepPlayerInspection = true;
+			tnd->StepPlayerInspection = true;
 		}
 	}
 
 }
 //////////////////////////////////////////////////////////////////////////////
 
-void StepOnStep(Player &MainCharacter, Mission &_Missiom)
+void StepOnStep(Player &MainCharacter)
 {
-	if (_Missiom.StepPlayerInspection == true)
+	if (tnd->StepPlayerInspection == true)
 	{
 		for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
 		{
@@ -1108,48 +1101,48 @@ void StepOnStep(Player &MainCharacter, Mission &_Missiom)
 			}
 		}
 		MainCharacter.orders = MainCharacter.GetMaxOrders();
-		_Missiom.StepPlayerInspection = false;
-		_Missiom.CouterS++;
-		GreenTileOFF(_Missiom);
+		tnd->StepPlayerInspection = false;
+		tnd->CouterS++;
+		GreenTileOFF();
 	}
 }
 
 
 //////////////////////////////////////////////////////////////////////////////
 
-void IsSelectMouseMissiomInterace(AllInterfaceMissiom &In, Event &_event, RenderWindow &windows, Mission &_Missiom, Player &MainCharacter, float time)
+void IsSelectMouseMissiomInterace(AllInterfaceMissiom &In, Event &_event, RenderWindow &windows, Player &MainCharacter)
 {
-	if (_Missiom.screen_lock == false)
+	if (tnd->screen_lock == false)
 	{
 		In.Ex.IsSelectExit(_event, windows);
-		In.IUP.IsSelectInformUnitPlayer(_event, windows, _Missiom);
+		In.IUP.IsSelectInformUnitPlayer(_event, windows);
 		In.IUP2.IsSelectInformUnitHostile(_event, windows);
-		In._map.IsSelectInterfaceMap(_event, windows, _Missiom, MainCharacter);
-		PressPassStep(In, _event, MainCharacter, _Missiom, windows);
+		In._map.IsSelectInterfaceMap(_event, windows, MainCharacter);
+		PressPassStep(In, _event, MainCharacter, windows);
 
 	}
-	In.IUP3.IsSelectSureStupee(_event, windows, _Missiom);
-	In.HaltNo.IsSelectSureHalt(_event, windows, _Missiom);
+	In.IUP3.IsSelectSureStupee(_event, windows);
+	In.HaltNo.IsSelectSureHalt(_event, windows);
 
 
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
-void DrawInterfaceMission(AllInterfaceMissiom &In, RenderWindow &window, Mission &Missiom)
+void DrawInterfaceMission(AllInterfaceMissiom &In, RenderWindow &window)
 {
 	In.Ex.DrawExit(window);
 	In.IUP.DrawInfo(window);
 	In.IUP2.DrawInfoHostile(window);
-	In.IUP3.IsDrawSureStupee(window, Missiom);
+	In.IUP3.IsDrawSureStupee(window);
 	In._map.IsDrawInterfaceMap(window);
-	In.HaltNo.IsDrawSureHalt(window, Missiom);
+	In.HaltNo.IsDrawSureHalt(window);
 	In.Tray.DrawTrayUnit(window);
 
-	if (Missiom.DownloadArt == true)
+	if (tnd->DownloadArt == true)
 	{
-		window.draw(Missiom.sprite_DownloadArt);
-		window.draw(Missiom.sprite_DownloadStrips);
+		window.draw(tnd->sprite_DownloadArt);
+		window.draw(tnd->sprite_DownloadStrips);
 	}
 }
 
@@ -1208,7 +1201,7 @@ void BroadcastVariablesHostile(AllInterfaceMissiom &In, Unit &Teamp)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &hostile, Mission &_Missiom, Event &_event, Vector2f &_pos, float time)	//передача данных в простые окна информации о юнитах
+void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &hostile,  Event &_event)	//передача данных в простые окна информации о юнитах
 {
 	for (int i(0); i < MainCharacter.ArmyGamer.size(); i++)
 	{
@@ -1219,7 +1212,7 @@ void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &ho
 				MainCharacter.ArmyGamer[i].Halt();
 				In.IUP.missingStep = false;
 				MainCharacter.orders -= 1;
-				GreenTileOFF(_Missiom);
+				GreenTileOFF();
 				MainCharacter.ArmyGamer[i].isSelect = false;
 
 				//cout << "Sraborala knopka otdiha" << endl;
@@ -1263,7 +1256,7 @@ void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &ho
 		if (In.IUP.Fast == true && (In.IUP.UnitId == MainCharacter.ArmyGamer[i].Id) && MainCharacter.ArmyGamer[i].isSelect == true && MainCharacter.orders > 0 && MainCharacter.ArmyGamer[i].CouterStep > 0)
 		{
 			MainCharacter.ArmyGamer[i].fast_step_True = true;
-			GreenToTheTile(MainCharacter.ArmyGamer[i], _Missiom);
+			GreenToTheTile(MainCharacter.ArmyGamer[i]);
 
 			break;
 		}
@@ -1272,12 +1265,12 @@ void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &ho
 		if (In.IUP.Fast == false && In.IUP.UnitId == MainCharacter.ArmyGamer[i].Id && MainCharacter.ArmyGamer[i].isSelect == true && MainCharacter.orders > 0 && MainCharacter.ArmyGamer[i].CouterStep > 0)
 		{
 			MainCharacter.ArmyGamer[i].fast_step_True = false;
-			GreenTileOFF(_Missiom);
-			GreenToTheTile(MainCharacter.ArmyGamer[i], _Missiom);
-			if (_Missiom.screen_lock == false)
+			GreenTileOFF();
+			GreenToTheTile(MainCharacter.ArmyGamer[i]);
+			if (tnd->screen_lock == false)
 			{
-				TileGreenOn(_event, _pos, _Missiom);
-				AttackUnitPlayerToHostile(_event, _pos, MainCharacter, hostile, _Missiom, time);
+				TileGreenOn(_event);
+				AttackUnitPlayerToHostile(_event, MainCharacter, hostile);
 			}
 			break;
 		}
@@ -1333,61 +1326,61 @@ void UpdateInterface(AllInterfaceMissiom &In, Player &MainCharacter, Enemy_1 &ho
 	}
 
 	In._map.Order = (int)MainCharacter.orders;
-	In._map._CouterS = _Missiom.CouterS;
+	In._map._CouterS = tnd->CouterS;
 
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
-void IsSelectMouseMissiomStaticNON(Event &event, Vector2f &pos, Player &MainCharacter, Enemy_1 & hostile, Mission& _Missiom)
+void IsSelectMouseMissiomStaticNON(Event &event, Player &MainCharacter, Enemy_1 & hostile)
 {
-	if (_Missiom.screen_lock == false)
+	if (tnd->screen_lock == false)
 	{
-		TileRedOnRedCursor(event, pos, _Missiom, hostile, MainCharacter);	//окрашиваем тайл атаки если попадаем в спрайт мышью
-		OffSelectUnitToHostilePlayer(hostile, _Missiom);	//сбрасываем курсор с вражеского если выделяем другого вражеского юнита
+		TileRedOnRedCursor(event, hostile, MainCharacter);	//окрашиваем тайл атаки если попадаем в спрайт мышью
+		OffSelectUnitToHostilePlayer(hostile);	//сбрасываем курсор с вражеского если выделяем другого вражеского юнита
 	}
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
-void UpdateMissiom(Mission& _Missiom, Player& MainCharacter, float time)
+void UpdateMissiom(Player& MainCharacter)
 {
-	_Missiom.FrameSpace += time;	//засикаем время для промежутку между нажатием клавиши space
-	_Missiom.CouterClick_Frame += time;	//запускае время, для промежутку между нажатием на кнопку ускорить шаг
-	_Missiom.FrameDownload += time;
+	tnd->FrameSpace += elapsed;	//засикаем время для промежутку между нажатием клавиши space
+	tnd->CouterClick_Frame += elapsed;	//запускае время, для промежутку между нажатием на кнопку ускорить шаг
+	tnd->FrameDownload += elapsed;
 
-	if (_Missiom.CouterClick_Frame > 1000 && _Missiom.Teamp_CouterClick_Frame == true)
+	if (tnd->CouterClick_Frame > 1000 && tnd->Teamp_CouterClick_Frame == true)
 	{
-		_Missiom.CouterClick_Frame = 0;
+		tnd->CouterClick_Frame = 0;
 
-		if (_Missiom.Fast_2 == true)
+		if (tnd->Fast_2 == true)
 		{
-			_Missiom.Fast_2 = false;
+			tnd->Fast_2 = false;
 		}
 
-		_Missiom.Teamp_CouterClick_Frame = false;
+		tnd->Teamp_CouterClick_Frame = false;
 	}
 
-	if (_Missiom.FrameDownload > 500 && _Missiom.DownloadArt == true)
+	if (tnd->FrameDownload > 500 && tnd->DownloadArt == true)
 	{
-		_Missiom.FrameDownload = 0;
-		_Missiom.Start = true;
+		tnd->FrameDownload = 0;
+		tnd->Start = true;
 	}
 
-	if (_Missiom.FrameSpace > 2000)	//для промежутка нажатие клавиши space
+	if (tnd->FrameSpace > 2000)	//для промежутка нажатие клавиши space
 	{
-		_Missiom.FrameSpace = 0;
-		_Missiom.PressedSpace = false;
+		tnd->FrameSpace = 0;
+		tnd->PressedSpace = false;
 	}
 
 	if (MainCharacter.orders <= 0)	//если у игрока не осталось ходов, то мы отбираем возможность ходить
 	{
-		_Missiom.MovementPlayer = false;
+		tnd->MovementPlayer = false;
 	}
 
 	if (MainCharacter.orders > 0)
 	{
-		_Missiom.MovementPlayer = true;
+		tnd->MovementPlayer = true;
 	}
-	StepOnStep(MainCharacter, _Missiom);
+	StepOnStep(MainCharacter);
 }

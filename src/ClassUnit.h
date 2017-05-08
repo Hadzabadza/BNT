@@ -8,6 +8,7 @@ using namespace std;
 using namespace sf;
 
 class AnimExtended;
+class Mission;
 
 class Unit
 {	
@@ -40,6 +41,7 @@ public:
 
 	////***Техническая механика юнитов***
 	static Unit * Unit::NIL;//Пустышка для проверок
+	Tile * ground;          //Тайл, на котором стоит
 	int UnitToUnit;			//индитификатор по которому будет определяться какого юнита мы создаем
 	Unit * gets_lyuley;     //Цель приказа атаки
 	string _Land;			//земля на которой стоит юнит
@@ -62,14 +64,13 @@ protected:
 public:
 
 	Unit(float, float, float, float, int, int, int, int, string, int, string);		//создания юнита
-	Unit(void) {};
 
-	void To_Move(Mission&, float);	   //функция движения,
-	void Update(Mission&, float);	   //функция апдейт юнита
-	void AttackToAttack(Unit&, float); //Приказ атаковать
+	void To_Move();	   //функция движения,
+	void Update();	   //функция апдейт юнита
+	void AttackToAttack(Unit&); //Приказ атаковать
 	void damageTarget();               //Попадание атакой
-	void AnimationToAttack(float);	   //Анимация атаки
-	void ReceivingFace(float);		   //Анимация получения урона
+	void AnimationToAttack();	   //Анимация атаки
+	void ReceivingFace();		   //Анимация получения урона
 	void Halt();
-	void drawTo(RenderWindow & window, float time);
+	void drawTo(RenderWindow & window);
 };

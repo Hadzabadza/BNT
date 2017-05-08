@@ -80,7 +80,7 @@ public:
 	float StaminaUnit, MoraleUnit, ConstStaminaUnit, ConstMoraleUnit;			//выносливость на интерфейс - моральное состояние на интерфейс
 
 	InformUnitPlayer();
-	void IsSelectInformUnitPlayer(Event&, RenderWindow&, Mission&);
+	void IsSelectInformUnitPlayer(Event&, RenderWindow&);
 	void DrawStrips(RenderWindow&);
 	void DrawInfo(RenderWindow&);	//выводим на экран
 	int IntToInt(int, int);
@@ -148,8 +148,8 @@ public:
 	bool _draw_SureStupe;
 	bool cross_SureStupe;
 
-	void IsSelectSureStupee(Event&, RenderWindow&, Mission&);
-	void IsDrawSureStupee(RenderWindow&, Mission&);
+	void IsSelectSureStupee(Event&, RenderWindow&);
+	void IsDrawSureStupee(RenderWindow&);
 	SureStupe();
 };
 
@@ -166,8 +166,8 @@ public:
 	bool _draw_SureHalt;
 	bool cross_SureHalt;
 
-	void IsSelectSureHalt(Event&, RenderWindow&, Mission&);
-	void IsDrawSureHalt(RenderWindow&, Mission&);
+	void IsSelectSureHalt(Event&, RenderWindow&);
+	void IsDrawSureHalt(RenderWindow&);
 	SureHalt();
 };
 
@@ -195,7 +195,7 @@ public:
 
 	InterfaceMap();
 	void IsDrawInterfaceMap(RenderWindow&);
-	void IsSelectInterfaceMap(Event&, RenderWindow&, Mission&, Player&);
+	void IsSelectInterfaceMap(Event&, RenderWindow&, Player&);
 };
 
 class TrayUnit_index

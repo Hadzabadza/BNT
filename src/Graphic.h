@@ -23,7 +23,7 @@ public:
 	Graphic(Vector2f & _pos, Sprite & _sheet, Vector2i _carve, Vector2i _dim);
 	void updateTruePosition();                              //Переводит сеточную позицию в позицию на экране
 	virtual void drawTo(RenderWindow & drawTo);				//Нарисовать спрайт
-	virtual void drawTo(RenderWindow & drawTo, float time); //Пустышка для анимированных спрайтов
+	bool hovered();                                         //Проверка на наличие курсора над графкой
 };
 
 class Animated :public Graphic {//Анимированное дополнение к графическому компоненту
@@ -31,13 +31,13 @@ public:
 	unsigned frames;		//Количество кадров в анимации
 
 	Animated(Graphic & g, unsigned _frames);
-	virtual void drawTo(RenderWindow & drawTo, float time); //Нарисовать анимированный спрайт
+	virtual void drawTo(RenderWindow & drawTo);				//Нарисовать спрайт с одной анимацией
 };
 
 class AnimExtended :public Graphic {//Расширение графического компонента в многовариантную анимацию
 public:
 	AnimExtended(Graphic & g, Animator & _ar);
-	virtual void drawTo(RenderWindow & drawTo, float time); //Нарисовать анимированный спрайт
+	virtual void drawTo(RenderWindow & drawTo);				//Нарисовать спрайт с варьирующимися анимациями
 };
 
 

@@ -61,6 +61,8 @@ SpriteLoader::SpriteLoader() {
 	load(steoNotIn, TextureLoader::tex->steoNotIn);
 	load(tileSetGame, TextureLoader::tex->tileSetGame);
 	load(tileSetAnimated, TextureLoader::tex->tileSetAnimated);
+	//delete TextureLoader::tex; TODO: После того, как все текстуры будут заменены на спрайты - задействовать.
+	//TextureLoader::tex = nullptr;
 };
 
 SpriteLoader::~SpriteLoader() {}

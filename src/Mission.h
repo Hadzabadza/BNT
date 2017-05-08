@@ -18,7 +18,7 @@ public:
 	bool MovementPlayer;			//ход игрока
 	bool screen_lock;				//для блокировки экрана
 	bool PressedSpace;				//для нажатие клавиши спейс
-	float FrameSpace;					//засикаем время для клавиши space
+	float FrameSpace;			    //засикаем время для клавиши space
 	bool StepPlayerInspection;
 	int CouterS;					//какой идет ход по счету
 	bool OnIUO3;					//для включение экрана о запрпосе о пропуске хода
@@ -36,6 +36,7 @@ public:
 	Sprite sprite_DownloadStrips;	//полоска загрузки
 
 	Tile **Miss;
+	Mission();
 	Mission(int, int, RenderWindow&);
 	~Mission();
 };

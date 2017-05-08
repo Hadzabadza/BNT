@@ -345,7 +345,7 @@ void InformUnitPlayer::DrawStrips(RenderWindow &_window)
 }
 
 
-void InformUnitPlayer::IsSelectInformUnitPlayer(Event& _event, RenderWindow& _window, Mission &_Missiom)
+void InformUnitPlayer::IsSelectInformUnitPlayer(Event& _event, RenderWindow& _window)
 {
 	if (_draw == true)
 	{
@@ -371,20 +371,20 @@ void InformUnitPlayer::IsSelectInformUnitPlayer(Event& _event, RenderWindow& _wi
 					{
 						_draw = false;
 						missingStep = true;
-						if (_Missiom.No_fast == true)
+						if (tnd->No_fast == true)
 						{
-							_Missiom.No_fast = false;
+							tnd->No_fast = false;
 						}
 					}
 					else
 					{
 						cout << "Srabotalo" << endl;
-						_Missiom.OnSureHalt = true;
-						_Missiom.screen_lock = true;
+						tnd->OnSureHalt = true;
+						tnd->screen_lock = true;
 
-						if (_Missiom.No_fast == true)
+						if (tnd->No_fast == true)
 						{
-							_Missiom.No_fast = false;
+							tnd->No_fast = false;
 						}
 					}
 				}
@@ -399,31 +399,31 @@ void InformUnitPlayer::IsSelectInformUnitPlayer(Event& _event, RenderWindow& _wi
 				if (_event.key.code == Mouse::Left)
 				{
 
-					if (_Missiom.Fast_2 == true)
+					if (tnd->Fast_2 == true)
 					{
 						Fast = false;
-						_Missiom.Teamp_CouterClick_Frame = true;
-						if (_Missiom.No_fast == true)
+						tnd->Teamp_CouterClick_Frame = true;
+						if (tnd->No_fast == true)
 						{
-							_Missiom.No_fast = false;
+							tnd->No_fast = false;
 						}
 					}
 
-					if (StaminaUnit > (ConstStaminaUnit / 4) && _Missiom.Fast_2 == false)
+					if (StaminaUnit > (ConstStaminaUnit / 4) && tnd->Fast_2 == false)
 					{
-						_Missiom.Fast_2 = true;
+						tnd->Fast_2 = true;
 						Fast = true;
-						if (_Missiom.No_fast == true)
+						if (tnd->No_fast == true)
 						{
-							_Missiom.No_fast = false;
+							tnd->No_fast = false;
 						}
 					}
 
 					if (StaminaUnit < (ConstStaminaUnit / 4))
 					{
-						_Missiom.OnSureHalt = true;
-						_Missiom.screen_lock = true;
-						_Missiom.No_fast = true;
+						tnd->OnSureHalt = true;
+						tnd->screen_lock = true;
+						tnd->No_fast = true;
 					}
 
 				}
@@ -713,9 +713,9 @@ SureStupe::SureStupe()
 	textInfoSureStupe.setColor(color);
 }
 
-void SureStupe::IsSelectSureStupee(Event& _event, RenderWindow& _window, Mission &_Missiom)
+void SureStupe::IsSelectSureStupee(Event& _event, RenderWindow& _window)
 {
-	if (_draw_SureStupe == true || _Missiom.OnIUO3 == true)
+	if (_draw_SureStupe == true || tnd->OnIUO3 == true)
 	{
 		
 		if (IntRect(460, 396, 41, 30).contains(Mouse::getPosition(_window)))
@@ -723,10 +723,10 @@ void SureStupe::IsSelectSureStupee(Event& _event, RenderWindow& _window, Mission
 			if (_event.type == Event::MouseButtonPressed)
 				if (_event.key.code == Mouse::Left)
 				{
-					_Missiom.StepPlayerInspection = true;
-					_Missiom.screen_lock = false;
+					tnd->StepPlayerInspection = true;
+					tnd->screen_lock = false;
 					_draw_SureStupe = false;
-					_Missiom.OnIUO3 = false;
+					tnd->OnIUO3 = false;
 					cout << "Ход пропущен!" << endl;
 				}
 		}
@@ -737,10 +737,10 @@ void SureStupe::IsSelectSureStupee(Event& _event, RenderWindow& _window, Mission
 			if (_event.type == Event::MouseButtonPressed)
 				if (_event.key.code == Mouse::Left)
 				{
-					_Missiom.StepPlayerInspection = false;
-					_Missiom.screen_lock = false;
+					tnd->StepPlayerInspection = false;
+					tnd->screen_lock = false;
 					_draw_SureStupe = false;
-					_Missiom.OnIUO3 = false;
+					tnd->OnIUO3 = false;
 					cout << "Вы не стали пропускать ход!" << endl;
 				}
 		}
@@ -749,9 +749,9 @@ void SureStupe::IsSelectSureStupee(Event& _event, RenderWindow& _window, Mission
 
 }
 
-void SureStupe::IsDrawSureStupee(RenderWindow& _window, Mission &_Missiom)
+void SureStupe::IsDrawSureStupee(RenderWindow& _window)
 {
-	if (_draw_SureStupe == true || _Missiom.OnIUO3 == true)
+	if (_draw_SureStupe == true || tnd->OnIUO3 == true)
 	{
 		center_SureStupe = _window.getView().getCenter();
 		size_SureStupe = _window.getView().getSize();
@@ -896,7 +896,7 @@ void InterfaceMap::IsDrawInterfaceMap(RenderWindow &_window)
 }
 
 
-void InterfaceMap::IsSelectInterfaceMap(Event &_event, RenderWindow &window, Mission &_Missiom, Player &MainCharacter)
+void InterfaceMap::IsSelectInterfaceMap(Event &_event, RenderWindow &window, Player &MainCharacter)
 {
 
 	if (IntRect(7, 735, 25, 33).contains(Mouse::getPosition(window)))	//нажимая пропуск худа на интерфейсе
@@ -906,12 +906,12 @@ void InterfaceMap::IsSelectInterfaceMap(Event &_event, RenderWindow &window, Mis
 			{
 				if (MainCharacter.orders == 0)
 				{
-					_Missiom.StepPlayerInspection = true;
+					tnd->StepPlayerInspection = true;
 				}
 
 				if (MainCharacter.orders > 0)
 				{
-					_Missiom.OnIUO3 = true;
+					tnd->OnIUO3 = true;
 				}
 			}
 	}
@@ -937,9 +937,9 @@ SureHalt::SureHalt()
 	textInfoSureHalt.setColor(color);
 }
 
-void SureHalt::IsSelectSureHalt(Event& _event, RenderWindow& _window, Mission &_Missiom)
+void SureHalt::IsSelectSureHalt(Event& _event, RenderWindow& _window)
 {
-	if (_draw_SureHalt == true || _Missiom.OnSureHalt == true)
+	if (_draw_SureHalt == true || tnd->OnSureHalt == true)
 	{
 
 		if (IntRect(496, 398, 42, 26).contains(Mouse::getPosition(_window)))
@@ -948,8 +948,8 @@ void SureHalt::IsSelectSureHalt(Event& _event, RenderWindow& _window, Mission &_
 				if (_event.key.code == Mouse::Left)
 				{
 					_draw_SureHalt = false;
-					_Missiom.OnSureHalt = false;
-					_Missiom.screen_lock = false;
+					tnd->OnSureHalt = false;
+					tnd->screen_lock = false;
 				}
 		}
 
@@ -966,9 +966,9 @@ TrayUnit::TrayUnit()
 	sprite_TrayUnit_end.setScale(2, 2);
 }
 
-void SureHalt::IsDrawSureHalt(RenderWindow& _window, Mission &_Missiom)
+void SureHalt::IsDrawSureHalt(RenderWindow& _window)
 {
-	if (_draw_SureHalt == true || _Missiom.OnSureHalt == true)
+	if (_draw_SureHalt == true || tnd->OnSureHalt == true)
 	{
 		center_SureHalt = _window.getView().getCenter();
 		size_SureHalt = _window.getView().getSize();
@@ -977,13 +977,13 @@ void SureHalt::IsDrawSureHalt(RenderWindow& _window, Mission &_Missiom)
 		sprite_infoUnitPlayer_SureHalt.setPosition(center_SureHalt.x - size_SureHalt.x / 2, center_SureHalt.y - size_SureHalt.y / 2);
 		_window.draw(sprite_infoUnitPlayer_SureHalt);
 
-		if (_Missiom.OnSureHalt == true && _Missiom.No_fast == false)
+		if (tnd->OnSureHalt == true && tnd->No_fast == false)
 		{
 			textInfoSureHalt.setString("Отряд не может отдохнуть");
 			textInfoSureHalt.setPosition(center_SureHalt.x - size_SureHalt.x / 9, center_SureHalt.y - size_SureHalt.y / 16);
 		}
 
-		if (_Missiom.No_fast == true)
+		if (tnd->No_fast == true)
 		{
 			textInfoSureHalt.setString("Отряд слишком устал для бега");
 			textInfoSureHalt.setPosition(center_SureHalt.x - size_SureHalt.x / 8, center_SureHalt.y - size_SureHalt.y / 16);

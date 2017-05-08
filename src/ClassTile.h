@@ -6,6 +6,7 @@
 #include "Settings.h"
 
 class Graphic;
+class Unit;
 
 using namespace std;
 using namespace sf;
@@ -24,6 +25,7 @@ private:
 
 public:
 
+	Unit * unit;            //Юнит, стоящий на тайле
 	Vector2f * pos;			//Координатная позиция тайла
 	Graphic * g;            //Графический компонент
 	

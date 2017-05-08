@@ -20,9 +20,14 @@ void Graphic::drawTo(RenderWindow & drawTo) {
 	drawTo.draw(*sheet);
 };
 
-void Graphic::drawTo(RenderWindow & _drawTo, float time) {
-	drawTo(_drawTo);
-};
+bool Graphic::hovered() {
+	if (truePos->x < mouse.x &&
+		truePos->x + dim.x * scale.x> mouse.x &&
+		truePos->y <mouse.y &&
+		truePos->y + dim.y * scale.y> mouse.y)
+		return true;
+	else return false;
+}
 
 //--------------------------------------------------------------
 
@@ -32,9 +37,9 @@ Animated::Animated(Graphic & g, unsigned _frames):frames(_frames),Graphic(g){
 	anSpeed = 0.004;
 };
 
-void Animated::drawTo(RenderWindow & drawTo, float time) {
+void Animated::drawTo(RenderWindow & drawTo) {
 	updateTruePosition();
-	currentFrame += anSpeed * time;
+	currentFrame += anSpeed * elapsed;
 	if (currentFrame >= frames) currentFrame -= frames; 
 	sheet->setTextureRect(IntRect(dim.x*floor(currentFrame), carve.y, dim.x, dim.y));
 	sheet->setScale(scale.x, scale.y);
@@ -52,9 +57,9 @@ AnimExtended::AnimExtended(Graphic & g, Animator & _ar):Graphic(g) {
 	delete &g;
 }
 
-void AnimExtended::drawTo(RenderWindow & drawTo, float time) {
+void AnimExtended::drawTo(RenderWindow & drawTo) {
 	updateTruePosition();
-	currentFrame += anSpeed*time;
+	currentFrame += anSpeed*elapsed;
 	ar->carveFrame(*sheet,  dim);
 	sheet->setScale(scale.x, scale.y);
 	drawTo.draw(*sheet);
